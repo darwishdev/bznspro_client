@@ -1,0 +1,40 @@
+// Define some variables for the colors and font sizes
+$primary-color: #333;
+$secondary-color: #fff;
+$logo-font-size: 18px;
+$link-font-size: 14px;
+$button-padding: 10px 20px;
+
+// Add some styling for the navigation bar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 15px;
+
+  // Add some styling for the logo
+  .logo {
+    font-size: $logo-font-size;
+    font-weight: bold;
+  }
+
+  // Add some styling for the links
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: $link-font-size;
+  }
+
+  // Add some styling for the rounded button
+  .button {
+    background-color: $primary-color;
+    border: none;
+    color: $secondary-color;
+    padding: $button-padding;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,74 @@
+@import url('http://fonts.googleapis.com/css?family=Tajawal:300,400,600,800,300italic,400italic,600italic&family=Cairo:300,400,600,800,300italic,400italic,600italic');
+
+body {
+  font-family: 'Tajawal';
+}
+
+.navbar .text-caption {
+  font-size: 0.55rem;
+}
+.q-item.q-router-link--active,
+.q-item--active {
+  color: var(--q-secondary);
+  font-weight: 800;
+  overflow: hidden;
+  ::after {
+    content: '';
+    width: 60%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    height: 2px;
+    background-color: var(--q-primary);
+  }
+}
+.underline {
+  position: relative;
+}
+.underline::after {
+  content: '';
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  text-align: right;
+  height: 2px;
+  background-color: var(--q-primary);
+}
+
+body.desktop .q-focusable:focus > .q-focus-helper,
+body.desktop .q-manual-focusable--focused > .q-focus-helper,
+body.desktop .q-hoverable:hover > .q-focus-helper {
+  background: currentColor;
+  opacity: 0;
+}
+
+body.desktop .q-focusable:focus > .q-focus-helper,
+body.desktop .q-manual-focusable--focused > .q-focus-helper,
+body.desktop .q-hoverable:hover {
+  color: var(--q-primary);
+  transform: scale(1.05);
+}
+
+.q-hoverable {
+  transition: all 0.3s ease;
+}
+
+.mw-200 {
+  max-width: 200px;
+}
+
+.h-50 {
+  height: 50px;
+}
+
+.container {
+  width: 100%;
+  padding: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1264px) {
+    max-width: 1200px !important;
+  }
+}
