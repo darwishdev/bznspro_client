@@ -1,54 +1,35 @@
 <template>
   <q-footer class="text-white bg-secondary">
     <contact-banner />
-    <nav class="navbar row justify-between q-px-xl q-pt-xl">
-      <!-- Add the links -->
-      <div class="column justify-center items-center">
-        <img
-          src="~assets/logo-light.png"
-          class="text-center q-mb-lg"
-          width="150"
-        />
-        <p class="mw-200 text-center">{{ aboutBreif }}</p>
-      </div>
+    <div class="container">
 
-      <q-list
-        class="text-left items-center"
-        v-for="list in lists"
-        :key="list.title"
-      >
-        <span class="text-white text-left text-bold underline">{{
-          list.title
-        }}</span>
-
-        <div class="q-mt-md">
-          <q-item
-            clickable
-            :hoverable="false"
-            v-ripple
-            class="text-left no-padding"
-            v-for="item in list.links"
-            :key="item.to"
-            :to="item.to"
-          >
-            <q-item-section>{{ item.text }}</q-item-section>
-          </q-item>
+      <nav class="navbar row justify-between footer_content  q-pt-xl">
+        <!-- Add the links -->
+        <div class="column  col-auto justify-center items-center">
+          <img src="~assets/logo-light.png" class="text-center q-mb-lg" width="150" />
+          <p class="mw-200 text-center">{{ aboutBreif }}</p>
         </div>
-      </q-list>
-    </nav>
+
+        <q-list class="text-center  col-auto items-center" v-for="list in lists" :key="list.title">
+          <span class="text-white text-center text-bold underline">{{
+    list.title
+}}</span>
+
+          <div class="q-mt-md">
+            <q-item clickable :hoverable="false" v-ripple class="text-center no-padding" v-for="item in list.links"
+              :key="item.to" :to="item.to">
+              <q-item-section>{{ item.text }}</q-item-section>
+            </q-item>
+          </div>
+        </q-list>
+      </nav>
+    </div>
     <hr class="bg-secondary" />
     <div class="row bg-secondary no-padding justify-around items-center">
       <span class="">{{ copyRights }}</span>
       <span class="">
         {{ follwUs }}
-        <q-btn
-          v-for="link in socialLinks"
-          flat
-          round
-          color="white"
-          :key="link.icon"
-          :icon="link.icon"
-        />
+        <q-btn v-for="link in socialLinks" flat round color="white" :key="link.icon" :icon="link.icon" />
       </span>
     </div>
   </q-footer>

@@ -73,73 +73,80 @@ body.desktop .q-hoverable:hover {
   }
 }
 .mr-110 {
-  margin-left: 110px;
+  @media (min-width: 1440px) {
+    margin-left: 110px;
+  }
 }
 .app-banner {
+  background-image: url('/src/assets/banner.png');
+  background-size: cover;
+  position: relative;
+  min-height: min-content;
+
+  & h1 {
+    @media (max-width: 1440px) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+
+  & .q-btn {
+    @media (max-width: 400px) {
+      font-size: 12px;
+      padding: 0 5px;
+    }
+  }
+
+  & p {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+  }
+
   & .banner_img {
-    max-height: 750px;
+    // max-height: 800px;
+    display: flex;
+    max-width: 50%;
   }
-  .services {
-    position: relative;
-    &::after {
-      content: '';
-      background: url('https://www.simpleimageresizer.com/_uploads/photos/cb7ae568/455001_2_75.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      width: 692px;
-      height: 614px;
-      // background-color: red;
 
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-    &_wrapper {
-      gap: 20px;
-      & .service {
-        max-width: 400px;
-        cursor: pointer;
-
-        padding: 30px;
-        transition: all 0.3s;
-
-        &:hover {
-          background-color: #fff;
-
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          transform: scale(1.02);
-        }
-        h2 {
-          font-weight: 600;
-          font-size: 32px;
-          color: var(--q-secondary);
-          margin-bottom: 30px;
-        }
-        & p {
-          font-size: 22px;
-          margin-right: 50px;
-        }
-      }
-    }
-  }
   .stats {
-    column-gap: 60px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    height: 50px;
+    padding: 0 20px;
     justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+    @media (max-width: 1024px) {
+      column-gap: 30px;
+    }
     & .stat_item {
       color: white;
-      margin: 20px 0;
       font-weight: bold;
       position: relative;
-
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 500px) {
+        font-size: 0.8rem;
+      }
       &:not(:first-child):after {
         content: '';
         position: absolute;
-        left: -30px;
         top: 0;
         width: 2px;
         height: 30px;
         background-color: var(--q-primary);
+        left: -30px;
+        @media (max-width: 1024px) {
+          left: -15px;
+        }
       }
     }
   }
@@ -201,6 +208,9 @@ body.desktop .q-hoverable:hover {
 }
 .testemonials {
   &_header {
+    @media (max-width: 1024px) {
+      align-items: center;
+    }
     & h4 {
       position: relative;
       padding-right: 20px;
@@ -226,10 +236,14 @@ body.desktop .q-hoverable:hover {
     &_content {
       border-left: 2px solid var(--q-secondary);
       border-bottom: 2px solid var(--q-secondary);
-      padding: 0 0px 30px 30px;
+      padding: 0 0px 1rem 1rem;
 
       & p {
         margin: 0;
+        max-width: 450px;
+        @media (min-width: 1024px) {
+          max-width: 600px;
+        }
       }
     }
   }
@@ -245,14 +259,23 @@ body.desktop .q-hoverable:hover {
     font-size: 20px;
     font-weight: 800;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
   }
   &_img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 100px;
     height: 100px;
-
     border-radius: 50%;
     transform: translateX(-30px);
+    transition: all 0.3s;
+    &:hover {
+      transform: translateX(-30px) scale(1.1);
+      z-index: 2;
+    }
   }
   &_name {
     font-size: 2px;
@@ -287,6 +310,9 @@ body.desktop .q-hoverable:hover {
 .mx-w-lg {
   max-width: 800px;
 }
+.mx-w-md {
+  max-width: 600px;
+}
 
 .project {
   & img {
@@ -301,4 +327,98 @@ body.desktop .q-hoverable:hover {
 
 .gap-md {
   gap: 20px;
+}
+
+html {
+  @media (max-width: 1024px) {
+    font-size: 12px;
+  }
+}
+
+.footer_content {
+  @media (max-width: 1024px) {
+    gap: 30px;
+
+    & .q-list {
+      min-width: 150px;
+    }
+  }
+  @media (max-width: 599px) {
+    gap: 20px;
+    justify-content: center;
+    & .q-list {
+      min-width: 200px;
+    }
+  }
+}
+
+.justify-md-between {
+  justify-content: center;
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+  }
+}
+
+.justify-sm-between {
+  justify-content: center;
+  @media (min-width: 600px) {
+    justify-content: space-between;
+  }
+}
+
+.services {
+  position: relative;
+  background-image: url(/src/assets/services_bg.png);
+  background-size: cover;
+  @media (min-width: 1024px) {
+    &::after {
+      content: '';
+      background: url('/src/assets/service_img_md.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 346px;
+      height: 307px;
+      // transform: scale(0.5);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &_wrapper {
+    gap: 20px;
+    @media (min-width: 1024px) {
+      justify-content: start;
+    }
+    & .service {
+      max-width: 400px;
+      cursor: pointer;
+
+      padding: 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #fff;
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transform: scale(1.02);
+      }
+      h2 {
+        font-weight: 600;
+        font-size: 32px;
+        color: var(--q-secondary);
+        margin-bottom: 30px;
+      }
+      & p {
+        font-size: 22px;
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+.text-lt-md-center {
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 }

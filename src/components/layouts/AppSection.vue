@@ -19,22 +19,13 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div
-    :class="`section q-py-xl ${props.className}`"
-    :style="{ background: props.color }"
-  >
+  <div :class="`section q-py-xl ${props.className}`" :style="{ background: props.color }">
     <div class="container">
-      <div
-        class="section-header column"
-        :class="{ 'items-center': centerTitle }"
-      >
+      <div class="section-header column" :class="{ 'items-center': centerTitle }">
         <slot name="title" />
       </div>
-      <div
-        :class="isColumn ? 'column' : 'row'"
-        class="no-wrap"
-        :style="`gap: ${props.gap}px`"
-      >
+      <div :class="{ 'column': props.isColumn, 'row': !props.isColumn, 'justify-center': props.centerContent }"
+        :style="`gap: ${props.gap}px`">
         <slot name="content" />
       </div>
     </div>
