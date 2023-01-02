@@ -2,9 +2,6 @@
   <q-header reveal class="text-secondary bg-white">
     <nav class="navbar row justify-between q-px-xl q-py-md">
       <!-- Add the links -->
-      <div class="logo">
-        <img src="~assets/logo.png" width="100" />
-      </div>
 
       <q-list class="row">
         <q-item
@@ -26,6 +23,9 @@
           >
         </q-item>
       </q-list>
+      <div class="logo">
+        <img src="~assets/logo.png" width="100" />
+      </div>
     </nav>
   </q-header>
 </template>

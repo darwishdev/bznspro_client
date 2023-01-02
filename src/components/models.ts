@@ -1,5 +1,21 @@
-export interface Todo {
+export interface Service {
   id: number;
+  title: string;
+  content: string;
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  img: string;
+  cat: string;
+}
+
+export interface Testemonial {
+  name: string;
+  job: string;
+  img: string;
+  letters: string;
   content: string;
 }
 
@@ -12,8 +28,6 @@ export interface Goal {
   text: string;
   icon: string;
 }
-
-
 
 export interface Program {
   id: number;
