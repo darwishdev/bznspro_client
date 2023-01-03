@@ -23,7 +23,7 @@
 
 
   </q-header>
-  <q-drawer v-model="drawer" show-if-above :width="300" :breakpoint="500" bordered class="bg-secondary ">
+  <q-drawer v-model="drawer" overlay :width="300" behavior="mobile" bordered class="bg-secondary ">
     <div class="flex justify-center q-my-lg">
       <img src="~assets/logo-light.png" height="" wid />
     </div>
@@ -52,7 +52,7 @@
 import { NavItem } from 'components/layouts/models';
 import { ref } from 'vue'
 
-const drawer = ref(true)
+let drawer = ref(false);
 const navItems: NavItem[] = [
   {
     text: 'الرئيسية',

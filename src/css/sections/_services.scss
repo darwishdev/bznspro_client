@@ -1,0 +1,50 @@
+.services {
+  position: relative;
+  background-image: url(/src/assets/services_bg.png);
+  background-size: cover;
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media (min-width: 1024px) {
+      background: url('/src/assets/service_img.png');
+      width: 692px;
+      height: 614px;
+    }
+  }
+
+  &_wrapper {
+    gap: 20px;
+    @media (min-width: 1024px) {
+      justify-content: start;
+    }
+    & .service {
+      max-width: 400px;
+      cursor: pointer;
+
+      padding: 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #fff;
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transform: scale(1.02);
+      }
+      h2 {
+        font-weight: 600;
+        font-size: 32px;
+        color: var(--q-secondary);
+        margin-bottom: 30px;
+      }
+      & p {
+        font-size: 22px;
+        margin-right: 50px;
+      }
+    }
+  }
+}

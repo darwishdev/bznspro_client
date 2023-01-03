@@ -1,0 +1,16 @@
+.footer_content {
+  @media (max-width: 1024px) {
+    gap: 30px;
+
+    & .q-list {
+      min-width: 150px;
+    }
+  }
+  @media (max-width: 599px) {
+    gap: 20px;
+    justify-content: center;
+    & .q-list {
+      min-width: 200px;
+    }
+  }
+}
