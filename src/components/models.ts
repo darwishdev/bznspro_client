@@ -1,7 +1,14 @@
+import { SocialLink } from './layouts/models';
 export interface Service {
   id: number;
   title: string;
   content: string;
+}
+
+export interface Team {
+  title: string;
+  name: string;
+  img: string;
 }
 
 export interface Project {
@@ -17,6 +24,21 @@ export interface Testemonial {
   img: string;
   letters: string;
   content: string;
+}
+
+export interface Cat {
+  id: number;
+  name: string;
+}
+export interface Blog {
+  id: number;
+  views?: number;
+  name: string;
+  cat: string;
+  img: string;
+  breif?: string;
+  date: string;
+  links?: SocialLink[];
 }
 
 export interface Meta {

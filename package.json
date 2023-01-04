@@ -12,15 +12,13 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@egjs/vue3-flicking": "^4.10.4",
     "@quasar/extras": "^1.0.0",
     "pinia": "^2.0.11",
     "postcss-rtlcss": "^4.0.1",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0",
-    "vue3-carousel": "^0.2.9",
-    "vueperslides": "^3.5.1"
+    "vue3-carousel": "^0.2.9"
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
