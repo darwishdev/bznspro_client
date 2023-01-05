@@ -1,0 +1,156 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { Cat, Project, ProjectCat } from 'components/models';
+import ProjectsPagePartial from 'components/partials/ProjectsPagePartial.vue';
+
+const tab = ref(1);
+const prevBtnDisabled = ref(true);
+const nextBtnDisabled = ref(false);
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: 'شركة متجر',
+    img: '/src/assets/projects/1.png',
+  },
+  {
+    id: 2,
+    title: 'الشاب الريادي',
+    img: '/src/assets/projects/2.png',
+  },
+  {
+    id: 3,
+    title: ' منصة المنتور',
+    img: '/src/assets/projects/3.png',
+  },
+  {
+    id: 4,
+    title: 'منصة ادراك',
+    img: '/src/assets/projects/4.png',
+  },
+  {
+    id: 5,
+    title: 'شركة الروضة',
+    img: '/src/assets/projects/5.png',
+  },
+  {
+    id: 6,
+    title: 'تطبيق شازلونج',
+    img: '/src/assets/projects/6.png',
+  },
+];
+const projectCats: ProjectCat[] = [
+  {
+    cat: {
+      id: 1,
+      name: 'مشاريع استشارية',
+    },
+    projects,
+  },
+  {
+    cat: {
+      id: 2,
+      name: 'مشاريع مالية',
+    },
+    projects,
+  },
+  {
+    cat: {
+      id: 3,
+      name: 'مشاريع تسويق',
+    },
+    projects,
+  },
+  {
+    cat: {
+      id: 4,
+      name: 'تطوير  الشركات',
+    },
+    projects,
+  },
+];
+
+// function _getCurrenServiceIndex(): number {
+//   return services.indexOf(
+//     services.filter((service) => service.id == tab.value)[0]
+//   );
+// }
+// function goTo(isNext: boolean) {
+//   const currentIndex = _getCurrenServiceIndex();
+//   if (typeof currentIndex == undefined) {
+//     return;
+//   }
+
+//   const targetSlide = services.indexOf(
+//     services[isNext ? currentIndex + 1 : currentIndex - 1]
+//   );
+//   if (targetSlide == -1) {
+//     nextBtnDisabled.value = isNext;
+//     prevBtnDisabled.value = !isNext;
+//     return;
+//   }
+
+//   tab.value = services[targetSlide].id;
+// }
+</script>
+
+<template>
+  <div class="container services-page">
+    <div class="header text-center">
+      <h1>مشاريعنا</h1>
+      <p class="text-h6">
+        يسعدنا تواصلك معنا للرد علي استفساراتك او لبحث إمكانية العمل معا
+        ومساعدتك علي تطوير شرتكتك
+      </p>
+    </div>
+    <div class="main">
+      <div class="items-center justify-center flex no-wrap q-mb-lg">
+        <span class="text-font-bold text-h6">تصفح مشاريعنا :</span>
+        <q-tabs
+          dense
+          v-model="tab"
+          active-bg-color="blue"
+          active-color="white"
+          outside-arrows
+          inline-label
+          class="cats flex-grow"
+        >
+          <q-tab
+            v-for="cat in projectCats"
+            :key="cat.cat.id"
+            :name="cat.cat.id"
+            :label="cat.cat.name"
+          />
+        </q-tabs>
+      </div>
+
+      <q-tab-panels v-model="tab" animated>
+        <q-tab-panel
+          v-for="cat in projectCats"
+          :key="cat.cat.id"
+          :name="cat.cat.id"
+        >
+          <div class="flex projects-wrapper">
+            <projects-page-partial
+              v-for="project in cat.projects"
+              :key="project.id"
+              :project="project"
+            />
+          </div>
+        </q-tab-panel>
+      </q-tab-panels>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+.projects-wrapper {
+  gap: 20px;
+  & .projects-page-partial {
+    max-width: 30%;
+    @media (max-width: 1024px) {
+      max-width: calc(50% - 10px);
+    }
+  }
+}
+</style>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import ServicePartial from 'components/partials/ServicePartial.vue';
-import {
-  Service,
-} from 'components/models';
+import { Service } from 'components/models';
 
 const services: Service[] = [
   {
@@ -29,12 +27,15 @@ const services: Service[] = [
 </script>
 
 <template>
-  <div class="services q-pa-lg">
-
+  <div class="services-section q-pa-lg">
     <div class="container">
       <h3 class="text-black font-weight-bold">تعرف علي خدماتنا</h3>
-      <div class="row services_wrapper justify-center">
-        <service-partial v-for="service in services" :key="service.id" :service="service" />
+      <div class="row services-section_wrapper justify-center">
+        <service-partial
+          v-for="service in services"
+          :key="service.id"
+          :service="service"
+        />
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { SocialLink } from './layouts/models';
 export interface Service {
   id: number;
   title: string;
+  img?: string;
   content: string;
 }
 
@@ -15,7 +16,12 @@ export interface Project {
   id: number;
   title: string;
   img: string;
-  cat: string;
+  cat?: string;
+}
+
+export interface ProjectCat {
+  cat: Cat;
+  projects: Project[];
 }
 
 export interface Testemonial {

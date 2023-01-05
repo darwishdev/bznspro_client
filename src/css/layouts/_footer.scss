@@ -1,4 +1,13 @@
 .footer_content {
+  & .q-item.q-router-link--active,
+  .q-item--active {
+    color: #fff;
+    font-weight: 800;
+    overflow: hidden;
+  }
+  & .q-item.q-router-link--active ::after {
+    display: none;
+  }
   @media (max-width: 1024px) {
     gap: 30px;
 
