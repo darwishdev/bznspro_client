@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Cat, Project, ProjectCat } from 'components/models';
+import { Project, ProjectCat } from 'components/models';
 import ProjectsPagePartial from 'components/partials/ProjectsPagePartial.vue';
 
 const tab = ref(1);
-const prevBtnDisabled = ref(true);
-const nextBtnDisabled = ref(false);
 
 const projects: Project[] = [
   {
@@ -70,28 +68,6 @@ const projectCats: ProjectCat[] = [
   },
 ];
 
-// function _getCurrenServiceIndex(): number {
-//   return services.indexOf(
-//     services.filter((service) => service.id == tab.value)[0]
-//   );
-// }
-// function goTo(isNext: boolean) {
-//   const currentIndex = _getCurrenServiceIndex();
-//   if (typeof currentIndex == undefined) {
-//     return;
-//   }
-
-//   const targetSlide = services.indexOf(
-//     services[isNext ? currentIndex + 1 : currentIndex - 1]
-//   );
-//   if (targetSlide == -1) {
-//     nextBtnDisabled.value = isNext;
-//     prevBtnDisabled.value = !isNext;
-//     return;
-//   }
-
-//   tab.value = services[targetSlide].id;
-// }
 </script>
 
 <template>
@@ -106,36 +82,16 @@ const projectCats: ProjectCat[] = [
     <div class="main">
       <div class="items-center justify-center flex no-wrap q-mb-lg">
         <span class="text-font-bold text-h6">تصفح مشاريعنا :</span>
-        <q-tabs
-          dense
-          v-model="tab"
-          active-bg-color="blue"
-          active-color="white"
-          outside-arrows
-          inline-label
-          class="cats flex-grow"
-        >
-          <q-tab
-            v-for="cat in projectCats"
-            :key="cat.cat.id"
-            :name="cat.cat.id"
-            :label="cat.cat.name"
-          />
+        <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
+          class="cats flex-grow">
+          <q-tab v-for="cat in projectCats" :key="cat.cat.id" :name="cat.cat.id" :label="cat.cat.name" />
         </q-tabs>
       </div>
 
       <q-tab-panels v-model="tab" animated>
-        <q-tab-panel
-          v-for="cat in projectCats"
-          :key="cat.cat.id"
-          :name="cat.cat.id"
-        >
+        <q-tab-panel v-for="cat in projectCats" :key="cat.cat.id" :name="cat.cat.id">
           <div class="flex projects-wrapper">
-            <projects-page-partial
-              v-for="project in cat.projects"
-              :key="project.id"
-              :project="project"
-            />
+            <projects-page-partial v-for="project in cat.projects" :key="project.id" :project="project" />
           </div>
         </q-tab-panel>
       </q-tab-panels>
@@ -146,8 +102,10 @@ const projectCats: ProjectCat[] = [
 <style lang="scss">
 .projects-wrapper {
   gap: 20px;
+
   & .projects-page-partial {
     max-width: 30%;
+
     @media (max-width: 1024px) {
       max-width: calc(50% - 10px);
     }

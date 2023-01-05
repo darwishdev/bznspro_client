@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import CarouselSection from 'components/layouts/CarouselSection.vue';
-import ProgramPartial from 'components/partials/ProgramPartial.vue';
+import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
 import {
   Program,
 } from 'components/models';
@@ -59,7 +59,7 @@ const programs: Program[] = [
       <div class="container">
         <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
           <slide v-for="program in programs" :key="program.title">
-            <program-partial :program="program" />
+            <home-program-partial :program="program" />
           </slide>
           <template #addons>
             <navigation />
@@ -70,7 +70,7 @@ const programs: Program[] = [
 
       </div>
       <div class="row justify-center q-mx-auto q-my-lg">
-        <q-btn icon-right="arrow_back" color="grey" text-color="secondary" size="lg" rounded>المزيد من المشاريع</q-btn>
+        <q-btn icon-right="arrow_back" color="grey" text-color="secondary" size="lg" rounded>المزيد من البرامج</q-btn>
       </div>
     </template>
   </carousel-section>

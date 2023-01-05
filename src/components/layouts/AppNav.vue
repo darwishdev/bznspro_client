@@ -1,5 +1,5 @@
 <template>
-  <q-header reveal class="text-secondary bg-white">
+  <q-header reveal class="text-secondary app-header " :class="{ 'white': $route.fullPath == '/' }">
     <nav class="navbar row justify-between q-px-xl q-py-md">
       <!-- Add the links -->
 

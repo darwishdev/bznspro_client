@@ -1,6 +1,5 @@
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import { Project } from '../models';
 export interface Props {
   project: Project;

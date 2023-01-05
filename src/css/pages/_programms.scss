@@ -1,0 +1,27 @@
+.programms {
+  // display: none;
+  &-all {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      & .progs {
+        max-width: 85%;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: center;
+        & > div {
+          max-width: 100%;
+          @media (min-width: 600px) {
+            max-width: 47%;
+          }
+          @media (min-width: 768px) {
+            max-width: 30%;
+          }
+        }
+        // display: none;
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import { Service } from '../models';
 export interface Props {
   service: Service;

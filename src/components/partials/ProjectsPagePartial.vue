@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import { Project } from '../models';
 export interface Props {
   project: Project;
@@ -11,11 +10,7 @@ const props = defineProps<Props>();
 <template>
   <div class="projects-page-partial">
     <div class="column">
-      <img
-        :src="props.project.img"
-        class="q-mb-md rounded-borders"
-        :alt="props.project.title"
-      />
+      <img :src="props.project.img" class="q-mb-md rounded-borders" :alt="props.project.title" />
       <div class="project-name">
         <h6 class="text-bold no-margin full-width">
           {{ props.project.title }}
@@ -31,14 +26,17 @@ const props = defineProps<Props>();
   transition: all 0.3s;
   margin-bottom: 40px;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.01);
   }
+
   & img {
     width: 100%;
     height: auto;
     border-radius: 0px;
   }
+
   & .project-name {
     position: absolute;
     bottom: 20px;
@@ -57,10 +55,12 @@ const props = defineProps<Props>();
       background-color: #488ad1;
       right: 0;
       bottom: 0;
+
       @media (max-width: 1024px) {
         width: 100px;
       }
     }
+
     &::after {
       content: '';
       position: absolute;
@@ -69,6 +69,7 @@ const props = defineProps<Props>();
       background-color: #488ad1;
       right: 0;
       bottom: 0;
+
       @media (max-width: 1024px) {
         height: 150px;
       }
