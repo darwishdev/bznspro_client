@@ -1,0 +1,61 @@
+.blog {
+  &-page {
+    & .header {
+      & h1 {
+        font-weight: 500;
+        position: relative;
+        display: inline;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          width: 100%;
+          height: 3px;
+          left: 0;
+          background-color: $blue;
+        }
+      }
+      & p {
+        margin: 60px 0;
+      }
+    }
+
+    & .latest,
+    .post,
+    .recent-post {
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    & .carousel {
+      margin-top: 50px;
+    }
+  }
+  &-post {
+    display: flex;
+    flex-wrap: no-wrap;
+    & .wrapper {
+      // max-width: 80%;
+      padding-right: 50px;
+      & h1 {
+        font-weight: bold;
+        font-size: 3rem;
+        max-width: 80%;
+      }
+
+      & img {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      & img {
+      }
+    }
+    & .sidebar {
+      max-width: 25%;
+    }
+  }
+}

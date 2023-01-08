@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { Program } from '../models';
 export interface Props {
@@ -9,13 +8,23 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-
-  <div class="">
+  <div
+    class="partial"
+    @click.prevent="
+      $router.push({ name: 'programms-view', params: { id: props.program.id } })
+    "
+  >
     <div>
-      <img src="~assets/program1.png" class="full-width" :alt="props.program.title" />
+      <img
+        :src="props.program.img"
+        class="full-width"
+        :alt="props.program.title"
+      />
     </div>
     <div class="program__content">
-      <div class=" q-py-lg  column items-center text-left justify-center full-height">
+      <div
+        class="q-py-lg column items-center text-left justify-center full-height"
+      >
         <h5 class="text-secondary text-bold no-margin full-width">
           {{ props.program.title }}
         </h5>
@@ -27,16 +36,25 @@ const props = defineProps<Props>();
         <q-separator />
         <div class="full-width flex justify-between text-left">
           <span class="text-blue">450 <br />ريال سعودي</span>
-          <q-btn color="blue" rounded size="lg">سجل الان</q-btn>
+          <q-btn
+            color="blue"
+            rounded
+            size="lg"
+            @click.prevent="
+              $router.push({
+                name: 'programms-view',
+                params: { id: props.program.id },
+              })
+            "
+            >سجل الان</q-btn
+          >
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
-
-<style lang="scss" >
+<style lang="scss">
 .program {
   &__content {
     position: relative;

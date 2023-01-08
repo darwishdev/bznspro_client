@@ -6,13 +6,45 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/about', component: () => import('pages/AboutPage.vue') },
-      { path: '/services', component: () => import('pages/ServicesPage.vue') },
-      { path: '/projects', component: () => import('pages/ProjectsPage.vue') },
-      { path: '/blog', component: () => import('pages/blog/BlogIndex.vue') },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('pages/AboutPage.vue'),
+      },
+      {
+        path: '/services',
+        name: 'services',
+        component: () => import('pages/ServicesPage.vue'),
+      },
+      {
+        path: '/projects',
+        name: 'projects',
+        component: () => import('pages/ProjectsPage.vue'),
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        component: () => import('pages/blog/BlogIndex.vue'),
+      },
+      {
+        path: '/blog/:id',
+        name: 'blog-view',
+        component: () => import('pages/blog/BlogView.vue'),
+      },
+      {
+        path: '/consultunts',
+        name: 'consultunts',
+        component: () => import('pages/ConsultuntsPage.vue'),
+      },
       {
         path: '/programms',
+        name: 'programms',
         component: () => import('pages/programm/ProgrammsIndex.vue'),
+      },
+      {
+        path: '/programms/:id',
+        name: 'programms-view',
+        component: () => import('pages/programm/ProgrammsView.vue'),
       },
     ],
   },

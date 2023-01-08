@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { Program } from '../models';
 export interface Props {
@@ -9,19 +8,29 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-
-  <div class="flex no-wrap">
+  <div
+    class="flex partial no-wrap"
+    @click.prevent="
+      $router.push({ name: 'programms-view', params: { id: props.program.id } })
+    "
+  >
     <div>
-      <img src="~assets/program1.png" class="full-height" :alt="props.program.title" />
+      <img
+        src="~assets/program1.png"
+        class="full-height"
+        :alt="props.program.title"
+      />
     </div>
-    <div class="program__content  bg-grey">
+    <div class="program__content bg-grey">
       <div class="date bg-teal">
         <div class="q-pa-sm text-center">
           <p class="no-padding no-margin text-h4 text-white">11</p>
           <p class="no-padding no-margin text-h5 text-white">سبتمبر</p>
         </div>
       </div>
-      <div class=" q-pa-lg program__title column items-center text-left justify-center full-height">
+      <div
+        class="q-pa-lg program__title column items-center text-left justify-center full-height"
+      >
         <h5 class="text-secondary text-bold no-margin full-width">
           {{ props.program.title }}
         </h5>
@@ -31,16 +40,24 @@ const props = defineProps<Props>();
           نمو ديناميكي و مستدام
         </p>
         <div class="full-width text-left">
-          <q-btn color="blue" size="lg">سجل الان</q-btn>
+          <q-btn
+            color="blue"
+            size="lg"
+            @click.prevent="
+              $router.push({
+                name: 'programms-view',
+                params: { id: props.program.id },
+              })
+            "
+            >سجل الان</q-btn
+          >
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
-
-<style lang="scss" >
+<style lang="scss">
 .program {
   &__content {
     position: relative;

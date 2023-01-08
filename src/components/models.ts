@@ -63,3 +63,31 @@ export interface Program {
   text: string;
   img: string;
 }
+
+export interface PorgramPlan {
+  title: string;
+  breif: string;
+}
+export interface SingleProgram {
+  id: number;
+  title: string;
+  price: number;
+  breif: string;
+  img: string;
+  description: string;
+  hours: number;
+  date: string;
+  location: string;
+  time: string;
+  note: string;
+  goals: string[];
+  whattolearn: string[];
+  subscribers: number;
+  plan: PorgramPlan[];
+}
+
+export interface Consultunt {
+  name: string;
+  title: string;
+  img: string;
+}

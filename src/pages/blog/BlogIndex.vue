@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import RecentPostPartial from 'components/partials/RecentPostPartial.vue';
+import PostRecentPartial from 'src/components/partials/PostRecentPartial.vue';
 import PostPartial from 'components/partials/PostPartial.vue';
 import { Blog, Cat } from 'components/models';
 
 import { ref } from 'vue';
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
-
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
   snapAlign: 'left',
-  wrapAround: true
-}
+  wrapAround: true,
+};
 // breakpoints are mobile first
 // any settings not specified will fallback to the carousel settings
 const carouselBreakpoints = {
@@ -20,7 +21,7 @@ const carouselBreakpoints = {
     itemsToShow: 3,
     snapAlign: 'left',
   },
-}
+};
 const tab = ref(1);
 
 const date = 'Aug 24, 2020';
@@ -156,47 +157,41 @@ const posts: Blog[] = [
   },
 ];
 
-function _getCurrenServiceIndex(): number {
-  return posts.indexOf(
-    posts.filter((service) => service.id == tab.value)[0]
-  );
-}
-function goTo(isNext: boolean) {
-  const currentIndex = _getCurrenServiceIndex();
-  if (typeof currentIndex == undefined) {
-    return;
-  }
-
-  const targetSlide = posts.indexOf(
-    posts[isNext ? currentIndex + 1 : currentIndex - 1]
-  );
-
-  console.log(targetSlide)
-  if (targetSlide == -1) {
-    tab.value = isNext ? posts[0].id : posts[posts.length - 1].id;
-    return;
-  }
-
-  // prevBtnDisabled.value = !isNext;
-
-  tab.value = posts[targetSlide].id;
+function goToPost(id: number) {
+  router.push({
+    name: 'blog-view',
+    params: { id },
+  });
 }
 </script>
 <template>
-  <div class="container services-page">
+  <div class="container blog-page">
     <div class="header text-center">
       <h1>المدونة</h1>
       <p class="text-h6">
         {{ pageDescription }}
       </p>
     </div>
-    <div class="latest">
-      <div class="flex  no-wrap">
-        <div class="latest-content bg-grey q-pa-lg">
-          <span>{{ latestBlog.cat }}</span>
-          <h4>{{ latestBlog.name }}</h4>
-          <p>{{ latestBlog.breif }}</p>
-          <q-btn outline label="اقرأ المزيد" color="blue" />
+    <div class="latest" @click.prevent="goToPost(latestBlog.id)">
+      <div class="flex no-wrap">
+        <div class="latest-content column justify-center bg-grey q-pa-lg">
+          <span class="text-h6 font-cairo">احدث المقالات في المدونة</span>
+          <h4 class="text-bold q-my-lg">{{ latestBlog.name }}</h4>
+          <p class="text-h5 q-mt-md">{{ latestBlog.breif }}</p>
+          <div>
+            <q-btn
+              outline
+              label="اقرأ المزيد"
+              color="blue"
+              size="xl"
+              @click.prevent="
+                $router.push({
+                  name: 'blog-view',
+                  params: { id: latestBlog.id },
+                })
+              "
+            />
+          </div>
         </div>
         <div class="img">
           <img :src="latestBlog.img" class="full-height" />
@@ -204,36 +199,56 @@ function goTo(isNext: boolean) {
       </div>
     </div>
     <div class="recents q-mt-xl">
-
       <h4 class="underline">الاكثر قراءة</h4>
 
-      <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
+      <carousel
+        :settings="carouselSettings"
+        dir="rtl"
+        :breakpoints="carouselBreakpoints"
+      >
         <slide v-for="post in mostReads" :key="post.id">
-          <RecentPostPartial :key="post.id" :post="post" />
+          <post-recent-partial
+            @click.prevent="goToPost(post.id)"
+            :key="post.id"
+            :post="post"
+          />
         </slide>
         <template #addons>
           <navigation />
           <!-- <pagination /> -->
         </template>
       </carousel>
-
     </div>
     <div class="main q-my-xl">
-
-      <div class="items-center   flex no-wrap q-my-xl">
+      <div class="items-center flex no-wrap q-my-xl">
         <span class="text-h4">المقالات :</span>
-        <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
-          class="cats flex-grow">
-          <q-tab v-for="cat in cats" :key="cat.id" :name="cat.id" :label="cat.name" />
+        <q-tabs
+          dense
+          v-model="tab"
+          active-bg-color="blue"
+          active-color="white"
+          outside-arrows
+          inline-label
+          class="cats flex-grow"
+        >
+          <q-tab
+            v-for="cat in cats"
+            :key="cat.id"
+            :name="cat.id"
+            :label="cat.name"
+          />
         </q-tabs>
       </div>
 
       <q-tab-panels v-for="cat in cats" :key="cat.id" v-model="tab" animated>
         <q-tab-panel v-for="post in posts" :key="post.id" :name="post.id">
-          <post-partial :post="post" class="q-mt-xl" />
+          <post-partial
+            @click.prevent="goToPost(post.id)"
+            :post="post"
+            class="q-mt-xl"
+          />
         </q-tab-panel>
       </q-tab-panels>
     </div>
-
   </div>
 </template>

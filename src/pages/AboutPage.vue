@@ -34,6 +34,7 @@ import TeamSection from 'components/TeamSection.vue';
 .about {
   &-wrapper {
     // gap: 30px;
+    margin: 100px 0;
   }
   &-img {
     & img {
