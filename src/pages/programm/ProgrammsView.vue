@@ -74,91 +74,104 @@ function price(val: number): string {
     <div class="header bg-secondary">
       <div class="container">
         <div class="header_wrapper">
-          <div>
+          <div class="header-info text-white">
             <q-breadcrumbs>
               <q-breadcrumbs-el label="البرامج" />
               <q-breadcrumbs-el label="الشركات والاعمال " />
               <q-breadcrumbs-el label="دورة بناء خطط الاعمال" />
             </q-breadcrumbs>
-            <h2 class="underline">دورة تدريبية لبناء خطط الاعمال للشركات</h2>
-            <p>
-              برنامج مسك "طريق المستقبل" يُمكنك من اكتساب المهارات الأكثر طلبًا
-              في سوق العمل البرنامج عدداً من الدورات التدريبية المتنوعة مباشرة
-            </p>
-            <span class="text-blue"> 148 مشتركا بهذه الدورة</span>
+            <h2 class="title">{{ program.title }}</h2>
+            <p v-html="program.breif" class="text-h5" />
+            <p class="text-blue-8 text-h6 "> {{ program.subscribers }} مشتركا بهذه الدورة</p>
 
             <div class="flex no-wrap">
-              <q-btn
-                class="text-center mr-110"
-                color="primary"
-                rounded
-                label="تصفح خدماتنا"
-                @click="() => $router.push('/contact')"
-              />
-              <q-btn
-                class="text-center justify-center"
-                flat
-                icon-right="arrow_back"
-                label="اعرف المزيد"
-                @click="() => $router.push('/contact')"
-              />
+              <q-btn class="text-center " color="primary" size="xl" rounded label="سجل الان"
+                @click="() => $router.push('/contact')" />
+              <q-btn class="text-center justify-center" size="xl" flat icon-right="arrow_back"
+                label="اعرف المزيد عن الدورة" @click="() => $router.push('/contact')" />
             </div>
           </div>
 
-          <div class="programm-img">
-            <img src="~assets/progs/single.png" alt="" />
+          <div class="img">
+            <img src="~assets/progs/single2.png" alt="" />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="programm-content">
+    <div class="content">
       <div class="container">
-        <div class="tabs">
-          <q-tabs
-            dense
-            v-model="tab"
-            active-color="primary"
-            indicator-color="primary"
-            align="justify"
-            narrow-indicator
-          >
-            <q-tab
-              v-for="t in tabs"
-              :key="t.key"
-              :name="t.key"
-              :label="t.value"
-            />
-          </q-tabs>
+        <div class="content_wrapper">
+          <div class="tabs">
+            <q-tabs dense v-model="tab" active-color="primary" indicator-color="primary" align="justify"
+              narrow-indicator>
+              <q-tab v-for="t in tabs" :key="t.key" :name="t.key" :label="t.value" />
+            </q-tabs>
 
-          <q-separator />
+            <q-separator />
 
-          <q-tab-panels v-model="tab" animated>
-            <q-tab-panel v-for="t in tabs" :key="t.key" :name="t.key">
-              <div class="text-h6">{{ t.value }}</div>
-              <div v-html="program[t.key as  keyof typeof program]"></div>
-            </q-tab-panel>
-          </q-tab-panels>
-        </div>
-        <div class="info">
-          <div class="info-head">
-            <span>سعر البرنامج</span><br />
-            <h3 class="text-secondary text-center text-bold">
-              {{ price(program.price) }}
-            </h3>
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="description">
+                <div class="text-h6 q-my-lg"> الوصف</div>
+                <div v-html="program.description"></div>
+              </q-tab-panel>
+              <q-tab-panel name="goals">
+                <div class="text-h6 q-my-lg"> اهداف البرنامج</div>
+                <q-list clicable class="text-left q-ml-xl">
+                  <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md">
+                    <q-item-section avatar>
+                      <q-icon color="secondary" name="img:/src/assets/chevron.svg" size="lg" />
+                    </q-item-section>
+
+                    <q-item-section>{{ goal }}</q-item-section>
+                  </q-item>
+
+                </q-list>
+              </q-tab-panel>
+              <q-tab-panel name="whattolearn">
+                <div class="text-h6 q-my-lg"> ماذا ستتعلم</div>
+                <q-list class="text-left q-ml-xl">
+                  <q-item v-for="goal in program.whattolearn" :key="goal" class="q-mb-md">
+                    <q-item-section avatar>
+                      <q-icon color="secondary" name="img:/src/assets/chevron.svg" size="lg" />
+                    </q-item-section>
+
+                    <q-item-section>{{ goal }}</q-item-section>
+                  </q-item>
+
+                </q-list>
+              </q-tab-panel>
+              <q-tab-panel name="plan">
+                <div class="text-h6 q-my-lg"> خطة البرنامج</div>
+                <q-list separator class="text-left q-ml-xl">
+                  <q-item v-for="step in program.plan" :key="step.title" class="q-py-xl">
+                    <q-item-section>
+                      <q-item-label class="text-blue q-mb-md text-h5">{{ step.title }}</q-item-label>
+                      <q-item-label class="text-h6">{{ step.breif }}</q-item-label>
+                    </q-item-section>
+                  </q-item>
+
+                </q-list>
+              </q-tab-panel>
+            </q-tab-panels>
           </div>
-          <div class="info-body">
-            <div
-              class="flex justify-between"
-              v-for="k in infoKeys"
-              :key="k.key"
-            >
-              <span>{{ k.value }}</span>
-              <span>{{ program[k.key as keyof typeof program] }}</span>
+          <div class="info">
+            <div class="info-head">
+              <span>سعر البرنامج</span><br />
+              <h5 class="text-secondary text-center text-bold no-margin">
+                {{ price(program.price) }}
+              </h5>
             </div>
-            <p>{{ program.note }}</p>
-            <q-btn color="primary" label="سجل الان" class="full-width" />
+            <div class="info-body">
+              <div class="flex q-py-md text-h6 justify-between" v-for="k in infoKeys" :key="k.key">
+                <span>{{ k.value }}</span>
+                <span class="value">{{ program[k.key as keyof typeof program] }}</span>
+              </div>
+              <p class="text-center q-my-xl text-h6">{{ program.note }}</p>
+              <q-btn color="primary" size="xl" label="سجل الان" class="btn" />
+            </div>
           </div>
+
         </div>
       </div>
     </div>
