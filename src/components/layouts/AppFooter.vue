@@ -1,22 +1,39 @@
 <template>
   <q-footer class="text-white bg-secondary">
-    <contact-banner v-if="$route.fullPath != '/services' && $route.fullPath != '/contact'" />
+    <contact-banner
+      v-if="$route.fullPath != '/services' && $route.fullPath != '/contact'"
+    />
     <div class="container">
       <nav class="navbar row justify-between footer_content q-pt-xl">
         <!-- Add the links -->
         <div class="column col-auto justify-center items-center">
-          <img src="~assets/logo-light.png" class="text-center q-mb-lg" width="150" />
+          <img
+            src="~assets/logo-light.png"
+            class="text-center q-mb-lg"
+            width="150"
+          />
           <p class="mw-200 text-center">{{ aboutBreif }}</p>
         </div>
 
-        <q-list class="text-center col-auto items-center" v-for="list in lists" :key="list.title">
+        <q-list
+          class="text-center col-auto items-center"
+          v-for="list in lists"
+          :key="list.title"
+        >
           <span class="text-white text-center text-bold underline">{{
             list.title
           }}</span>
 
           <div class="q-mt-md">
-            <q-item clickable :hoverable="false" v-ripple class="text-center no-padding" v-for="item in list.links"
-              :key="item.to" :to="item.to">
+            <q-item
+              clickable
+              :hoverable="false"
+              v-ripple
+              class="text-center no-padding"
+              v-for="item in list.links"
+              :key="item.to"
+              :to="item.to"
+            >
               <q-item-section>{{ item.text }}</q-item-section>
             </q-item>
           </div>
@@ -30,7 +47,14 @@
       <span class="">
         {{ follwUs }}
         {{ $route.name }}
-        <q-btn v-for="link in socialLinks" flat round color="white" :key="link.icon" :icon="link.icon" />
+        <q-btn
+          v-for="link in socialLinks"
+          flat
+          round
+          color="white"
+          :key="link.icon"
+          :icon="link.icon"
+        />
       </span>
     </div>
   </q-footer>

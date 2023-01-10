@@ -33,6 +33,10 @@
     // max-height: 800px;
     display: flex;
     max-width: 50%;
+
+    & img {
+      max-width: 100%;
+    }
   }
 
   .stats {
