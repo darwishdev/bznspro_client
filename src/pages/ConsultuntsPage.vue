@@ -8,42 +8,42 @@ const consultunts: Consultunt[] = [
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ',
-    img: '/src/assets/consultunt1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
   },
 ];
 </script>

@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { Project } from '../models';
 export interface Props {
@@ -9,10 +8,13 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-
   <div class="project">
     <div class="column">
-      <img :src="props.project.img" class="q-mb-md rounded-borders" :alt="props.project.title" />
+      <img
+        :src="props.project.img"
+        class="q-mb-md rounded-borders"
+        :alt="props.project.title"
+      />
       <div class="props.project_content">
         <h6 class="text-white text-bold no-margin full-width">
           {{ props.project.title }}
@@ -21,9 +23,7 @@ const props = defineProps<Props>();
       </div>
     </div>
   </div>
-
 </template>
-
 
 <style lang="scss" scoped>
 .project {

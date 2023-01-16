@@ -27,22 +27,22 @@ const members: Team[] = [
   {
     name: 'احمد عبد الله',
     title: 'مسوق الكتروني',
-    img: '/src/assets/team/1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/team/1.png',
   },
   {
     name: 'رشدي حمدين',
     title: 'مطور تطبيقات الادنرويد',
-    img: '/src/assets/team/2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/team/2.png',
   },
   {
     name: 'أسامة أبو يزيد',
     title: 'مدير التسويق',
-    img: '/src/assets/team/3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/team/3.png',
   },
   {
     name: 'محمد عطا الله',
     title: 'مسوق الكتروني',
-    img: '/src/assets/team/4.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/team/4.png',
   },
 ];
 </script>
@@ -68,7 +68,7 @@ const members: Team[] = [
 
 <style lang="scss">
 .team {
-  background-image: url(/src/assets/team_bg.png);
+  background-image: url(https://api-st.alshabalriyadi.net/assets/bznspro/team_bg.png);
   padding: 100px 0;
 
   & h4 {

@@ -6,84 +6,84 @@ const services: Service[] = [
   {
     id: 1,
     title: 'استشارة مالية',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 2,
     title: 'استشارة ادارية',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 3,
     title: 'تسويق',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 4,
     title: 'خطط اعمال',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 5,
     title: 'تطوير الشركات',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 6,
     title: 'استشارة اونلاين',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 7,
     title: 'استشارة مالية',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 8,
     title: 'خطة عمل',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 9,
     title: 'دراسة جدوي',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 10,
     title: 'دراسة جدوي',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 11,
     title: 'دراسة جدوي',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 12,
     title: 'دراسة جدوي',
-    img: '/src/assets/service_inner.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
@@ -171,7 +171,7 @@ function goTo(isNext: boolean) {
           :name="service.id"
         >
           <div
-            class="flex q-mt-lg no-wrap service-wrapper justify-md-between justify-center"
+            class="flex q-mt-lg service-wrapper justify-md-between justify-center"
           >
             <div class="service-content full-width">
               <h4 class="underline h-mr">{{ service.title }}</h4>
@@ -207,7 +207,7 @@ function goTo(isNext: boolean) {
             <q-item-section avatar>
               <q-icon
                 color="secondary"
-                name="img:/src/assets/chevron.svg"
+                name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
                 size="lg"
               />
             </q-item-section>
@@ -218,7 +218,7 @@ function goTo(isNext: boolean) {
             <q-item-section avatar>
               <q-icon
                 color="secondary"
-                name="img:/src/assets/chevron.svg"
+                name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
                 size="lg"
               />
             </q-item-section>

@@ -60,3 +60,25 @@ html {
     color: #fff !important;
   }
 }
+.projects {
+}
+@media (max-width: 700px) {
+  .carousel__next {
+    left: auto !important;
+    right: 70px !important;
+    top: -65px !important;
+  }
+  .carousel__prev {
+    left: auto !important;
+    right: 0 !important;
+    top: -65px !important;
+  }
+
+  h3 {
+    margin-bottom: 80px !important;
+  }
+}
+
+ol {
+  padding: 0;
+}

@@ -15,9 +15,9 @@ const props = defineProps<Props>();
         <span class="rounded-borders q-py-sm q-px-md bg-grey">{{
           props.post.cat
         }}</span>
-        <h3 class="text-weight-medium full-width q-mt-lg q-mb-md">
+        <h4 class="text-weight-medium full-width q-mt-lg q-mb-md">
           {{ props.post.name }}
-        </h3>
+        </h4>
         <span class="rounded-borders q-py-sm q-px-md">{{
           props.post.date
         }}</span>

@@ -1,7 +1,7 @@
 .services {
   &-section {
     position: relative;
-    background-image: url(/src/assets/services_bg.png);
+    background-image: url(https://api-st.alshabalriyadi.net/assets/bznspro/services_bg.png);
     background-size: cover;
     &::after {
       content: '';
@@ -11,7 +11,7 @@
       right: 0;
       bottom: 0;
       @media (min-width: 1024px) {
-        background: url('/src/assets/service_img.png');
+        background: url('https://api-st.alshabalriyadi.net/assets/bznspro/service_img.png');
         width: 692px;
         height: 614px;
       }
@@ -20,6 +20,7 @@
     &_wrapper {
       gap: 20px;
       @media (min-width: 1024px) {
+        max-width: 80%;
         justify-content: start;
       }
       & .service {
@@ -65,12 +66,15 @@
       }
     }
     & p {
-      margin-top: 60px;
+      margin: 60px 0;
     }
 
     &-img {
       padding-right: 100px;
       padding-top: 50px;
+      @media (max-width: 700px) {
+        margin-top: 100px;
+      }
       & img {
         // display: none;
         box-shadow: 113px -80px 0px 0px $greyDarken;
@@ -85,6 +89,18 @@
       & .breif {
         max-width: 600px;
       }
+      & .q-btn {
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+      }
+    }
+    & .service-wrapper {
+      @media (min-width: 700px) {
+        & > div {
+          max-width: 50%;
+        }
+      }
     }
     .q-tab-panel {
       padding: 0 !important;
@@ -94,24 +110,55 @@
       // overflow: visible !important;
     }
     & .navigators {
+      display: flex;
+      margin: 30px 0;
+      @media (max-width: 700px) {
+        justify-content: flex-end;
+        gap: 10px;
+
+        .carousel__prev,
+        .carousel__next {
+          transform: rotate(0);
+        }
+      }
       & button {
         background-color: $blue;
         color: #fff;
+
         &.carousel__next {
-          transform: translateX(200%);
+          position: relative;
+          top: 0 !important;
+          left: auto !important;
+          right: 0 !important;
+          @media (min-width: 700px) {
+            position: absolute;
+            transform: translateX(200%);
+          }
         }
         &.carousel__prev {
-          transform: translateX(-200%);
+          position: relative;
+          top: 0 !important;
+          left: auto !important;
+          right: 0 !important;
+          @media (min-width: 700px) {
+            position: absolute;
+            transform: translateX(-200%);
+          }
         }
       }
     }
 
     & .contacts {
       margin: 100px 0;
-      display: flex;
+
+      @media (min-width: 700px) {
+        display: flex;
+      }
       justify-content: space-between;
       & .text-center {
-        width: 50%;
+        @media (min-width: 700px) {
+          width: 50%;
+        }
         & h4 {
           font-weight: 500;
         }

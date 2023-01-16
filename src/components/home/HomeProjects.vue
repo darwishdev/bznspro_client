@@ -28,49 +28,49 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'مشروع شركة العقاري',
-    img: '~assets/pr1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr1.png',
     cat: 'ماليات',
   },
   {
     id: 2,
     title: 'تطوير خطة عمل لستارت اب',
-    img: '~assets/pr2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr2.png',
     cat: 'استشارة ادارية',
   },
   {
     id: 3,
     title: 'استشارة شركات القبيصي',
-    img: '~assets/pr3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr3.png',
     cat: 'استشارة ',
   },
   {
     id: 4,
     title: 'مشروع شركة البحرين',
-    img: '~assets/pr4.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr4.png',
     cat: 'تسويق',
   },
   {
     id: 1,
     title: 'مشروع شركة العقاري',
-    img: '~assets/pr1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr1.png',
     cat: 'ماليات',
   },
   {
     id: 2,
     title: 'تطوير خطة عمل لستارت اب',
-    img: '~assets/pr2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr2.png',
     cat: 'استشارة ادارية',
   },
   {
     id: 3,
     title: 'استشارة شركات القبيصي',
-    img: '~assets/pr3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr3.png',
     cat: 'استشارة ',
   },
   {
     id: 4,
     title: 'مشروع شركة البحرين',
-    img: '~assets/pr4.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/pr4.png',
     cat: 'تسويق',
   },
 ];
@@ -103,6 +103,7 @@ const projects: Project[] = [
           icon-right="arrow_back"
           color="grey"
           text-color="secondary"
+          @click="$router.push('/projects')"
           size="lg"
           rounded
           >المزيد من المشاريع</q-btn

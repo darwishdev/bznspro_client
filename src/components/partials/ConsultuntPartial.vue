@@ -12,7 +12,7 @@ const props = defineProps<Props>();
     <q-responsive :ratio="1">
       <div class="consultunt-img">
         <img
-          src="~assets/consultunt1.png"
+          src="https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png"
           class=""
           :alt="props.consultunt.title"
         />

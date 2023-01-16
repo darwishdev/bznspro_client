@@ -24,7 +24,17 @@ const props = defineProps<Props>();
 </template>
 
 <style lang="scss" scoped>
+@media (min-width: 600px) {
+  .carousel__slide--visible {
+    .recent-post {
+      box-shadow: -10px 10px 30px rgb(0 0 0 / 0.1);
+    }
+  }
+}
 .recent-post {
+  @media (max-width: 600px) {
+    border: 1px solid var(--q-secondary);
+  }
   & img {
     width: 100%;
     height: auto;
@@ -40,6 +50,5 @@ const props = defineProps<Props>();
   }
 
   border-radius: 20px;
-  box-shadow: -10px 10px 10px rgb(0 0 0 / 0.2);
 }
 </style>

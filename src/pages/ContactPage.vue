@@ -50,7 +50,7 @@ function onReset() {
           <h4 class="text-blue text-bold underline q-mr-md">تواصل معنا</h4>
           <q-icon
             color="secondary"
-            name="img:/src/assets/icons/contact.svg"
+            name="img:https://api-st.alshabalriyadi.net/assets/bznspro/icons/contact.svg"
             size="xl"
           />
         </div>
@@ -169,7 +169,7 @@ function onReset() {
                 <q-item-section avatar>
                   <q-icon
                     color="secondary"
-                    name="img:/src/assets/chevron.svg"
+                    name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
                     size="lg"
                   />
                 </q-item-section>
@@ -180,7 +180,7 @@ function onReset() {
                 <q-item-section avatar>
                   <q-icon
                     color="secondary"
-                    name="img:/src/assets/chevron.svg"
+                    name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
                     size="lg"
                   />
                 </q-item-section>

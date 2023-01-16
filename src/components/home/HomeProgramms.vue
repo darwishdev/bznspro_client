@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
 import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
-import {
-  Program,
-} from 'components/models';
+import { Program } from 'components/models';
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
   snapAlign: 'left',
-  wrapAround: true
-}
+  wrapAround: true,
+};
 // breakpoints are mobile first
 // any settings not specified will fallback to the carousel settings
 const carouselBreakpoints = {
@@ -19,7 +17,7 @@ const carouselBreakpoints = {
     itemsToShow: 2,
     snapAlign: 'left',
   },
-}
+};
 const programs: Program[] = [
   {
     id: 1,
@@ -48,7 +46,6 @@ const programs: Program[] = [
 ];
 </script>
 
-
 <template>
   <carousel-section class-name="programs" color="#162337" center-title>
     <template v-slot:title>
@@ -57,7 +54,10 @@ const programs: Program[] = [
 
     <template v-slot:content>
       <div class="container">
-        <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
+        <carousel
+          :settings="carouselSettings"
+          :breakpoints="carouselBreakpoints"
+        >
           <slide v-for="program in programs" :key="program.title">
             <home-program-partial :program="program" />
           </slide>
@@ -67,10 +67,17 @@ const programs: Program[] = [
           </template>
         </carousel>
         <!-- <program-partial v-for="program in programs" :key="program.title" :program="program" /> -->
-
       </div>
       <div class="row justify-center q-mx-auto q-my-lg">
-        <q-btn icon-right="arrow_back" color="grey" text-color="secondary" size="lg" rounded>المزيد من البرامج</q-btn>
+        <q-btn
+          icon-right="arrow_back"
+          color="grey"
+          text-color="secondary"
+          @click="$router.push('/programms')"
+          size="lg"
+          rounded
+          >المزيد من البرامج</q-btn
+        >
       </div>
     </template>
   </carousel-section>

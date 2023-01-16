@@ -23,7 +23,10 @@ import TeamSection from 'components/TeamSection.vue';
         </p>
       </div>
       <div class="about-img">
-        <img src="~assets/about.png" alt="" />
+        <img
+          src="https://api-st.alshabalriyadi.net/assets/bznspro/about.png"
+          alt=""
+        />
       </div>
     </div>
   </div>

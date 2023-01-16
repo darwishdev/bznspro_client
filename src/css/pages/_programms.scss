@@ -6,7 +6,9 @@
       justify-content: space-between;
 
       & .progs {
-        max-width: 85%;
+        @media (min-width: 700px) {
+          max-width: 85%;
+        }
         display: flex;
         gap: 30px;
         flex-wrap: wrap;

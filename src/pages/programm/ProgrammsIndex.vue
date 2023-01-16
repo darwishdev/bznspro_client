@@ -6,6 +6,7 @@ import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
 import { Cat, Program } from 'components/models';
 import { ref } from 'vue';
 const activeCat = ref(1);
+const drawer = ref(false);
 const showFilter = ref(activeCat.value != -1);
 const carouselSettings = {
   itemsToShow: 1,
@@ -45,37 +46,37 @@ const programs: Program[] = [
   {
     id: 1,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p1.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
   },
   {
     id: 2,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p2.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
   },
   {
     id: 3,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p3.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
   },
   {
     id: 4,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p1.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
   },
   {
     id: 5,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p2.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعا#ِت الثقافية والترفيهية',
   },
   {
     id: 6,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    img: '/src/assets/progs/p3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/p3.png',
     text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
   },
 ];
@@ -130,14 +131,54 @@ function getCurrenCat(): Cat {
           :title="getCurrenCat().name"
         />
       </div>
+      <div class="lt-md flex justify-end q-mb-lg items-center">
+        <span class="text-h6">يمكنك فلترة البرامج :</span>
+        <q-btn
+          icon="filter_alt"
+          class="q-ml-md"
+          round
+          color="secondary"
+          size="md"
+          clicable
+          @click="drawer = !drawer"
+        />
+        <q-drawer
+          v-model="drawer"
+          :width="200"
+          overlay
+          bordered
+          class="bg-secondary"
+        >
+          <q-scroll-area class="fit">
+            <q-list>
+              <template v-for="(cat, index) in cats" :key="index">
+                <q-item
+                  clickable
+                  :active="cat.id === activeCat"
+                  v-ripple
+                  @click.prevent="
+                    activeCat = cat.id;
+                    drawer = false;
+                  "
+                >
+                  <q-item-section class="text-white">
+                    {{ cat.name }}
+                  </q-item-section>
+                </q-item>
+                <q-separator />
+              </template>
+            </q-list>
+          </q-scroll-area>
+        </q-drawer>
+      </div>
       <div class="programms-all-wrapper">
         <div class="progs">
           <div class="program" v-for="program in programs" :key="program.title">
             <program-partial :program="program" />
           </div>
         </div>
-        <q-separator vertical />
-        <div class="column">
+        <q-separator vertical class="gt-md" />
+        <div class="column gt-md">
           <h6>التصنيف:</h6>
           <q-list padding class="rounded-borders">
             <q-item
@@ -162,25 +203,27 @@ function getCurrenCat(): Cat {
 .programms {
   .header {
     position: relative;
-    &::before {
-      content: 'بزنس برو';
-      font-family: Cairo;
-      font-size: 150px;
-      font-weight: bold;
-      position: absolute;
-      left: 50px;
-      top: -30px;
-      color: rgba(168, 168, 168, 0.1);
-    }
-    &::after {
-      content: 'برامجنا';
-      font-family: Cairo;
-      font-size: 150px;
-      font-weight: bold;
-      position: absolute;
-      right: 50px;
-      top: 30px;
-      color: rgba(168, 168, 168, 0.1);
+    @media (min-width: 700px) {
+      &::before {
+        content: 'بزنس برو';
+        font-family: Cairo;
+        font-size: 150px;
+        font-weight: bold;
+        position: absolute;
+        left: 50px;
+        top: -30px;
+        color: rgba(168, 168, 168, 0.1);
+      }
+      &::after {
+        content: 'برامجنا';
+        font-family: Cairo;
+        font-size: 150px;
+        font-weight: bold;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        color: rgba(168, 168, 168, 0.1);
+      }
     }
   }
 }

@@ -6,20 +6,13 @@ import { ref } from 'vue';
 
 import { Carousel, Slide } from 'vue3-carousel';
 const carouselSettings = {
-  itemsToShow: 2,
+  itemsToShow: 1,
   dir: 'rtl',
   snapAlign: 'center',
   wrapAround: true,
 };
 // breakpoints are mobile first
 // any settings not specified will fallback to the carousel settings
-const carouselBreakpoints = {
-  // 700px and up
-  600: {
-    itemsToShow: 1,
-    snapAlign: 'center',
-  },
-};
 
 const email = ref('');
 const date = 'Aug 24, 2020';
@@ -82,7 +75,7 @@ const post: Blog = {
   breif:
     'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفةازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك',
   cat: 'تسويق',
-  img: '/src/assets/blog/single.png',
+  img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/single.png',
   date,
 };
 
@@ -92,7 +85,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: '/src/assets/blog/01.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
     date,
   },
   {
@@ -100,7 +93,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: '/src/assets/blog/02.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
     date,
   },
   {
@@ -108,7 +101,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: '/src/assets/blog/03.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
     date,
   },
   {
@@ -116,7 +109,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: '/src/assets/blog/01.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/main.png',
     date,
   },
 ];
@@ -125,7 +118,12 @@ const mostReads: Blog[] = [
   <div class="breadcrumbs">
     <div class="container">
       <div class="flex items-center">
-        <q-icon name="img:/src/assets/back.svg" size="md"></q-icon>
+        <q-icon
+          clickable
+          @click="$router.push('/blog')"
+          name="img:https://api-st.alshabalriyadi.net/assets/bznspro/back.svg"
+          size="md"
+        ></q-icon>
         <span class="cursor-pointer" @click="$router.push('/blog')"
           >المدونة</span
         >
@@ -137,7 +135,7 @@ const mostReads: Blog[] = [
 
   <div class="container blog-post">
     <div class="wrapper">
-      <div class="title flex justify-between no-wrap items-center">
+      <div class="title flex items-center">
         <h1>{{ post.name }}</h1>
         <div class="left">
           <q-btn
@@ -165,10 +163,18 @@ const mostReads: Blog[] = [
       <div class="column lt-md">
         <h3 class="no-margin">ابرز المقالات:</h3>
         <div class="carousel-container">
-          <carousel
-            :settings="carouselSettings"
-            :breakpoints="carouselBreakpoints"
-          >
+          <carousel :settings="carouselSettings">
+            <slide v-for="post in mostReads" :key="post.id">
+              <post-recent-partial :post="post" />
+            </slide>
+          </carousel>
+        </div>
+      </div>
+      <q-separator class="q-my-lg lt-md" />
+      <div class="column lt-md">
+        <h3 class="no-margin">مقالات اخري:</h3>
+        <div class="carousel-container">
+          <carousel :settings="carouselSettings">
             <slide v-for="post in mostReads" :key="post.id">
               <post-recent-partial :post="post" />
             </slide>
@@ -201,7 +207,7 @@ const mostReads: Blog[] = [
         <q-btn class="text-center" color="secondary" label="اشترك الان" />
       </div>
       <div class="column">
-        <h6>ابرز المقالات:</h6>
+        <h6>مقالاتٍ اخري:</h6>
         <q-list class="rounded-borders">
           <q-item clickable v-ripple v-for="post in mostReads" :key="post.id">
             <post-side-partial :post="post" />

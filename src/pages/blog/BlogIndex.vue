@@ -66,7 +66,7 @@ const latestBlog: Blog = {
   breif:
     'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفةازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك',
   cat: 'تسويق',
-  img: '/src/assets/blog/main.png',
+  img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/main.png',
   date,
 };
 
@@ -76,7 +76,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: '/src/assets/blog/m1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
     date,
   },
   {
@@ -84,7 +84,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: '/src/assets/blog/m2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
     date,
   },
   {
@@ -92,7 +92,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: '/src/assets/blog/m3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
     date,
   },
   {
@@ -100,7 +100,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: '/src/assets/blog/m1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
     date,
   },
   {
@@ -108,7 +108,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: '/src/assets/blog/m2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
     date,
   },
   {
@@ -116,7 +116,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: '/src/assets/blog/m3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
     date,
   },
 ];
@@ -126,7 +126,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'تطوير الاعمال والشركات والبيزنيس من خلال استشارات مع خبراء في المجال',
     cat: 'الاعمال والشركات',
-    img: '/src/assets/blog/1.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/1.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -138,7 +138,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'تطوير الاعمال والشركات والبيزنيس من',
     cat: 'الاعمال والشركات',
-    img: '/src/assets/blog/2.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/2.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -149,7 +149,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'خلال استشارات مع خبراء في المجال',
     cat: 'الاعمال والشركات',
-    img: '/src/assets/blog/3.png',
+    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/3.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -221,7 +221,7 @@ function goToPost(id: number) {
     </div>
     <div class="main q-my-xl">
       <div class="items-center flex no-wrap q-my-xl">
-        <span class="text-h4">المقالات :</span>
+        <span class="text-h5">المقالات </span>
         <q-tabs
           dense
           v-model="tab"

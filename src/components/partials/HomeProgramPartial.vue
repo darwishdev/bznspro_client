@@ -9,14 +9,14 @@ const props = defineProps<Props>();
 
 <template>
   <div
-    class="flex partial no-wrap"
+    class="flex program__wrapper partial no-wrap"
     @click.prevent="
       $router.push({ name: 'programms-view', params: { id: props.program.id } })
     "
   >
-    <div>
+    <div class="img__wrapper">
       <img
-        src="~assets/program1.png"
+        src="https://api-st.alshabalriyadi.net/assets/bznspro/program1.png"
         class="full-height"
         :alt="props.program.title"
       />
@@ -89,6 +89,26 @@ const props = defineProps<Props>();
   &__title {
     padding-left: 70px;
     padding-right: 10px;
+  }
+}
+.program__wrapper {
+  @media (max-width: 600px) {
+    flex-direction: column;
+    & .img__wrapper {
+      max-height: 250px;
+      & img {
+        width: 100%;
+      }
+    }
+    & .program__content {
+      & .q-pa-lg {
+        padding: 30px 20px !important;
+      }
+    }
+    & .date {
+      top: 0;
+      transform: translate(50%, -79%);
+    }
   }
 }
 </style>

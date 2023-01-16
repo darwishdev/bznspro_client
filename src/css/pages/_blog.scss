@@ -33,17 +33,43 @@
     & .carousel {
       margin-top: 50px;
     }
+
+    & .latest {
+      @media (max-width: 700px) {
+        & .flex {
+          flex-direction: column-reverse;
+
+          & .img {
+            max-width: calc(100vw - 40px);
+            & img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
   &-post {
     display: flex;
-    flex-wrap: no-wrap;
+    @media (min-width: 700px) {
+      flex-wrap: no-wrap;
+    }
     & .wrapper {
       // max-width: 80%;
       padding-right: 50px;
-      & h1 {
-        font-weight: bold;
-        font-size: 3rem;
-        max-width: 80%;
+      & .title {
+        justify-content: flex-end;
+        @media (min-width: 700px) {
+          justify-content: space-between;
+        }
+        & h1 {
+          font-weight: bold;
+          font-size: 3rem;
+          line-height: 4rem;
+          @media (min-width: 700px) {
+            max-width: 80%;
+          }
+        }
       }
 
       & img {

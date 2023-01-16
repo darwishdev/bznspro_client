@@ -8,7 +8,7 @@
         <!-- Add the links -->
         <div class="column col-auto justify-center items-center">
           <img
-            src="~assets/logo-light.png"
+            src="https://api-st.alshabalriyadi.net/assets/bznspro/logo-light.png"
             class="text-center q-mb-lg"
             width="150"
           />
