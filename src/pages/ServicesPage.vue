@@ -6,84 +6,84 @@ const services: Service[] = [
   {
     id: 1,
     title: 'استشارة مالية',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 2,
     title: 'استشارة ادارية',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 3,
     title: 'تسويق',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 4,
     title: 'خطط اعمال',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 5,
     title: 'تطوير الشركات',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 6,
     title: 'استشارة اونلاين',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 7,
     title: 'استشارة مالية',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 8,
     title: 'خطة عمل',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 9,
     title: 'دراسة جدوي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 10,
     title: 'دراسة جدوي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 11,
     title: 'دراسة جدوي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
   {
     id: 12,
     title: 'دراسة جدوي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/service_inner.png',
+    img: 'https://static.exploremelon.com/bznspro/service_inner.png',
     content:
       '<p class="text-h6">تعد الاستشارات المالية واحدة من أهم الوسائل المستخدمة في المشاريع الكبرى والصغرى وفي الشركات والمؤسسات، بجانب الاستشارات الإدارية والاستشارات التسويقية، وهما في النهاية أدوات نجاح المشاريع والوصول إلى الحد الأعلى من الأرباح وتقدير حجم السوق جيداً مستقبليّاً، والمستشار المالي هو طريق أي شركة أو مؤسسة نحو التقدم </p>',
   },
@@ -127,58 +127,24 @@ function goTo(isNext: boolean) {
     </div>
     <div class="main">
       <div class="navigators">
-        <q-btn
-          flat
-          size="lg"
-          round
-          class="carousel__prev"
-          @click="goTo(false)"
-          icon="chevron_right"
-        />
-        <q-btn
-          flat
-          size="lg"
-          round
-          @click="goTo(true)"
-          class="carousel__next"
-          icon="chevron_left"
-        />
+        <q-btn flat size="lg" round class="carousel__prev" @click="goTo(false)" icon="chevron_right" />
+        <q-btn flat size="lg" round @click="goTo(true)" class="carousel__next" icon="chevron_left" />
       </div>
       <div class="items-center justify-between flex no-wrap q-mb-lg">
         <span>تصفح خدماتنا :</span>
-        <q-tabs
-          dense
-          v-model="tab"
-          active-bg-color="blue"
-          active-color="white"
-          outside-arrows
-          inline-label
-          class="cats flex-grow"
-        >
-          <q-tab
-            v-for="service in services"
-            :key="service.id"
-            :name="service.id"
-            :label="service.title"
-          />
+        <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
+          class="cats flex-grow">
+          <q-tab v-for="service in services" :key="service.id" :name="service.id" :label="service.title" />
         </q-tabs>
       </div>
 
       <q-tab-panels v-model="tab" animated>
-        <q-tab-panel
-          v-for="service in services"
-          :key="service.id"
-          :name="service.id"
-        >
-          <div
-            class="flex q-mt-lg service-wrapper justify-md-between justify-center"
-          >
+        <q-tab-panel v-for="service in services" :key="service.id" :name="service.id">
+          <div class="flex q-mt-lg service-wrapper justify-md-between justify-center">
             <div class="service-content full-width">
               <h4 class="underline h-mr">{{ service.title }}</h4>
               <div v-html="service.content" class="breif"></div>
-              <q-btn color="blue" text-color="white" size="lg" rounded
-                >اطلب الخدمة</q-btn
-              >
+              <q-btn color="blue" text-color="white" size="lg" rounded>اطلب الخدمة</q-btn>
             </div>
             <div class="services-page-img">
               <img :src="service.img" alt="" />
@@ -191,13 +157,7 @@ function goTo(isNext: boolean) {
       <div class="text-center">
         <h4 class="font-weight-medium">لديك استفسار بشان خدماتنا؟</h4>
 
-        <q-btn
-          outline
-          size="lg"
-          label="تواصل معنا"
-          color="blue"
-          rounded
-        ></q-btn>
+        <q-btn outline size="lg" label="تواصل معنا" color="blue" rounded></q-btn>
       </div>
       <q-separator vertical inset />
       <div class="text-left">
@@ -205,22 +165,14 @@ function goTo(isNext: boolean) {
         <q-list clicable class="text-left q-ml-xl">
           <q-item to="Tel: 123-456-7890" clickable v-ripple>
             <q-item-section avatar>
-              <q-icon
-                color="secondary"
-                name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                size="lg"
-              />
+              <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
             </q-item-section>
 
             <q-item-section>BusinessPro@gmail.com</q-item-section>
           </q-item>
           <q-item clickable v-ripple>
             <q-item-section avatar>
-              <q-icon
-                color="secondary"
-                name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                size="lg"
-              />
+              <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
             </q-item-section>
 
             <q-item-section>+966 455 888 25</q-item-section>

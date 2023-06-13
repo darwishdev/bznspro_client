@@ -48,11 +48,7 @@ function onReset() {
       <div class="container">
         <div class="flex items-center">
           <h4 class="text-blue text-bold underline q-mr-md">تواصل معنا</h4>
-          <q-icon
-            color="secondary"
-            name="img:https://api-st.alshabalriyadi.net/assets/bznspro/icons/contact.svg"
-            size="xl"
-          />
+          <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/icons/contact.svg" size="xl" />
         </div>
         <p class="">
           يسعدنا تواصلك معنا للرد علي استفساراتك او لبحث إمكانية العمل معا
@@ -72,92 +68,44 @@ function onReset() {
 
             <div class="row">
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.name"
-                  label="الاسم"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.name" label="الاسم" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.email"
-                  label="الايميل"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.email" label="الايميل" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.phone"
-                  label="رقم الهاتف"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.phone" label="رقم الهاتف" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.city"
-                  label="الدولة / مدينة"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.city" label="الدولة / مدينة" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.company"
-                  label="اسم الشركة"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.company" label="اسم الشركة" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-md-6 col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.website"
-                  label="الموقع الالكتروني للشركة"
-                  lazy-rules
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.website" label="الموقع الالكتروني للشركة" lazy-rules :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
               <div class="col-12 q-pr-lg q-mb-lg">
-                <q-input
-                  outlined
-                  v-model="state.msg"
-                  label="محتوي الرسالة"
-                  lazy-rules
-                  type="textarea"
-                  :rules="[
-                    (val) => (val && val.length > 0) || 'Please type something',
-                  ]"
-                />
+                <q-input outlined v-model="state.msg" label="محتوي الرسالة" lazy-rules type="textarea" :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]" />
               </div>
             </div>
 
             <div class="flex">
-              <q-btn
-                label="ارسال"
-                type="submit"
-                color="secondary"
-                class="full-width"
-              />
+              <q-btn label="ارسال" type="submit" color="secondary" class="full-width" />
             </div>
           </q-form>
         </div>
@@ -167,22 +115,14 @@ function onReset() {
             <q-list clicable class="text-left">
               <q-item to="Tel: 123-456-7890" clickable v-ripple>
                 <q-item-section avatar>
-                  <q-icon
-                    color="secondary"
-                    name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                    size="lg"
-                  />
+                  <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
                 </q-item-section>
 
                 <q-item-section>BusinessPro@gmail.com</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section avatar>
-                  <q-icon
-                    color="secondary"
-                    name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                    size="lg"
-                  />
+                  <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
                 </q-item-section>
 
                 <q-item-section>+966 455 888 25</q-item-section>
@@ -200,14 +140,9 @@ function onReset() {
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section>
-                  <q-label
-                    ><iframe
+                  <q-label><iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475322.6559168405!2d38.930964658387126!3d21.450528936128286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059579737b118db!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1673275039664!5m2!1sen!2seg"
-                      style="border: 0"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe
-                  ></q-label>
+                      style="border: 0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></q-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -223,9 +158,11 @@ function onReset() {
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
+
   @media (min-width: 1000px) {
     grid-template-columns: 70% 30%;
   }
+
   .form {
     padding: 30px;
     border-radius: 20px;

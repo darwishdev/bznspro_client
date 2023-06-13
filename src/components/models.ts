@@ -62,6 +62,11 @@ export interface Program {
   title: string;
   text: string;
   img: string;
+  price: number;
+  discount?: number;
+  discountExpiresAt?: string;
+  day: number;
+  month: string;
 }
 
 export interface PorgramPlan {
@@ -72,6 +77,10 @@ export interface SingleProgram {
   id: number;
   title: string;
   price: number;
+  day: number;
+  discount?: number;
+  discountExpiresAt?: string;
+  month: string;
   breif: string;
   img: string;
   description: string;

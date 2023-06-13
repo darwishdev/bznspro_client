@@ -1,7 +1,7 @@
 .services {
   &-section {
     position: relative;
-    background-image: url(https://api-st.alshabalriyadi.net/assets/bznspro/services_bg.png);
+    background-image: url(https://static.exploremelon.com/bznspro/services_bg.png);
     background-size: cover;
     &::after {
       content: '';
@@ -11,7 +11,7 @@
       right: 0;
       bottom: 0;
       @media (min-width: 1024px) {
-        background: url('https://api-st.alshabalriyadi.net/assets/bznspro/service_img.png');
+        background: url('https://static.exploremelon.com/bznspro/service_img.png');
         width: 692px;
         height: 614px;
       }

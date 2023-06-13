@@ -12,10 +12,7 @@ const stats = [
     <div class="column full-width">
       <div class="row no-wrap justify-start">
         <div class="banner_img">
-          <img
-            src="https://api-st.alshabalriyadi.net/assets/bznspro/slider_1.png"
-            class=""
-          />
+          <img src="https://static.exploremelon.com/bznspro/slider_1.png" class="" />
         </div>
 
         <div class="justify-center column">
@@ -28,20 +25,10 @@ const stats = [
               ف ادارة شركتك و البزنس الخاص بك
             </p>
             <div class="row no-wrap">
-              <q-btn
-                class="text-center mr-110"
-                color="secondary"
-                rounded
-                label="تصفح خدماتنا"
-                @click="() => $router.push('/services')"
-              />
-              <q-btn
-                class="text-center justify-center"
-                flat
-                icon-right="arrow_back"
-                label="اعرف المزيد"
-                @click="() => $router.push('/about')"
-              />
+              <q-btn class="text-center mr-110" color="secondary" rounded label="تصفح خدماتنا"
+                @click="() => $router.push('/services')" />
+              <q-btn class="text-center justify-center" flat icon-right="arrow_back" label="اعرف المزيد"
+                @click="() => $router.push('/about')" />
             </div>
           </div>
         </div>

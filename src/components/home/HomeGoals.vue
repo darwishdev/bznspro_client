@@ -5,17 +5,17 @@ const goals: Goal[] = [
   {
     title: 'رؤيتنا',
     text: ' تتجه شركة بزنس برو نحو<br /> نمو ديناميكي و مستدام',
-    icon: 'img:https://api-st.alshabalriyadi.net/assets/bznspro/icons/vision.svg',
+    icon: 'img:https://static.exploremelon.com/bznspro/icons/vision.svg',
   },
   {
     title: 'رسالتنا',
     text: ' تتجه شركة بزنس برو نحو<br /> نمو ديناميكي و مستدام',
-    icon: 'img:https://api-st.alshabalriyadi.net/assets/bznspro/icons/mission.svg',
+    icon: 'img:https://static.exploremelon.com/bznspro/icons/mission.svg',
   },
   {
     title: 'هدفنا',
     text: ' تتجه شركة بزنس برو نحو<br /> نمو ديناميكي و مستدام',
-    icon: 'img:https://api-st.alshabalriyadi.net/assets/bznspro/icons/goal.svg',
+    icon: 'img:https://static.exploremelon.com/bznspro/icons/goal.svg',
   },
 ];
 </script>
@@ -34,11 +34,7 @@ const goals: Goal[] = [
     </template>
 
     <template v-slot:content>
-      <div
-        class="col-12 col-sm-4 text-center"
-        v-for="goal in goals"
-        :key="goal.title"
-      >
+      <div class="col-12 col-sm-4 text-center" v-for="goal in goals" :key="goal.title">
         <div>
           <h2 class="text-secondary q-ma-md">
             {{ goal.title }} <q-icon :name="goal.icon" />

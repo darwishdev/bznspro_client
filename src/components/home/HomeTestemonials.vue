@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import AppSection from 'components/layouts/AppSection.vue';
 import TestemonialPartial from 'components/partials/TestemonialPartial.vue';
 
 import { Testemonial } from 'components/models';
-import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
 
 const carouselSettings = {
@@ -16,7 +15,7 @@ const testemonials: Testemonial[] = [
   {
     name: 'هيثم الاحمدي',
     job: 'مدير التسوق بشركة "نهضة"',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/testomnial.png',
+    img: 'https://static.exploremelon.com/bznspro/testomnial.png',
     letters: 'MD',
     content: `" كل الفخر والسعادة تآتيك عندما تجد شخصاً ذو مهنية واحترافية عالية
             جداَ وتعامل أرقى مما تتصور .. بصراحة التعامل معكم مكسب كبير وأنا
@@ -25,7 +24,7 @@ const testemonials: Testemonial[] = [
   {
     name: 'هيثم الاحمدي',
     job: 'مدير التسوق بشركة "نهضة"',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/testomnial.png',
+    img: 'https://static.exploremelon.com/bznspro/testomnial.png',
     letters: 'MD',
     content: `" كل الفخر والسعادة تآتيك عندما تجد شخصاً ذو مهنية واحترافية عالية
             جداَ وتعامل أرقى مما تتصور .. بصراحة التعامل معكم مكسب كبير وأنا
@@ -34,7 +33,7 @@ const testemonials: Testemonial[] = [
   {
     name: 'هيثم الاحمدي',
     job: 'مدير التسوق بشركة "نهضة"',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/testomnial.png',
+    img: 'https://static.exploremelon.com/bznspro/testomnial.png',
     letters: 'MD',
     content: `" كل الفخر والسعادة تآتيك عندما تجد شخصاً ذو مهنية واحترافية عالية
             جداَ وتعامل أرقى مما تتصور .. بصراحة التعامل معكم مكسب كبير وأنا

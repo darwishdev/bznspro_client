@@ -8,42 +8,42 @@ const consultunts: Consultunt[] = [
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ومالي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار قانوني',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
   {
     name: 'احمد عبد الله',
     title: 'مستشار اداري ',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png',
+    img: 'https://static.exploremelon.com/bznspro/consultunt1.png',
   },
 ];
 </script>
@@ -58,11 +58,7 @@ const consultunts: Consultunt[] = [
     </div>
     <div class="container">
       <div class="consultunts-main flex q-mt-xl gap-md">
-        <ConsultuntPartial
-          v-for="c in consultunts"
-          :key="c.name"
-          :consultunt="c"
-        />
+        <ConsultuntPartial v-for="c in consultunts" :key="c.name" :consultunt="c" />
       </div>
     </div>
   </div>
@@ -72,6 +68,7 @@ const consultunts: Consultunt[] = [
 .consultunts-page {
   .header {
     position: relative;
+
     &::before {
       content: 'بزنس برو';
       font-family: Cairo;
@@ -82,6 +79,7 @@ const consultunts: Consultunt[] = [
       top: -30px;
       color: rgba(168, 168, 168, 0.1);
     }
+
     &::after {
       content: 'مستشارينا';
       font-family: Cairo;
@@ -94,6 +92,7 @@ const consultunts: Consultunt[] = [
     }
   }
 }
+
 .consultunts-main {
   margin-top: 50px;
   display: grid;

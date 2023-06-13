@@ -6,16 +6,11 @@ import AppSection from 'components/layouts/AppSection.vue';
   <app-section center-content :gap="50">
     <template v-slot:content>
       <div class="border-outline">
-        <img
-          src="https://api-st.alshabalriyadi.net/assets/bznspro/consulting.png"
-          alt="business pro consulting"
-          class="consulting-img"
-        />
+        <img src="https://static.exploremelon.com/bznspro/consulting.png" alt="business pro consulting"
+          class="consulting-img" />
       </div>
       <div class="column justify-center">
-        <h2
-          class="text-secondary text-weight-medium text-lt-md-center text-weight-medium q-mr-md q-mb-lg"
-        >
+        <h2 class="text-secondary text-weight-medium text-lt-md-center text-weight-medium q-mr-md q-mb-lg">
           نقدم استشارات خاصة
         </h2>
         <p class="text-h6 mx-w-md q-mb-lg text-lt-md-center">
@@ -26,15 +21,8 @@ import AppSection from 'components/layouts/AppSection.vue';
           وتأشيرات دخول الطلاب وصلاحية أشيرة الدخول الخاصة بك
         </p>
         <div class="text-lt-md-center">
-          <q-btn
-            class="text-center h-50"
-            color="secondary"
-            rounded
-            icon-right="arrow_back"
-            label="اعرف المزيد"
-            size="lg"
-            @click="() => $router.push('/services')"
-          />
+          <q-btn class="text-center h-50" color="secondary" rounded icon-right="arrow_back" label="اعرف المزيد" size="lg"
+            @click="() => $router.push('/services')" />
         </div>
       </div>
     </template>

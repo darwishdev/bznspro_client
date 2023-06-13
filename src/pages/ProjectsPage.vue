@@ -9,32 +9,32 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'شركة متجر',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/1.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/1.png',
   },
   {
     id: 2,
     title: 'الشاب الريادي',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/2.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/2.png',
   },
   {
     id: 3,
     title: ' منصة المنتور',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/3.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/3.png',
   },
   {
     id: 4,
     title: 'منصة ادراك',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/4.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/4.png',
   },
   {
     id: 5,
     title: 'شركة الروضة',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/5.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/5.png',
   },
   {
     id: 6,
     title: 'تطبيق شازلونج',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/projects/6.png',
+    img: 'https://static.exploremelon.com/bznspro/projects/6.png',
   },
 ];
 const projectCats: ProjectCat[] = [
@@ -81,36 +81,16 @@ const projectCats: ProjectCat[] = [
     <div class="main">
       <div class="items-center justify-center flex no-wrap q-mb-lg">
         <span class="text-font-bold text-h6">تصفح مشاريعنا :</span>
-        <q-tabs
-          dense
-          v-model="tab"
-          active-bg-color="blue"
-          active-color="white"
-          outside-arrows
-          inline-label
-          class="cats flex-grow"
-        >
-          <q-tab
-            v-for="cat in projectCats"
-            :key="cat.cat.id"
-            :name="cat.cat.id"
-            :label="cat.cat.name"
-          />
+        <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
+          class="cats flex-grow">
+          <q-tab v-for="cat in projectCats" :key="cat.cat.id" :name="cat.cat.id" :label="cat.cat.name" />
         </q-tabs>
       </div>
 
       <q-tab-panels v-model="tab" animated>
-        <q-tab-panel
-          v-for="cat in projectCats"
-          :key="cat.cat.id"
-          :name="cat.cat.id"
-        >
+        <q-tab-panel v-for="cat in projectCats" :key="cat.cat.id" :name="cat.cat.id">
           <div class="flex projects-wrapper">
-            <projects-page-partial
-              v-for="project in cat.projects"
-              :key="project.id"
-              :project="project"
-            />
+            <projects-page-partial v-for="project in cat.projects" :key="project.id" :project="project" />
           </div>
         </q-tab-panel>
       </q-tab-panels>

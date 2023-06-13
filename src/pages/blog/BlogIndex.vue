@@ -66,7 +66,7 @@ const latestBlog: Blog = {
   breif:
     'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفةازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك',
   cat: 'تسويق',
-  img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/main.png',
+  img: 'https://static.exploremelon.com/bznspro/blog/main.png',
   date,
 };
 
@@ -76,7 +76,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m1.png',
     date,
   },
   {
@@ -84,7 +84,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m2.png',
     date,
   },
   {
@@ -92,7 +92,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m3.png',
     date,
   },
   {
@@ -100,7 +100,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m1.png',
     date,
   },
   {
@@ -108,7 +108,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m2.png',
     date,
   },
   {
@@ -116,7 +116,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m3.png',
     date,
   },
 ];
@@ -126,7 +126,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'تطوير الاعمال والشركات والبيزنيس من خلال استشارات مع خبراء في المجال',
     cat: 'الاعمال والشركات',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/1.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/1.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -138,7 +138,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'تطوير الاعمال والشركات والبيزنيس من',
     cat: 'الاعمال والشركات',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/2.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/2.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -149,7 +149,7 @@ const posts: Blog[] = [
     views: 10,
     name: 'خلال استشارات مع خبراء في المجال',
     cat: 'الاعمال والشركات',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/3.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/3.png',
     breif:
       'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفة ازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك. تتضمّن خدماتنا تقديم المعلومات حول الوُجهات التعليمية والجامعات والبرامج وإجراءات القبول وأماكن السكن وتأشيرات دخول الطلاب',
     date,
@@ -179,18 +179,12 @@ function goToPost(id: number) {
           <h4 class="text-bold q-my-lg">{{ latestBlog.name }}</h4>
           <p class="text-h5 q-mt-md">{{ latestBlog.breif }}</p>
           <div>
-            <q-btn
-              outline
-              label="اقرأ المزيد"
-              color="blue"
-              size="xl"
-              @click.prevent="
-                $router.push({
-                  name: 'blog-view',
-                  params: { id: latestBlog.id },
-                })
-              "
-            />
+            <q-btn outline label="اقرأ المزيد" color="blue" size="xl" @click.prevent="
+              $router.push({
+                name: 'blog-view',
+                params: { id: latestBlog.id },
+              })
+              " />
           </div>
         </div>
         <div class="img">
@@ -201,17 +195,9 @@ function goToPost(id: number) {
     <div class="recents q-mt-xl">
       <h4 class="underline">الاكثر قراءة</h4>
 
-      <carousel
-        :settings="carouselSettings"
-        dir="rtl"
-        :breakpoints="carouselBreakpoints"
-      >
+      <carousel :settings="carouselSettings" dir="rtl" :breakpoints="carouselBreakpoints">
         <slide v-for="post in mostReads" :key="post.id">
-          <post-recent-partial
-            @click.prevent="goToPost(post.id)"
-            :key="post.id"
-            :post="post"
-          />
+          <post-recent-partial @click.prevent="goToPost(post.id)" :key="post.id" :post="post" />
         </slide>
         <template #addons>
           <navigation />
@@ -222,31 +208,15 @@ function goToPost(id: number) {
     <div class="main q-my-xl">
       <div class="items-center flex no-wrap q-my-xl">
         <span class="text-h5">المقالات </span>
-        <q-tabs
-          dense
-          v-model="tab"
-          active-bg-color="blue"
-          active-color="white"
-          outside-arrows
-          inline-label
-          class="cats flex-grow"
-        >
-          <q-tab
-            v-for="cat in cats"
-            :key="cat.id"
-            :name="cat.id"
-            :label="cat.name"
-          />
+        <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
+          class="cats flex-grow">
+          <q-tab v-for="cat in cats" :key="cat.id" :name="cat.id" :label="cat.name" />
         </q-tabs>
       </div>
 
       <q-tab-panels v-for="cat in cats" :key="cat.id" v-model="tab" animated>
         <q-tab-panel v-for="post in posts" :key="post.id" :name="post.id">
-          <post-partial
-            @click.prevent="goToPost(post.id)"
-            :post="post"
-            class="q-mt-xl"
-          />
+          <post-partial @click.prevent="goToPost(post.id)" :post="post" class="q-mt-xl" />
         </q-tab-panel>
       </q-tab-panels>
     </div>

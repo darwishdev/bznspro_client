@@ -51,6 +51,11 @@ const routes: RouteRecordRaw[] = [
         name: 'programms-view',
         component: () => import('pages/programm/ProgrammsView.vue'),
       },
+      {
+        path: '/programms/:id/checkout',
+        name: 'programms-checkout',
+        component: () => import('pages/programm/ProgramCheckout.vue'),
+      },
     ],
   },
 

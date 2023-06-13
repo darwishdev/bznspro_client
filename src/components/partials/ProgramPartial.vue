@@ -1,52 +1,52 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { Program } from '../models';
 export interface Props {
   program: Program;
 }
 
 const props = defineProps<Props>();
+
+const newPrice = computed(() => {
+  const program = props.program
+  if (!program.discount) {
+    return program.price
+  }
+  const discountAmount = program.price * (program.discount / 100);
+  return program.price - discountAmount;
+});
 </script>
 
 <template>
-  <div
-    class="partial"
-    @click.prevent="
-      $router.push({ name: 'programms-view', params: { id: props.program.id } })
-    "
-  >
+  <div class="partial" @click.prevent="
+    $router.push({ name: 'programms-view', params: { id: props.program.id } })
+    ">
     <div>
-      <img
-        :src="props.program.img"
-        class="full-width"
-        :alt="props.program.title"
-      />
+      <img :src="props.program.img" class="full-width" style="height: 250px;" :alt="props.program.title" />
     </div>
     <div class="program__content">
-      <div
-        class="q-py-lg column items-center text-left justify-center full-height"
-      >
+      <div class="q-py-lg column items-center text-left justify-center full-height">
         <h5 class="text-secondary text-bold no-margin full-width">
           {{ props.program.title }}
         </h5>
         <p class="text-h6">
-          تتجه شركة بزنس برو نحو نمو ديناميكي و مستدام تتجه شركة بزنس برو نحو
-          نمو ديناميكي و مستدام
+          {{ props.program.text }}
         </p>
         <q-separator />
         <div class="full-width flex justify-between text-left">
-          <span class="text-blue">450 <br />ريال سعودي</span>
-          <q-btn
-            color="blue"
-            rounded
-            size="lg"
-            @click.prevent="
-              $router.push({
-                name: 'programms-view',
-                params: { id: props.program.id },
-              })
-            "
-            >سجل الان</q-btn
-          >
+          <div class="flex justify-evenly ">
+            <div class="discont  text-center q-mx-sm" v-if="props.program.discount">
+              <del class="text-blue"> {{ props.program.price }} </del>
+              <p v-if="props.program.discountExpiresAt">حتي {{ props.program.discountExpiresAt }}</p>
+            </div>
+            <p class="text-blue text-center"> {{ newPrice }} <br />ريال سعودي</p>
+          </div>
+          <q-btn color="blue" rounded size="lg" @click.prevent="
+            $router.push({
+              name: 'programms-view',
+              params: { id: props.program.id },
+            })
+            ">سجل الان</q-btn>
         </div>
       </div>
     </div>

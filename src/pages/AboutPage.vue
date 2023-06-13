@@ -23,10 +23,7 @@ import TeamSection from 'components/TeamSection.vue';
         </p>
       </div>
       <div class="about-img">
-        <img
-          src="https://api-st.alshabalriyadi.net/assets/bznspro/about.png"
-          alt=""
-        />
+        <img src="https://static.exploremelon.com/bznspro/about.png" alt="" />
       </div>
     </div>
   </div>
@@ -39,15 +36,18 @@ import TeamSection from 'components/TeamSection.vue';
     // gap: 30px;
     margin: 100px 0;
   }
+
   &-img {
     & img {
       max-width: 400px;
     }
   }
+
   &-content {
     & h1 {
       margin: 0 0 50px 0;
       position: relative;
+
       &::after {
         content: '';
         position: absolute;
@@ -58,6 +58,7 @@ import TeamSection from 'components/TeamSection.vue';
         background-color: #002e5f;
       }
     }
+
     & p {
       max-width: 600px;
     }

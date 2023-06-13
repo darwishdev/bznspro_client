@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { SingleProgram } from 'components/models';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
+const { params } = route;
 const tab = ref('description');
 
 const tabs = [
@@ -17,55 +20,108 @@ const infoKeys = [
   { key: 'time', value: 'توقيت البرنامج' },
   { key: 'location', value: 'مكان البرنامج' },
 ];
-const program: SingleProgram = {
-  id: 1,
-  price: 450,
+const program2: SingleProgram = {
+  id: 2,
   title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-  breif:
-    'برنامج مسك "طريق المستقبل" يُمكنك من اكتساب المهارات الأكثر طلبًا في سوق العمل البرنامج عدداً من الدورات التدريبية المتنوعة مباشرة',
-  img: 'https://api-st.alshabalriyadi.net/assets/bznspro/progs/single.png',
-  description: `<p>إدارة العمليات هو مساق مجاني مقدّم من إدراك يساعد المتعلم على استيعاب أهم المفاهيم و والمهام الرئيسية المتعلقة بموضوع إدارة العمليات، ليتمكن من شق طريقه المهني في هذا المجال بنجاح وممارسة مسؤولياته وصلاحياته بالشكل الصحيح وفي الوقت والمكان المناسبين. إضافةً إلى ذلك، يوضح المساق أهمية إدارة العمليات والأجزاء الرئيسية فيها وكيفية تصميم وتطوير المنتجات والخدمات في المؤسسة.
-</p>
-  <p>تكمن أهمية إدارة العمليات في تحقيق التكامل بين الأقسام المختلفة للمؤسسة، وتُعَد إدارة العمليات من المواضيع الهامة التي تُعنى بها المؤسسات والشركات الكبرى تدور تفاصيل عملها حول كيفية تقديم الخدمات وإنتاج البضائع والسلع لتشمل عدداً من الجوانب، ابتداءً من تصميم المنتجات وإدارة المستودعات والمخازن وحتى تحسين وتطوير أداء إدارة العمليات في الشركات.
-</p>
-  <p>تُمثل إدارة العمليات حلقة الوصل بين جميع الوظائف داخل المؤسسات والشركات الكبرى، ومن الضروري جداً الوعي التام بجميع مهام إدارة العمليات ومسؤوليات مدير العمليات كي تسير الوظائف بكل سلاسة دون مواجهة أي عقبات. تشمل هذه الوظائف، تحصيل الموارد بجميع أشكالها مثل الموارد البشرية والمواد الخام والآلات والمعلومات وحتى الأموال والوظائف التحويلية.</p>`,
-  subscribers: 148,
-  hours: 25,
-  date: '30  نوفمبر 2022 ',
-  location: 'الرياض',
-  time: 'Pm 09.00 : 05.00',
-  note: 'يقام البرنامج في أحد قاعات فنادق الدرجة الأولى + يشمل شهادة إتمام البرنامج',
-  goals: [
-    'البرنامج عدداً من الدورات التدريبية المتنوعة بالإضافة إلى العديد',
-    ' ليس فقط لإدارة كيفية إنتاج البضائع والخدمات وإنما لدراسة العمليات الخدماتية',
-    'يهدف مساق إدارة العمليات إلى توضيح المفاهيم الأساسية',
-    'سيتعرف المتعلم على بعض الأدوات المستخدمة في تصميم هيكلة إدارة العمليات',
-  ],
-  whattolearn: [
-    'البرنامج عدداً من الدورات التدريبية المتنوعة بالإضافة إلى العديد',
-    ' ليس فقط لإدارة كيفية إنتاج البضائع والخدمات وإنما لدراسة العمليات الخدماتية',
-    'يهدف مساق إدارة العمليات إلى توضيح المفاهيم الأساسية',
-    'سيتعرف المتعلم على بعض الأدوات المستخدمة في تصميم هيكلة إدارة العمليات',
-  ],
-  plan: [
-    {
-      title: 'الوحدة الاولي',
-      breif: 'ستتمكن عند إتمام الدورة من تطبيق مهارات التواصل الفعّال اللفظية',
-    },
-    {
-      title: 'الوحدة الثانية',
-      breif: 'ستتمكن عند إتمام الدورة من توظيف مهارات الذكاء العاطفي بنجاح',
-    },
-    {
-      title: 'الوحدة الثالثة',
-      breif:
-        'ستتمكن عند إتمام الدورة من بناء خطة للمشروع باستخدام أدوات تخطيط المشاريع',
-    },
-  ],
+  day: 22,
+  month: 'يوليو',
+  img: 'https://static.exploremelon.com/bznspro/progs/single2.png',
+  price: 480,
+  breif: 'تهدف هذه الدورة التدريبية إلى تزويد المشاركين بالمعرفة والمهارات اللازمة لوضع خطط أعمال ناجحة للشركات. ستتعلم كيفية تحليل السوق، وتحديد الجمهور المستهدف، ووضع استراتيجية التسويق، وتطوير الخطة المالية، وتقييم الأداء. ستتلقى أدوات ومنهجيات عملية للتخطيط والتنفيذ، بالإضافة إلى الاستفادة من الدروس المستفادة من الشركات الناجحة في هذا المجال.',
+  description: '<p>تهدف هذه الدورة التدريبية إلى تزويد المشاركين بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات. ستتعلم كيفية تحليل السوق، وتحديد الجمهور المستهدف، ووضع استراتيجية التسويق، وتطوير الخطة المالية، وتقييم الأداء. ستتلقى أدوات ومنهجيات عملية للتخطيط والتنفيذ، بالإضافة إلى الاستفادة من الدروس المستفادة من الشركات الناجحة في هذا المجال.</p>',
+  subscribers: 0,
+  hours: 0,
+  date: '',
+  location: '',
+  time: '',
+  note: '',
+  goals: [],
+  whattolearn: [],
+  plan: []
 };
 
-function price(val: number): string {
-  return `${val} ريال سعودي`;
+const program1: SingleProgram = {
+  id: 1,
+  title: 'صناعة الريادة والابتكار في المنظمات والشركات',
+  img: 'https://static.exploremelon.com/bznspro/progs/single3.png',
+  price: 575,
+  day: 15,
+  month: 'يوليو',
+  discount: 40,
+  discountExpiresAt: '10 يوليو',
+
+  breif: ' تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق من خلال الاستثمار المستقبلي لتحقيق أفكار جديدة وجريئة تتوافق مع تطلعات المستقبل',
+  description: `<p>تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق من خلال الاستثمار المستقبلي لتحقيق أفكار جديدة وجريئة تتوافق مع تطلعات المستقبل.</p>
+
+<p>إدارة العمليات هو مساق مجاني مقدّم من إدراك يساعد المتعلم على استيعاب أهم المفاهيم والمهام الرئيسية المتعلقة بموضوع إدارة العمليات، ليتمكن من شق طريقه المهني في هذا المجال بنجاح وممارسة مسؤولياته وصلاحياته بالشكل الصحيح وفي الوقت والمكان المناسبين. إضافةً إلى ذلك، يوضح المساق أهمية إدارة العمليات والأجزاء الرئيسية فيها وكيفية تصميم وتطوير المنتجات والخدمات في المؤسسة.</p>
+
+<p>تكمن أهمية إدارة العمليات في تحقيق التكامل بين الأقسام المختلفة للمؤسسة، وتُعَد إدارة العمليات من المواضيع الهامة التي تُعنى بها المؤسسات والشركات الكبرى تدور تفاصيل عملها حول كيفية تقديم الخدمات وإنتاج البضائع والسلع لتشمل عدداً من الجوانب، ابتداءً من تصميم المنتجات وإدارة المستودعات والمخازن وحتى تحسين وتطوير أداء إدارة العمليات في الشركات.</p>
+
+<p>تُمثل إدارة العمليات حلقة الوصل بين جميع الوظائف داخل المؤسسات والشركات الكبرى، ومن الضروري جداً الوعي التام بجميع مهام إدارة العمليات ومسؤوليات مدير العمليات كي تسير الوظائف ب
+`,
+
+  subscribers: 148,
+  hours: 25,
+  date: '15  يوليو 2023 ',
+  location: 'السعودية ( الرياض )',
+  time: '  4.00 م - 09.00 م',
+  note: 'يقام البرنامج في أحد قاعات فنادق الدرجة الأولى + يشمل شهادة إتمام البرنامج',
+  goals: [
+    'توفير مجموعة متنوعة من الدورات التدريبية المكثفة لتطوير مهارات الإدارة والتسويق والتمويل والابتكار في بناء خطط الأعمال الناجحة.',
+    'تعزيز قدرات المشاركين على استخدام أدوات قياس الأداء وتحليل البيانات لتحقيق تحسين مستمر واتخاذ القرارات الاستراتيجية المبنية على الحقائق.',
+    'تطوير مهارات التواصل والتفاوض والعمل الجماعي من خلال المشاركة في نقاشات نشطة ومحاكاة عملية لتعزيز التعلم وبناء شبكات علاقات مهنية قوية.',
+    'تعريف المشاركين بأحدث تقنيات الذكاء الاصطناعي واستخدامها في نمذجة الابتكار وتحليل البيانات لتحقيق تفوق ريادي في مجالات الأعمال المختلفة',
+    'تمكين المشاركين من وضع خطط استراتيجية شاملة للمشاريع وتحليل السوق واستراتيجية التسويق وتخطيط الموارد وإدارة المخاطر لتحقيق النجاح المستدام في الأعمال التجارية'
+  ],
+  whattolearn: [
+    'فهم وتطبيق مهارات التواصل الفعّال اللفظي وغير اللفظي لتحسين التفاعل والتواصل في بيئة الأعمال',
+    'اكتساب وتطوير مهارات الذكاء العاطفي لفهم وإدارة المشاعر الشخصية والتعامل بفعالية مع الآخرين في سياق العمل',
+    'استخدام أدوات تخطيط المشاريع وتطوير خطط مشاريع فعّالة لتحقيق الأهداف وإدارة الموارد والمخاطر بكفاءة',
+    'التعرف على أساسيات نمذجة الابتكار باستخدام التقنيات الحديثة للذكاء الاصطناعي وتطبيقها في تحليل البيانات وتطوير حلول إبداعية',
+    'تطوير مهارات التحليل والتقييم واستخدام أدوات قياس الأداء لتحقيق تحسين مستمر واتخاذ القرارات الاستراتيجية المبنية على البيانات'
+  ],
+
+  plan: [
+
+    {
+      title: 'محاكاة عملية',
+      breif: 'تجربة عملية تفاعلية تمنحك الفرصة للتعلم من خلال محاكاة أوضاع وظروف العمل الحقيقية'
+    },
+    {
+      title: 'أدوات قياس',
+      breif: 'تعلم استخدام أدوات القياس الفعالة لتحليل أداء الشركة واتخاذ القرارات الاستراتيجية المبنية على البيانات'
+    },
+    {
+      title: 'نقاشات نشطة',
+      breif: 'المشاركة في نقاشات مفصلة وتبادل الأفكار والآراء مع المشاركين الآخرين لتعزيز التعلم وتوسيع المدارك'
+    },
+    {
+      title: 'شبكة علاقات',
+      breif: 'بناء علاقات قوية ومفيدة مع المشاركين والمحاضرين والخبراء في مجال الأعمال وتوسيع شبكتك المهنية'
+    },
+    {
+      title: 'نمذجة الابتكار بواسطة الذكاء الاصطناعي (AI)',
+      breif: 'استخدام تقنيات الذكاء الاصطناعي لتحليل البيانات واستخراج الصيحات وتوجيه عملية اتخاذ القرارات للابتكار في المشاريع'
+    }
+  ]
+
+};
+
+
+const program = computed(() => {
+  return params.id == '1' ? program1 : program2
+});
+
+const newPrice = computed(() => {
+  if (!program.value.discount) {
+    return program.value.price
+  }
+  const discountAmount = program.value.price * (program.value.discount / 100);
+  return program.value.price - discountAmount;
+});
+
+function price(): string {
+  return `${newPrice.value} ريال سعودي`;
 }
 </script>
 
@@ -87,30 +143,15 @@ function price(val: number): string {
             </p>
 
             <div class="flex no-wrap">
-              <q-btn
-                class="text-center"
-                color="primary"
-                size="xl"
-                rounded
-                label="سجل الان"
-                @click="() => $router.push('/contact')"
-              />
-              <q-btn
-                class="text-center justify-center"
-                size="xl"
-                flat
-                icon-right="arrow_back"
-                label="اعرف المزيد عن الدورة"
-                @click="() => $router.push('/contact')"
-              />
+              <q-btn class="text-center" color="primary" size="xl" rounded label="سجل الان"
+                @click="() => $router.push({ name: 'programms-checkout', params })" />
+              <q-btn class="text-center justify-center" size="xl" flat icon-right="arrow_back"
+                label="اعرف المزيد عن الدورة" @click="() => $router.push('/contact')" />
             </div>
           </div>
 
           <div class="img">
-            <img
-              src="https://api-st.alshabalriyadi.net/assets/bznspro/progs/single2.png"
-              alt=""
-            />
+            <img :src="program.img" alt="" />
           </div>
         </div>
       </div>
@@ -120,20 +161,8 @@ function price(val: number): string {
       <div class="container">
         <div class="content_wrapper">
           <div class="tabs">
-            <q-tabs
-              dense
-              v-model="tab"
-              active-color="primary"
-              indicator-color="primary"
-              align="justify"
-              narrow-indicator
-            >
-              <q-tab
-                v-for="t in tabs"
-                :key="t.key"
-                :name="t.key"
-                :label="t.value"
-              />
+            <q-tabs dense v-model="tab" active-color="primary" indicator-color="primary" align="justify" narrow-indicator>
+              <q-tab v-for="t in tabs" :key="t.key" :name="t.key" :label="t.value" />
             </q-tabs>
 
             <q-separator />
@@ -146,17 +175,10 @@ function price(val: number): string {
               <q-tab-panel name="goals">
                 <div class="text-h6 q-my-lg">اهداف البرنامج</div>
                 <q-list clicable class="text-left q-ml-xl">
-                  <q-item
-                    v-for="goal in program.goals"
-                    :key="goal"
-                    class="q-mb-md"
-                  >
+                  <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md">
                     <q-item-section avatar>
-                      <q-icon
-                        color="secondary"
-                        name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                        size="lg"
-                      />
+                      <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
+                        size="lg" />
                     </q-item-section>
 
                     <q-item-section>{{ goal }}</q-item-section>
@@ -166,17 +188,10 @@ function price(val: number): string {
               <q-tab-panel name="whattolearn">
                 <div class="text-h6 q-my-lg">ماذا ستتعلم</div>
                 <q-list class="text-left q-ml-xl">
-                  <q-item
-                    v-for="goal in program.whattolearn"
-                    :key="goal"
-                    class="q-mb-md"
-                  >
+                  <q-item v-for="goal in program.whattolearn" :key="goal" class="q-mb-md">
                     <q-item-section avatar>
-                      <q-icon
-                        color="secondary"
-                        name="img:https://api-st.alshabalriyadi.net/assets/bznspro/chevron.svg"
-                        size="lg"
-                      />
+                      <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
+                        size="lg" />
                     </q-item-section>
 
                     <q-item-section>{{ goal }}</q-item-section>
@@ -186,11 +201,7 @@ function price(val: number): string {
               <q-tab-panel name="plan">
                 <div class="text-h6 q-my-lg">خطة البرنامج</div>
                 <q-list separator class="text-left q-ml-xl">
-                  <q-item
-                    v-for="step in program.plan"
-                    :key="step.title"
-                    class="q-py-xl"
-                  >
+                  <q-item v-for="step in program.plan" :key="step.title" class="q-py-xl">
                     <q-item-section>
                       <q-item-label class="text-blue q-mb-md text-h5">{{
                         step.title
@@ -207,23 +218,28 @@ function price(val: number): string {
           <div class="info">
             <div class="info-head">
               <span>سعر البرنامج</span><br />
-              <h5 class="text-secondary text-center text-bold no-margin">
-                {{ price(program.price) }}
-              </h5>
+
+              <div class="flex">
+                <div class="discont  text-center q-mx-sm" v-if="program.discount">
+                  <del class="text-blue"> {{ program.price }} </del>
+                </div>
+                <h5 class="text-secondary text-center text-bold no-margin">
+                  {{ price() }}
+                </h5>
+              </div>
+              <span v-if="program.discountExpiresAt">حتي {{ program.discountExpiresAt }}</span>
+
             </div>
             <div class="info-body">
-              <div
-                class="flex q-py-md text-h6 justify-between"
-                v-for="k in infoKeys"
-                :key="k.key"
-              >
+              <div class="flex q-py-md text-h6 justify-between" v-for="k in infoKeys" :key="k.key">
                 <span>{{ k.value }}</span>
                 <span class="value">{{
                   program[k.key as keyof typeof program]
                 }}</span>
               </div>
               <p class="text-center q-my-xl text-h6">{{ program.note }}</p>
-              <q-btn color="primary" size="xl" label="سجل الان" class="btn" />
+              <q-btn color="primary" size="xl" label="سجل الان" class="btn"
+                @click="() => $router.push({ name: 'programms-checkout', params })" />
             </div>
           </div>
         </div>

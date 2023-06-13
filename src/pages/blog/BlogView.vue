@@ -75,7 +75,7 @@ const post: Blog = {
   breif:
     'تتجه شركة بيزنيس برو نحو نمو ديناميكي ومستدام مستهدفةازدهار ورفاهية موظفيها والمجتمع والمساهمة في اقتصاد قطر المتنامي أن تنتهي صلاحية تأشيرة الدخول الخاصة بك',
   cat: 'تسويق',
-  img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/single.png',
+  img: 'https://static.exploremelon.com/bznspro/blog/single.png',
   date,
 };
 
@@ -85,7 +85,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m1.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m1.png',
     date,
   },
   {
@@ -93,7 +93,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: '  كيف تطور الاستشارات المالية والإدارية من مشروعك وشركتك',
     cat: 'استشارة',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m2.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m2.png',
     date,
   },
   {
@@ -101,7 +101,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'كيف أكون الاستشارة الاونلاين وكيف تقوم بحجزها',
     cat: 'أعمال',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/m3.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/m3.png',
     date,
   },
   {
@@ -109,7 +109,7 @@ const mostReads: Blog[] = [
     views: 10,
     name: 'أهمية التسويق الرقمي  في عالم البيزنيس والشركات',
     cat: 'تسويق',
-    img: 'https://api-st.alshabalriyadi.net/assets/bznspro/blog/main.png',
+    img: 'https://static.exploremelon.com/bznspro/blog/main.png',
     date,
   },
 ];
@@ -118,15 +118,9 @@ const mostReads: Blog[] = [
   <div class="breadcrumbs">
     <div class="container">
       <div class="flex items-center">
-        <q-icon
-          clickable
-          @click="$router.push('/blog')"
-          name="img:https://api-st.alshabalriyadi.net/assets/bznspro/back.svg"
-          size="md"
-        ></q-icon>
-        <span class="cursor-pointer" @click="$router.push('/blog')"
-          >المدونة</span
-        >
+        <q-icon clickable @click="$router.push('/blog')" name="img:https://static.exploremelon.com/bznspro/back.svg"
+          size="md"></q-icon>
+        <span class="cursor-pointer" @click="$router.push('/blog')">المدونة</span>
         <q-icon name="play_arrow" size="md"></q-icon>
         <span>مقال "كيف تساهم الاستشارات ...."</span>
       </div>
@@ -138,20 +132,9 @@ const mostReads: Blog[] = [
       <div class="title flex items-center">
         <h1>{{ post.name }}</h1>
         <div class="left">
-          <q-btn
-            class="text-center full-width"
-            color="secondary"
-            rounded
-            label="مشاركة"
-          />
+          <q-btn class="text-center full-width" color="secondary" rounded label="مشاركة" />
           <div class="flex">
-            <q-btn
-              v-for="link in links"
-              flat
-              round
-              :key="link.icon"
-              :icon="link.icon"
-            />
+            <q-btn v-for="link in links" flat round :key="link.icon" :icon="link.icon" />
           </div>
         </div>
       </div>
@@ -186,11 +169,7 @@ const mostReads: Blog[] = [
     <div class="sidebar gt-md">
       <div class="column">
         <h6>ابرز المقالات:</h6>
-        <post-side-partial
-          v-for="post in mostReads"
-          :key="post.id"
-          :post="post"
-        />
+        <post-side-partial v-for="post in mostReads" :key="post.id" :post="post" />
       </div>
       <div class="column">
         <h6 class="q-mb-md">اشترك في نشرة الاعمال:</h6>
@@ -198,12 +177,7 @@ const mostReads: Blog[] = [
           اشترك في النشرة الإخبارية ليصلك كل جديد بشان كل مقال جديد ننشرة في
           المدونة, قم بكتابة البريد الالكتروني الخاص بك واشترك
         </p>
-        <q-input
-          v-model="email"
-          outlined
-          class="q-mb-lg"
-          label="قم بكتابة البريد الاكتروني  هنا"
-        />
+        <q-input v-model="email" outlined class="q-mb-lg" label="قم بكتابة البريد الاكتروني  هنا" />
         <q-btn class="text-center" color="secondary" label="اشترك الان" />
       </div>
       <div class="column">

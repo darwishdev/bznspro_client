@@ -11,17 +11,11 @@ const props = defineProps<Props>();
   <div class="consultunt">
     <q-responsive :ratio="1">
       <div class="consultunt-img">
-        <img
-          src="https://api-st.alshabalriyadi.net/assets/bznspro/consultunt1.png"
-          class=""
-          :alt="props.consultunt.title"
-        />
+        <img src="https://static.exploremelon.com/bznspro/consultunt1.png" class="" :alt="props.consultunt.title" />
       </div>
     </q-responsive>
     <div class="consultunt__content">
-      <div
-        class="q-pa-lg column items-center text-center justify-center full-height"
-      >
+      <div class="q-pa-lg column items-center text-center justify-center full-height">
         <h5 class="text-blue text-bold no-margin full-width">
           {{ props.consultunt.name }}
         </h5>
@@ -39,6 +33,7 @@ const props = defineProps<Props>();
     background-color: $greyDarken;
     border-radius: 50%;
     overflow: hidden;
+
     & img {
       width: 100%;
       height: 100%;
