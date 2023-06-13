@@ -4,7 +4,7 @@
       <!-- Add the links -->
 
       <q-list class="row gt-md">
-        <q-item clickable v-ripple class="text-center" v-for="item in navItems" :key="item.to" :to="item.to">
+        <q-item clickable v-ripple class="text-center" v-for="item in navItems" :key="item.to" exact :to="item.to">
           <q-item-section>{{ item.text }}</q-item-section>
         </q-item>
         <q-item clickable v-ripple to="/about" class="column">
