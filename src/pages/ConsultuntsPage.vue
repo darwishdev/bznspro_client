@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { Consultunt } from 'components/models';
 import ConsultuntPartial from 'components/partials/ConsultuntPartial.vue';
 
-const tab = ref(1);
 const consultunts: Consultunt[] = [
   {
     name: 'احمد عبد الله',
