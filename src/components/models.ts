@@ -76,6 +76,7 @@ export interface PorgramPlan {
 export interface SingleProgram {
   id: number;
   title: string;
+  category?: string;
   price: number;
   day: number;
   discount?: number;

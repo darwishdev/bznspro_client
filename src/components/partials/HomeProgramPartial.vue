@@ -8,11 +8,11 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <div class="flex program__wrapper partial no-wrap" @click.prevent="
+  <div class="flex home-programm program__wrapper partial no-wrap" @click.prevent="
     $router.push({ name: 'programms-view', params: { id: props.program.id } })
     ">
-    <div class="img__wrapper" style="height:360px">
-      <img :src="props.program.img" style="width:250px" class="full-height" :alt="props.program.title" />
+    <div class="img__wrapper">
+      <img :src="props.program.img" class="full-height" :alt="props.program.title" />
     </div>
     <div class="program__content bg-grey">
       <div class="date bg-teal">

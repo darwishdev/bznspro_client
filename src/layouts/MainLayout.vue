@@ -1,7 +1,7 @@
 <template>
   <app-loading v-if="loading" />
 
-  <q-layout v-else view="hHh lpR fff">
+  <q-layout v-else :class="$route.name" view="hHh lpR fff">
     <app-nav />
     <q-page-container>
       <router-view />

@@ -52,11 +52,7 @@ const cats: Cat[] = [
   {
     id: 3,
     name: 'تطوير الشركات',
-  },
-  {
-    id: 4,
-    name: 'التسويق',
-  },
+  }
 ];
 const pageDescription =
   'يسعدنا تواصلك معنا للرد علي استفساراتك او لبحث إمكانية العمل معا ومساعدتك علي تطوير شرتكتك';
@@ -209,7 +205,7 @@ function goToPost(id: number) {
       <div class="items-center flex no-wrap q-my-xl">
         <span class="text-h5">المقالات </span>
         <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
-          class="cats flex-grow">
+          class="cats flex-grow wrap">
           <q-tab v-for="cat in cats" :key="cat.id" :name="cat.id" :label="cat.name" />
         </q-tabs>
       </div>

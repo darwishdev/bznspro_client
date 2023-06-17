@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md bg-white">
+  <div class="contact-banner q-pa-md bg-white">
     <div class="container">
       <q-parallax :height="200" :speed="0.5" class="rounded-borders">
         <template v-slot:media>

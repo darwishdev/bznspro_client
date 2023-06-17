@@ -21,28 +21,24 @@ const carouselBreakpoints = {
 const programs: Program[] = [
   {
     id: 1,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
-    img: 'prog',
+    title: 'صناعة الريادة والابتكار في المنظمات والشركات',
+    img: 'https://static.exploremelon.com/bznspro/progs//p1.webp',
+    text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
+    price: 575,
+    day: 15,
+    month: 'يوليو',
+    discount: 40,
+    discountExpiresAt: '10 يوليو'
   },
   {
     id: 2,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
-    img: '',
-  },
-  {
-    id: 1,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
-    img: 'prog',
-  },
-  {
-    id: 2,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    text: 'مجموعة أفيستا هي شركة تخطيط وتصميم وتشغيل تعمل على إحياء المشروعات الثقافية والترفيهية',
-    img: '',
-  },
+    day: 22,
+    month: 'يوليو',
+    img: 'https://static.exploremelon.com/bznspro/progs/p2.png',
+    text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
+    price: 480
+  }
 ];
 </script>
 
@@ -54,10 +50,7 @@ const programs: Program[] = [
 
     <template v-slot:content>
       <div class="container">
-        <carousel
-          :settings="carouselSettings"
-          :breakpoints="carouselBreakpoints"
-        >
+        <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
           <slide v-for="program in programs" :key="program.title">
             <home-program-partial :program="program" />
           </slide>
@@ -69,15 +62,8 @@ const programs: Program[] = [
         <!-- <program-partial v-for="program in programs" :key="program.title" :program="program" /> -->
       </div>
       <div class="row justify-center q-mx-auto q-my-lg">
-        <q-btn
-          icon-right="arrow_back"
-          color="grey"
-          text-color="secondary"
-          @click="$router.push('/programms')"
-          size="lg"
-          rounded
-          >المزيد من البرامج</q-btn
-        >
+        <q-btn icon-right="arrow_back" color="grey" text-color="secondary" @click="$router.push('/programms')" size="lg"
+          rounded>المزيد من البرامج</q-btn>
       </div>
     </template>
   </carousel-section>

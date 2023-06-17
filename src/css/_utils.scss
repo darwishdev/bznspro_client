@@ -5,13 +5,14 @@
 .h-50 {
   height: 50px;
 }
+
 .cats {
   & .q-tab {
     padding: 0px 15px;
     background-color: $greyDarken;
     border-radius: 50px;
     color: #000;
-    margin: 0 20px;
+    margin: 10px;
     width: 100%;
     text-align: center;
     width: 100%;
@@ -176,4 +177,18 @@
 
 .consulting-img {
   max-width: 80vw;
+}
+
+.home-programm {
+  & .img__wrapper {
+    @media (min-width: 100px) {
+      height: 360px;
+    }
+
+    & img {
+      @media (min-width: 100px) {
+        width: 250px;
+      }
+    }
+  }
 }

@@ -1,0 +1,23 @@
+.programms-checkout {
+  background-color: #f2f2f2;
+  & .contact-banner {
+    display: none;
+  }
+
+  & .programm-checkout {
+    & .programm-info {
+      box-shadow: var(--box-shadow);
+    }
+
+    & .q-card {
+      border-radius: 20px !important;
+
+      & .text-h6 {
+        color: #4d4d4d !important;
+      }
+      & hr {
+        color: #fff;
+      }
+    }
+  }
+}
