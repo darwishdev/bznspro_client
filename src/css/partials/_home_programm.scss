@@ -1,0 +1,20 @@
+.home-programm {
+  @media (max-width: 1440px) and (min-width: 600px) {
+    & .img__wrapper img {
+      max-width: 140px;
+    }
+    & .program__content {
+      & .program__title {
+        & h5 {
+          font-size: 18px;
+        }
+
+        & p {
+          font-size: 14px;
+          max-height: 100px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

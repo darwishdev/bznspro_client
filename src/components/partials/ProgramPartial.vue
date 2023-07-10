@@ -35,11 +35,11 @@ const newPrice = computed(() => {
         <q-separator />
         <div class="full-width flex justify-between text-left">
           <div class="flex justify-evenly ">
-            <div class="discont  text-center q-mx-sm" v-if="props.program.discount">
+            <!-- <div class="discont  text-center q-mx-sm" v-if="props.program.discount">
               <del class="text-blue"> {{ props.program.price }} </del>
               <p v-if="props.program.discountExpiresAt">حتي {{ props.program.discountExpiresAt }}</p>
-            </div>
-            <p class="text-blue text-center"> {{ newPrice }} <br />ريال سعودي</p>
+            </div> -->
+            <p class="text-blue text-center"> الرياض</p>
           </div>
           <q-btn color="blue" rounded size="lg" @click.prevent="
             $router.push({
@@ -72,7 +72,7 @@ const newPrice = computed(() => {
       flex-direction: column;
 
       &::after {
-        content: 'اخر موعد للتقدم';
+        content: 'الرياض';
         background-color: grey;
         text-align: center;
         color: #fff;

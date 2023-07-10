@@ -1,0 +1,38 @@
+.programms-single {
+  @media (min-width: 1000px) {
+    .mobile-items {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .header_wrapper {
+      height: 350px;
+      & .header-info {
+        display: none;
+      }
+      & .img {
+        & img {
+          width: 100%;
+        }
+      }
+    }
+
+    & .content {
+      & .tabs {
+        display: none;
+      }
+      & .info {
+        width: calc(100vw - 30px);
+      }
+      & .q-tab {
+        color: #000;
+      }
+      & .q-tab--active {
+        background-color: $blue;
+        color: #fff;
+        border-radius: 6px;
+      }
+    }
+  }
+}

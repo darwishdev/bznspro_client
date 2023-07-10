@@ -60,7 +60,7 @@ const props = defineProps<Props>();
       flex-direction: column;
 
       &::after {
-        content: 'اخر موعد للتقدم';
+        content: 'الرياض';
         background-color: grey;
         text-align: center;
         color: #fff;

@@ -40,6 +40,12 @@ import TeamSection from 'components/TeamSection.vue';
   &-img {
     & img {
       max-width: 400px;
+
+      @media (max-width : 500px) {
+        max-width: 100%;
+
+
+      }
     }
   }
 

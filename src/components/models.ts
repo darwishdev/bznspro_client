@@ -77,9 +77,11 @@ export interface SingleProgram {
   id: number;
   title: string;
   category?: string;
+  video?: string;
   price: number;
   day: number;
   discount?: number;
+  shabDiscount?: number;
   discountExpiresAt?: string;
   month: string;
   breif: string;

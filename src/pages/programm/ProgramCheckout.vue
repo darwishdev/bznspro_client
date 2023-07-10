@@ -1,8 +1,13 @@
+<!-- eslint-disable @typescript-eslint/no-non-null-assertion -->
+
+
 <script setup lang="ts">
 import { reactive, computed } from 'vue';
 import { SingleProgram } from 'components/models';
 import { useRoute } from 'vue-router';
+import { ref, watch } from 'vue'
 
+const isShabRyady = ref(false)
 const route = useRoute();
 const { params } = route;
 
@@ -52,6 +57,7 @@ const program1: SingleProgram = {
   day: 15,
   month: 'يوليو',
   discount: 40,
+  shabDiscount: 60,
   discountExpiresAt: '10 يوليو',
 
   breif: ' تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق من خلال الاستثمار المستقبلي لتحقيق أفكار جديدة وجريئة تتوافق مع تطلعات المستقبل',
@@ -116,34 +122,23 @@ const program = computed(() => {
   return params.id == '1' ? program1 : program2
 });
 
-const newPrice = computed(() => {
-  if (!program.value.discount) {
-    return program.value.price
+
+
+
+
+const discont = computed(() => {
+  if (!program.value.discount && !isShabRyady.value) {
+    return 0
   }
-  const discountAmount = program.value.price * (program.value.discount / 100);
-  return program.value.price - discountAmount;
+  if (isShabRyady.value) {
+    return program.value.price * (program.value.shabDiscount! / 100)
+  }
+  return program.value.price * (program.value.discount! / 100)
 });
 
-function priceBeforeDiscount(): string {
-  return `${(program.value.price).toFixed(2)} ريال سعودي`;
-}
 
-function priceAfterDiscount(): string {
-  return `${(newPrice.value).toFixed(2)} ريال سعودي`;
-}
-
-function discont(): string {
-  const discountAmount = program.value.price * (program.value.discount / 100);
-  return `${(discountAmount).toFixed(2)} ريال سعودي`;
-}
-
-
-function tax(): string {
-  return `${(newPrice.value * .1).toFixed(2)} ريال سعودي`;
-}
-
-function total(): string {
-  return `${(newPrice.value * 1.1).toFixed(2)} ريال سعودي`;
+function convertToPrice(price: number): string {
+  return `${price.toFixed(2)} ريال سعودي`;
 }
 </script>
 
@@ -157,47 +152,6 @@ function total(): string {
           <q-breadcrumbs-el label="الشركات والاعمال " />
           <q-breadcrumbs-el label="دورة بناء خطط الاعمال" />
         </q-breadcrumbs>
-        <div class="row justify-between items-center">
-          <div class="header-info col-md-5 col-12">
-
-            <h4 class="q-my-sm text-secondary text-bold">تفاصيل الدفع</h4>
-            <h6 class="q-my-sm text-black"><strong>اسم البرنامج : </strong> {{ program1.title }}</h6>
-            <h6 class="q-my-sm text-black"><strong>سعر البرنامج : </strong> {{ priceAfterDiscount() }}</h6>
-            <h6 class="q-my-sm text-black"><strong>التصنيف : </strong> {{ program1.title }}</h6>
-          </div>
-          <div class="card-wrapper col-md-7 col-12">
-            <q-card class="bg-white rounded-xl">
-              <q-card-section>
-                <div class="text-h6 q-my-md row justify-between">
-                  <span> السعر</span>
-                  <span class="price"> {{ priceBeforeDiscount() }}</span>
-                </div>
-                <div v-if="program.discount" class="text-h6 q-my-md row justify-between">
-                  <span> الخصم ({{ program.discount }} %) </span>
-                  <span class="price"> {{ discont() }}</span>
-                </div>
-                <div v-if="program.discount" class="text-h6 q-my-md row justify-between">
-                  <span> السعر بعد الخصم</span>
-                  <span class="price"> {{ priceAfterDiscount() }}</span>
-                </div>
-                <div class="text-h6 q-my-md row justify-between">
-                  <span> الضريبة (10%) </span>
-                  <span class="price"> {{ tax() }}</span>
-                </div>
-                <hr class="bg-white q-my-sm" />
-
-                <div class="text-h6 row justify-between">
-                  <span> المجموع الكلي</span>
-                  <span class="price"> {{ total() }}</span>
-                </div>
-              </q-card-section>
-
-
-            </q-card>
-          </div>
-
-        </div>
-        <hr class="bg-white q-my-xl" />
         <div class="form">
           <div class="form-header q-my-xl row items-center">
             <h4 class="q-my-sm text-secondary text-bold q-mr-md">بيانات المشترك </h4>
@@ -246,10 +200,48 @@ function total(): string {
 
         </div>
         <hr class="bg-white q-my-xl" />
+
+        <div class="row justify-between items-center">
+          <div class="header-info col-md-5 col-12">
+            <h4 class="q-my-sm text-secondary text-bold">تفاصيل الدفع</h4>
+            <div class="flex" v-if="program.shabDiscount">
+              <q-toggle v-model="isShabRyady" label="تفعيل خصم الشاب الريادي" />
+            </div>
+            <h6 class="q-my-sm text-black"><strong>اسم البرنامج : </strong> {{ program.title }}</h6>
+            <h6 class="q-my-sm text-black"><strong>سعر البرنامج : </strong> {{ convertToPrice(program.price) }} </h6>
+            <h6 class="q-my-sm text-black"><strong>التصنيف : </strong> {{ program.title }}</h6>
+          </div>
+          <div class="card-wrapper col-md-7 col-12">
+            <q-card class="bg-white rounded-xl">
+              <q-card-section>
+                <div class="text-h6 q-my-md row justify-between">
+                  <span> السعر</span>
+                  <span class="price"> {{ convertToPrice(program.price) }}</span>
+                </div>
+                <div v-if="discont != 0" class="text-h6 q-my-md row justify-between">
+                  <span> الخصم ({{ isShabRyady ? program.shabDiscount : program.discount }} %) </span>
+                  <span class="price"> {{ convertToPrice(discont) }} </span>
+                </div>
+                <hr class="bg-white q-my-sm" />
+
+                <div class="text-h6 row justify-between">
+                  <span> المجموع الكلي</span>
+                  <span class="price"> {{ convertToPrice(program.price - discont) }}</span>
+                </div>
+              </q-card-section>
+
+
+            </q-card>
+          </div>
+
+        </div>
+
+        <hr class="bg-white q-my-xl" />
         <div class="payment_method">
           <div class="form-header q-my-xl row items-center">
             <h4 class="q-my-sm text-secondary text-bold q-mr-md">وسيلة الدفع </h4>
           </div>
+
           <div class="flex">
             <q-btn label="ارسال" type="submit" color="secondary" class="full-width" />
           </div>

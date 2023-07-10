@@ -4,13 +4,15 @@ import { SingleProgram } from 'components/models';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+// const tab = ref('mails')
+const splitterModel = ref(30)
 const { params } = route;
 const tab = ref('description');
 
 const tabs = [
   { value: 'الوصف', key: 'description' },
   { value: 'اهداف البرنامج', key: 'goals' },
-  { value: 'ماذا ستتعلم', key: 'whattolearn' },
+  { value: 'فيديو تعريفي', key: 'whattolearn' },
   { value: 'خطة البرنامج', key: 'plan' },
 ];
 
@@ -37,11 +39,13 @@ const program2: SingleProgram = {
   note: '',
   goals: [],
   whattolearn: [],
+  video: 'BviMmZyhSh4',
   plan: []
 };
 
 const program1: SingleProgram = {
   id: 1,
+  video: 'BviMmZyhSh4',
   title: 'صناعة الريادة والابتكار في المنظمات والشركات',
   img: 'https://static.exploremelon.com/bznspro/progs/single3.png',
   price: 575,
@@ -65,7 +69,7 @@ const program1: SingleProgram = {
   date: '15  يوليو 2023 ',
   location: 'السعودية ( الرياض )',
   time: '  4.00 م - 09.00 م',
-  note: 'يقام البرنامج في أحد قاعات فنادق الدرجة الأولى + يشمل شهادة إتمام البرنامج',
+  note: '',
   goals: [
     'توفير مجموعة متنوعة من الدورات التدريبية المكثفة لتطوير مهارات الإدارة والتسويق والتمويل والابتكار في بناء خطط الأعمال الناجحة.',
     'تعزيز قدرات المشاركين على استخدام أدوات قياس الأداء وتحليل البيانات لتحقيق تحسين مستمر واتخاذ القرارات الاستراتيجية المبنية على الحقائق.',
@@ -186,17 +190,11 @@ function price(): string {
                 </q-list>
               </q-tab-panel>
               <q-tab-panel name="whattolearn">
-                <div class="text-h6 q-my-lg">ماذا ستتعلم</div>
-                <q-list class="text-left q-ml-xl">
-                  <q-item v-for="goal in program.whattolearn" :key="goal" class="q-mb-md">
-                    <q-item-section avatar>
-                      <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
-                        size="lg" />
-                    </q-item-section>
-
-                    <q-item-section>{{ goal }}</q-item-section>
-                  </q-item>
-                </q-list>
+                <div class="text-h6 q-my-lg">فيديو تعريفي</div>
+                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${program.video}`"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
               </q-tab-panel>
               <q-tab-panel name="plan">
                 <div class="text-h6 q-my-lg">خطة البرنامج</div>
@@ -217,17 +215,17 @@ function price(): string {
           </div>
           <div class="info">
             <div class="info-head">
-              <span>سعر البرنامج</span><br />
+              <span>خبير تطوير الاعمال</span><br />
 
-              <div class="flex">
-                <div class="discont  text-center q-mx-sm" v-if="program.discount">
+              <div class="flex q-mt-sm">
+                <!-- <div class="discont  text-center q-mx-sm" v-if="program.discount">
                   <del class="text-blue"> {{ program.price }} </del>
-                </div>
+                </div> -->
                 <h5 class="text-secondary text-center text-bold no-margin">
-                  {{ price() }}
+                  احمد عبدالله المنهبي
                 </h5>
               </div>
-              <span v-if="program.discountExpiresAt">حتي {{ program.discountExpiresAt }}</span>
+              <!-- <span v-if="program.discountExpiresAt">حتي {{ program.discountExpiresAt }}</span> -->
 
             </div>
             <div class="info-body">
@@ -243,6 +241,59 @@ function price(): string {
             </div>
           </div>
         </div>
+        <q-splitter v-model="splitterModel" class="mobile-items" style="height: 250px">
+
+          <template v-slot:before>
+            <q-tabs v-model="tab" vertical class="text-teal">
+              <q-tab v-for="(t, index) in tabs" :key="index" :name="t.key" :label="t.value" />
+            </q-tabs>
+          </template>
+
+          <template v-slot:after>
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="description">
+                <div class="text-h6 ">الوصف</div>
+                <div v-html="program.description"></div>
+              </q-tab-panel>
+              <q-tab-panel name="goals">
+                <div class="text-h6 ">اهداف البرنامج</div>
+                <q-list clicable class="text-left ">
+                  <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md">
+                    <!-- <q-item-section avatar>
+                      <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
+                        size="lg" />
+                    </q-item-section> -->
+
+                    <q-item-section>{{ goal }}</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-tab-panel>
+              <q-tab-panel name="whattolearn">
+                <div class="text-h6 ">td]d, juvdtd</div>
+                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${program.video}`"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </q-tab-panel>
+              <q-tab-panel name="plan">
+                <div class="text-h6 ">خطة البرنامج</div>
+                <q-list separator class="text-left ">
+                  <q-item v-for="step in program.plan" :key="step.title" class="q-py-xl">
+                    <q-item-section>
+                      <q-item-label class="text-blue q-mb-md text-h5">{{
+                        step.title
+                      }}</q-item-label>
+                      <q-item-label class="text-h6">{{
+                        step.breif
+                      }}</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-tab-panel>
+            </q-tab-panels>
+          </template>
+
+        </q-splitter>
       </div>
     </div>
   </div>

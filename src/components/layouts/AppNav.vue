@@ -3,7 +3,7 @@
     <nav class="navbar row justify-between q-px-xl q-py-md">
       <!-- Add the links -->
 
-      <q-list class="row gt-md">
+      <q-list class="row gt-sm">
         <q-item clickable v-ripple class="text-center" v-for="item in navItems" :key="item.to" exact :to="item.to">
           <q-item-section>{{ item.text }}</q-item-section>
         </q-item>
