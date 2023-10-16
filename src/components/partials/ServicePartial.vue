@@ -9,7 +9,6 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-
   <div class="service">
     <svg xmlns="http://www.w3.org/2000/svg" width="105.713" height="58.491" viewBox="0 0 105.713 58.491">
       <g id="_9057315_quote_icon" data-name="9057315_quote_icon" transform="translate(-7 -9)">
@@ -21,9 +20,9 @@ const props = defineProps<Props>();
     </svg>
 
     <h2 class="font-weight-bold">{{ props.service.title }}</h2>
-    <p>{{ props.service.content }}</p>
-    <q-btn class="text-center justify-center h-50" flat icon-right="arrow_back" label="اطلب الخدمة" size="lg"
-      @click="() => $router.push('/contact')" />
+    <p class="srevice-desc">{{ props.service.content }}</p>
+    <!-- <q-btn class="text-center justify-center h-50" flat icon-right="arrow_back" label="اطلب الخدمة" size="lg"
+      @click="() => $router.push('/contact')" /> -->
   </div>
 </template>
 

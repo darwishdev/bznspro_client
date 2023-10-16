@@ -1,22 +1,25 @@
 <template>
   <q-header reveal class="text-secondary app-header" :class="{ white: $route.fullPath == '/' }">
-    <nav class="navbar row justify-between q-px-xl q-py-md">
-      <!-- Add the links -->
+    <div class="container">
 
-      <q-list class="row gt-sm">
-        <q-item clickable v-ripple class="text-center" v-for="item in navItems" :key="item.to" exact :to="item.to">
-          <q-item-section>{{ item.text }}</q-item-section>
-        </q-item>
-        <q-item clickable v-ripple to="/about" class="column">
-          <q-item-label><q-btn rounded color="primary" size="md" :label="`اطلب عضويتك`" /></q-item-label>
-          <q-item-label class="text-center text-subtitle2" caption>منصة مجتمع الشاب الريادي</q-item-label>
-        </q-item>
-      </q-list>
-      <q-btn flat @click="drawer = !drawer" round dense icon="menu" class="lt-md" />
-      <div class="logo">
-        <img src="https://static.exploremelon.com/bznspro/logo.png" width="100" />
-      </div>
-    </nav>
+      <nav class="navbar row justify-between q-px-xl q-py-md">
+        <!-- Add the links -->
+
+        <q-list class="row gt-sm">
+          <q-item clickable v-ripple class="text-center" v-for="item in navItems" :key="item.to" exact :to="item.to">
+            <q-item-section>{{ item.text }}</q-item-section>
+          </q-item>
+          <!-- <q-item clickable v-ripple to="/about" class="column">
+            <q-item-label><q-btn rounded color="primary" size="md" :label="`اطلب عضويتك`" /></q-item-label>
+            <q-item-label class="text-center text-subtitle2" caption>منصة مجتمع الشاب الريادي</q-item-label>
+          </q-item> -->
+        </q-list>
+        <q-btn flat @click="drawer = !drawer" round dense icon="menu" class="lt-md" />
+        <div class="logo">
+          <img src="https://static.exploremelon.com/bznspro/logo.png" width="100" />
+        </div>
+      </nav>
+    </div>
   </q-header>
   <q-drawer v-model="drawer" overlay :width="300" behavior="mobile" bordered class="bg-secondary">
     <div class="flex justify-center q-my-lg">
@@ -54,42 +57,43 @@ const navItems: NavItem[] = [
     to: '/',
   },
   {
-    text: 'الخدمات',
-    icon: 'payments',
-    to: '/services',
-  },
-  {
-    text: 'مشاريعنا',
-    icon: 'analytics',
-    to: '/projects',
-  },
-  {
-    text: 'البرامج',
-    icon: 'calendar_month',
-    to: '/programms',
-  },
-  {
     text: 'من نحن',
     icon: 'info',
-
     to: '/about',
   },
   {
     text: 'مستشارينا',
     icon: 'account_circle',
-
     to: '/consultunts',
+  },
+  {
+    text: 'الخدمات',
+    icon: 'payments',
+    to: '/services',
+  },
+  // {
+  //   text: 'مشاريعنا',
+  //   icon: 'analytics',
+  //   to: '/projects',
+  // },
+  {
+    text: 'الفعاليات',
+    icon: 'calendar_month',
+    to: '/programms',
+  },
+  {
+    text: 'الاكاديمية',
+    icon: 'school',
+    to: '/academies',
   },
   {
     text: 'المدونة',
     icon: 'article',
-
     to: '/blog',
   },
   {
     text: 'تواصل معنا',
     icon: 'contact_support',
-
     to: '/contact',
   },
 ];

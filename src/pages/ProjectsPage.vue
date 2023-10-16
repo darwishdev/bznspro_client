@@ -80,7 +80,7 @@ const projectCats: ProjectCat[] = [
     </div>
     <div class="main">
       <div class="items-center justify-center flex no-wrap q-mb-lg">
-        <span class="text-font-bold text-h6">تصفح مشاريعنا :</span>
+        <!-- <span class="text-font-bold text-h6">تصفح مشاريعنا :</span> -->
         <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
           class="cats flex-grow">
           <q-tab v-for="cat in projectCats" :key="cat.cat.id" :name="cat.cat.id" :label="cat.cat.name" />
@@ -107,6 +107,18 @@ const projectCats: ProjectCat[] = [
 
     @media (max-width: 1024px) {
       max-width: calc(50% - 10px);
+    }
+
+    @media (max-width: 700px) {
+      max-width: 100%;
+
+      & .project-name {
+        padding: 10px;
+
+        & h6 {
+          font-size: 2.2rem;
+        }
+      }
     }
   }
 }

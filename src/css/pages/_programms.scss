@@ -7,19 +7,20 @@
 
       & .progs {
         @media (min-width: 700px) {
-          max-width: 85%;
+          max-width: 100%;
         }
         display: flex;
-        gap: 30px;
+        // gap: 30px;
         flex-wrap: wrap;
         align-items: center;
         & > div {
           max-width: 100%;
+          padding: 0 20px;
           @media (min-width: 600px) {
             max-width: 47%;
           }
           @media (min-width: 768px) {
-            max-width: 30%;
+            max-width: 33%;
           }
         }
         // display: none;

@@ -44,7 +44,7 @@ function onReset() {
 
 <template>
   <div class="contact-page">
-    <div class="header text-left q-mb-xl">
+    <div class="header text-left ">
       <div class="container">
         <div class="flex items-center">
           <h4 class="text-blue text-bold underline q-mr-md">تواصل معنا</h4>
@@ -58,7 +58,7 @@ function onReset() {
       </div>
     </div>
     <div class="container">
-      <div class="contact-main flex q-my-xl q-pb-xl">
+      <div class="contact-main flex q-my-sm q-pb-xl">
         <div class="form">
           <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
             <h3 class="underline">طلب استشارة</h3>
@@ -136,15 +136,21 @@ function onReset() {
                 <q-item-section avatar>
                   <q-icon color="secondary" name="location_on" size="lg" />
                 </q-item-section>
-                <q-item-section>السعودية , الرياض , جدة</q-item-section>
+                <q-item-section> , المملكة العربية السعودية
+                  , الرياض
+                  , حي النرجس
+                  , طريق انس بن مالك</q-item-section>
               </q-item>
-              <q-item clickable v-ripple>
+
+
+
+              <!-- <q-item clickable v-ripple>
                 <q-item-section>
                   <q-label><iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475322.6559168405!2d38.930964658387126!3d21.450528936128286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059579737b118db!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1673275039664!5m2!1sen!2seg"
                       style="border: 0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></q-label>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
             </q-list>
           </div>
         </div>

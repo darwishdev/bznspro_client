@@ -7,16 +7,16 @@ import TeamSection from 'components/TeamSection.vue';
     <div class="flex about-wrapper justify-md-between justify-center">
       <div class="about-content">
         <h1>عن بزنس برو</h1>
-        <p class="text-h6">
+        <p class="text-h6 aligned-paragraph">
           نطرح على الطاولة العديد من الخدمات الاستشارية القيمة المختلفة التي
           تؤثر بشكل مباشر على الإدارات الأساسية الشركة السعودية الرائدة في تقديم
           خدمات الاستشارات الإدارية والمالية وحلول الاعمال
         </p>
-        <p class="text-h6">
+        <p class="text-h6 aligned-paragraph">
           الشركة السعودية الرائدة في تقديم خدمات الاستشارات الإدارية والمالية
           وحلول الاعمال
         </p>
-        <p class="text-h6">
+        <p class="text-h6 aligned-paragraph">
           نطرح على الطاولة العديد من الخدمات الاستشارية القيمة المختلفة التي
           تؤثر بشكل مباشر على الإدارات الأساسية الشركة السعودية الرائدة في تقديم
           خدمات الاستشارات الإدارية والمالية وحلول الاعمال
@@ -53,6 +53,11 @@ import TeamSection from 'components/TeamSection.vue';
     & h1 {
       margin: 0 0 50px 0;
       position: relative;
+
+      @media (max-width:700px) {
+        font-size: 56px;
+
+      }
 
       &::after {
         content: '';

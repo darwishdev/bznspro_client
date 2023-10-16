@@ -39,13 +39,13 @@ const program2: SingleProgram = {
   note: '',
   goals: [],
   whattolearn: [],
-  video: 'BviMmZyhSh4',
+  video: 'IG4-i4XTFr0',
   plan: []
 };
 
 const program1: SingleProgram = {
   id: 1,
-  video: 'BviMmZyhSh4',
+  video: 'mvhR_luALaA',
   title: 'صناعة الريادة والابتكار في المنظمات والشركات',
   img: 'https://static.exploremelon.com/bznspro/progs/single3.png',
   price: 575,
@@ -142,16 +142,13 @@ function price(): string {
             </q-breadcrumbs>
             <h2 class="title">{{ program.title }}</h2>
             <p v-html="program.breif" class="text-h5" />
-            <p class="text-blue-8 text-h6">
-              {{ program.subscribers }} مشتركا بهذه الدورة
-            </p>
 
-            <div class="flex no-wrap">
+
+            <!-- <div class="flex no-wrap">
               <q-btn class="text-center" color="primary" size="xl" rounded label="سجل الان"
                 @click="() => $router.push({ name: 'programms-checkout', params })" />
-              <q-btn class="text-center justify-center" size="xl" flat icon-right="arrow_back"
-                label="اعرف المزيد عن الدورة" @click="() => $router.push('/contact')" />
-            </div>
+
+            </div> -->
           </div>
 
           <div class="img">
@@ -214,18 +211,26 @@ function price(): string {
             </q-tab-panels>
           </div>
           <div class="info">
-            <div class="info-head">
-              <span>خبير تطوير الاعمال</span><br />
+            <div class="info-head text-center desktop">
+              <div class="text-center">خبير تطوير الاعمال</div>
 
               <div class="flex q-mt-sm">
-                <!-- <div class="discont  text-center q-mx-sm" v-if="program.discount">
-                  <del class="text-blue"> {{ program.price }} </del>
-                </div> -->
+
                 <h5 class="text-secondary text-center text-bold no-margin">
                   احمد عبدالله المنهبي
                 </h5>
               </div>
-              <!-- <span v-if="program.discountExpiresAt">حتي {{ program.discountExpiresAt }}</span> -->
+
+            </div>
+            <div class="info-head mobile">
+              <div class="text-center q-pt-sm">احمد عبدالله المنهبي</div>
+
+              <div class="flex q-mt-sm">
+
+                <h5 class="text-secondary  q-pa-sm text-center text-bold no-margin">
+                  {{ program.title }}
+                </h5>
+              </div>
 
             </div>
             <div class="info-body">

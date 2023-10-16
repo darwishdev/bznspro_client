@@ -50,20 +50,30 @@ const programs: Program[] = [
     img: 'https://static.exploremelon.com/bznspro/progs//p1.webp',
     text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
     price: 575,
-    day: 15,
-    month: 'يوليو',
+    day: 16,
+    month: 'سبنتمبر',
     discount: 40,
     discountExpiresAt: '10 يوليو'
   },
   {
     id: 2,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    day: 22,
-    month: 'يوليو',
+    day: 9,
+    month: 'ديسمبر',
     img: 'https://static.exploremelon.com/bznspro/progs/p2.png',
     text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
     price: 480
-  }
+  },
+  {
+    id: 3,
+    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
+    day: 9,
+    month: 'ديسمبر',
+    img: 'https://static.exploremelon.com/bznspro/progs/p3.png',
+    text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
+    price: 480
+  },
+
 ];
 
 function getCurrenCat(): Cat {
@@ -75,19 +85,17 @@ function getCurrenCat(): Cat {
   <div class="programms">
     <div class="header bg-secondary q-pa-xl">
       <div class="container text-white">
-        <h1 class="underline white">البرامج</h1>
-        <p class="q-mt-xl text-h6">
+        <h1 class="underline white">الفعاليات</h1>
+        <p class="q-mt-xl text-h6 sm-aligned-paragraph">
           إذا اشتركت في أي من برامجنا، سنقوم بتقديم العديد من المزايا والفوائد لك. ستحصل على فرصة الانضمام إلى شركة شريكة
           من الخارج أو الشرق الأوسط والعمل في بيئة تعاونية مميزة. برامجنا تتنوع وتشمل مجموعة واسعة من المجالات، مثل
-          التدريب التقني، التطوير الشخصي، وريادة الأعمال. ستتعلم المهارات اللازمة وتكتسب الخبرات العملية القيمة التي
-          ستساعدك في مستقبلك المهني. بالإضافة إلى ذلك، سنوفر لك الدعم والإرشاد لضمان تحقيق أهدافك ونجاحك في المجال الذي
-          تختاره.
+          التدريب التقني، التطوير الشخصي، وريادة الأعمال.
         </p>
       </div>
     </div>
     <carousel-section class-name="programs" center-title>
       <template v-slot:title>
-        <h3 class="text-left text-weight-mediumn">احدث برامجنا</h3>
+        <h3 class="text-left ">احدث فعالياتنا</h3>
       </template>
 
       <template v-slot:content>
@@ -107,14 +115,13 @@ function getCurrenCat(): Cat {
     </carousel-section>
     <div class="container q-mt-xl">
       <div class="header items-center q-mb-xl">
-        <h3 class="underline text-left">كل البرامج</h3>
-        <q-chip removable class="q-ml-xl q-px-lg q-py-md" color="grey-12" :label="getCurrenCat().name"
-          :title="getCurrenCat().name" />
+        <h3 class="underline text-center">كل الفعاليات</h3>
+        <!-- <q-chip removable class="q-ml-xl q-px-lg q-py-md" color="grey-12" :label="getCurrenCat().name"
+          :title="getCurrenCat().name" /> -->
       </div>
       <div class="lt-md flex justify-end q-mb-lg items-center">
-        <span class="text-h6">يمكنك فلترة البرامج :</span>
         <q-btn icon="filter_alt" class="q-ml-md" round color="secondary" size="md" clicable @click="drawer = !drawer" />
-        <q-drawer v-model="drawer" :width="200" overlay bordered class="bg-secondary">
+        <!-- <q-drawer v-model="drawer" :width="200" overlay bordered class="bg-secondary">
           <q-scroll-area class="fit">
             <q-list>
               <template v-for="(cat, index) in cats" :key="index">
@@ -130,16 +137,17 @@ function getCurrenCat(): Cat {
               </template>
             </q-list>
           </q-scroll-area>
-        </q-drawer>
+        </q-drawer> -->
       </div>
       <div class="programms-all-wrapper">
         <div class="progs">
           <div class="program" v-for="program in programs" :key="program.title">
             <program-partial :program="program" />
           </div>
+
         </div>
-        <q-separator vertical class="gt-md" />
-        <div class="column gt-md">
+        <!-- <q-separator vertical class="gt-md" /> -->
+        <!-- <div class="column gt-md">
           <h6>التصنيف:</h6>
           <q-list padding class="rounded-borders">
             <q-item clickable v-ripple v-for="cat in cats" :key="cat.id" :active="activeCat === cat.id"
@@ -147,7 +155,7 @@ function getCurrenCat(): Cat {
               <q-item-section>{{ cat.name }}</q-item-section>
             </q-item>
           </q-list>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

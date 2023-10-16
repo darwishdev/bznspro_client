@@ -53,7 +53,7 @@ const members: Team[] = [
       <h4 class="text-secondary">أعضاء فريق العمل</h4>
       <h3 class="text-black font-weight-bold">تعرف علي فريق العمل</h3>
 
-      <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
+      <carousel class="teams-carousel" :settings="carouselSettings" :breakpoints="carouselBreakpoints">
         <slide v-for="member in members" :key="member.name">
           <team-partial :member="member" />
         </slide>
@@ -70,6 +70,13 @@ const members: Team[] = [
 .team {
   background-image: url(https://static.exploremelon.com/bznspro/team_bg.png);
   padding: 100px 0;
+
+  & .teams-carousel {
+    @media (max-width:700pc) {
+      margin-top: 80px;
+
+    }
+  }
 
   & h4 {
     position: relative;

@@ -1,9 +1,8 @@
 <template>
   <q-footer class="text-white bg-secondary">
     <contact-banner v-if="$route.fullPath != '/services' && $route.fullPath != '/contact'" />
-    <div class="container">
+    <!-- <div class="container">
       <nav class="navbar row justify-between footer_content q-pt-xl">
-        <!-- Add the links -->
         <div class="column col-auto justify-center items-center">
           <img src="https://static.exploremelon.com/bznspro/logo-light.png" class="text-center q-mb-lg" width="150" />
           <p class="mw-200 text-center">{{ aboutBreif }}</p>
@@ -22,34 +21,49 @@
           </div>
         </q-list>
       </nav>
-    </div>
-    <hr class="bg-secondary" />
-    <div class="row bg-secondary no-padding justify-around items-center">
-      <span class="">{{ copyRights }}</span>
+    </div> -->
+    <!-- <hr class="bg-secondary" /> -->
+    <div class="row bg-secondary q-pt-md q-pa-4 justify-around items-center">
+      <div class="container">
 
-      <span class="">
-        {{ follwUs }}
-        {{ $route.name }}
-        <q-btn v-for="link in socialLinks" flat round color="white" :key="link.icon" :icon="link.icon" />
-      </span>
+        <div class="content">
+          <img src="https://static.exploremelon.com/bznspro/logo-light.png" width="100" />
+          <div class="logo">
+            <span class="">{{ copyRights }}</span>
+          </div>
+
+          <span class="">
+            <!-- {{ follwUs }} -->
+            <!-- {{ $route.name }} -->
+            <q-btn v-for="link in socialLinks" flat round color="white" :key="link.icon" :icon="link.icon"
+              @click="openLink(link.url)" />
+          </span>
+
+        </div>
+      </div>
     </div>
   </q-footer>
 </template>
 
 <script setup lang="ts">
 import ContactBanner from 'components/layouts/ContactBanner.vue';
-
 import { NavItem, FooterLists, SocialLink } from 'components/layouts/models';
-const copyRights = 'بزنس برو. جميع حقوق النشر محفوظة';
+
+
+const openLink = (url: string) => {
+  window.open(url, '_blank')
+}
+const copyRights = ' جميع حقوق النشر محفوظة © بزنس برو. ';
 const follwUs = ' يمكنك متابعتنا علي : ';
 const socialLinks: SocialLink[] = [
+
   {
-    icon: 'facebook',
-    url: 'https://www.facebook.com/',
+    icon: 'ion-logo-youtube',
+    url: 'https://www.youtube.com/@businesspro7304',
   },
   {
     icon: 'ion-logo-twitter',
-    url: 'https://www.twitter.com/',
+    url: 'https://twitter.com/businessprosa',
   },
   {
     icon: 'ion-logo-instagram',

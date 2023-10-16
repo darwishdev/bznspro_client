@@ -79,7 +79,7 @@ const projects: Project[] = [
 <template>
   <carousel-section class-name="projects" color="#162337" center-title>
     <template v-slot:title>
-      <h3 class="text-white text-weight-bold">احدث مشاريعنا</h3>
+      <h3 class="text-white text-weight-bold"> احدث مشاريعنا </h3>
     </template>
 
     <template v-slot:content>
@@ -95,10 +95,10 @@ const projects: Project[] = [
         </carousel>
         <!-- <project-partial v-for="project in projects" :key="project.title" :project="project" /> -->
       </div>
-      <div class="row justify-center q-mx-auto q-my-lg">
+      <!-- <div class="row justify-center q-mx-auto q-my-lg">
         <q-btn icon-right="arrow_back" color="grey" text-color="secondary" @click="$router.push('/projects')" size="lg"
           rounded>المزيد من المشاريع</q-btn>
-      </div>
+      </div> -->
     </template>
   </carousel-section>
 </template>

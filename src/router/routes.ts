@@ -56,6 +56,16 @@ const routes: RouteRecordRaw[] = [
         name: 'programms-checkout',
         component: () => import('pages/programm/ProgramCheckout.vue'),
       },
+      {
+        path: '/academies',
+        name: 'academies',
+        component: () => import('pages/academy/AcademiesIndex.vue'),
+      },
+      {
+        path: '/academies/:id',
+        name: 'academies-view',
+        component: () => import('pages/academy/AcademiesView.vue'),
+      },
     ],
   },
 

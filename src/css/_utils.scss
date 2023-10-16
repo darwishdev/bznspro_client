@@ -22,7 +22,16 @@
     }
   }
 }
-
+.aligned-paragraph {
+  text-align: justify;
+  text-align-last: justify;
+}
+.sm-aligned-paragraph {
+  @media (max-width: 700px) {
+    text-align: justify;
+    text-align-last: justify;
+  }
+}
 .container {
   width: 100%;
 }

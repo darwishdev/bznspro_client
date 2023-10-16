@@ -23,3 +23,17 @@
     }
   }
 }
+
+footer {
+  & .content,
+  & .logo {
+    display: flex;
+    align-items: center;
+  }
+  & .content {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    // flex-direction: column;
+  }
+}

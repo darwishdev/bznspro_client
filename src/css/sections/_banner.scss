@@ -24,7 +24,8 @@
 
   & p {
     @media (max-width: 600px) {
-      font-size: 1rem;
+      padding-left: 10px;
+      font-size: 0.8rem;
       line-height: 1rem;
     }
   }

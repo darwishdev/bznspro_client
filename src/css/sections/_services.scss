@@ -23,6 +23,7 @@
         max-width: 80%;
         justify-content: start;
       }
+
       & .service {
         max-width: 400px;
         cursor: pointer;
@@ -45,7 +46,10 @@
         }
         & p {
           font-size: 22px;
-          margin-right: 50px;
+          // margin-right: 50px;
+          // @media (max-width: 700px) {
+          //   margin: 0;
+          // }
         }
       }
     }
@@ -73,7 +77,8 @@
       padding-right: 100px;
       padding-top: 50px;
       @media (max-width: 700px) {
-        margin-top: 100px;
+        margin-top: 10px;
+        margin-bottom: 30px;
       }
       & img {
         // display: none;
@@ -82,9 +87,10 @@
       // display: none;
     }
     & .q-tabs {
-      max-width: calc(100% - 100px) !important;
+      max-width: 100% !important;
       // box-shadow: none;
     }
+
     & .service-content {
       & .breif {
         max-width: 600px;
@@ -96,6 +102,9 @@
       }
     }
     & .service-wrapper {
+      @media (max-width: 700px) {
+        flex-direction: column-reverse;
+      }
       @media (min-width: 700px) {
         & > div {
           max-width: 50%;
@@ -111,32 +120,32 @@
     }
     & .navigators {
       display: flex;
-      margin: 30px 0;
+      margin: 80px 0;
       @media (max-width: 700px) {
-        justify-content: flex-end;
-        gap: 10px;
+        display: none;
+        // gap: 10px;
 
-        .carousel__prev,
-        .carousel__next {
-          transform: rotate(0);
-        }
+        // .carousel__prev,
+        // .carousel__next {
+        //   transform: rotate(0);
+        // }
       }
       & button {
         background-color: $blue;
         color: #fff;
 
         &.carousel__next {
-          position: relative;
+          position: absolutewzsa;
           top: 0 !important;
           left: auto !important;
           right: 0 !important;
           @media (min-width: 700px) {
             position: absolute;
-            transform: translateX(200%);
+            transform: translateX(0);
           }
         }
         &.carousel__prev {
-          position: relative;
+          position: absolutewzsa;
           top: 0 !important;
           left: auto !important;
           right: 0 !important;

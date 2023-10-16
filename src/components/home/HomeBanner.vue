@@ -1,9 +1,22 @@
 <script setup lang="ts">
+import Vue3Autocounter from 'vue3-autocounter';
 const stats = [
-  'اكثر من 115 استشارة',
-  'اكثر من 132 عميل',
-  'اكثر من 145 مشروع',
-  'اكثر من 190 عميل',
+  {
+    label: 'عضو',
+    number: 300,
+  },
+  {
+    label: 'مستفيد',
+    number: 2000,
+  },
+  {
+    label: 'شركة',
+    number: 250,
+  },
+  {
+    label: 'استشارة',
+    number: 1100,
+  }
 ];
 </script>
 
@@ -17,25 +30,32 @@ const stats = [
 
         <div class="justify-center column">
           <div class="column">
-            <h1 class="text-secondary">
-              تقدم استشارت <br /><strong class="mr-110"> مالية وادارية</strong>
+            <h1 class="text-secondary" style="margin-bottom : 20px">
+              خدمات استشارية <br /><strong class="mr-110"> لتطوير اعمالك </strong>
             </h1>
             <p class="text-black text-h6 w-100 mr-110">
-              بزنس برو يقدم لك خدمات استشارية اون لاين و عبر موقعنا لمساعدتك<br />
-              ف ادارة شركتك و البزنس الخاص بك
+
+              نساعد الشركات و المنظمات على تحقيق النمو و الاستدامة <br /> لصناعة حلول مؤثرة
+
             </p>
-            <div class="row no-wrap">
-              <q-btn class="text-center mr-110" color="secondary" rounded label="تصفح خدماتنا"
+            <div class="row no-wrap banner-btns">
+              <q-btn class="text-center mr-110" color="secondary" rounded label=" اتصل بنا "
                 @click="() => $router.push('/services')" />
-              <q-btn class="text-center justify-center" flat icon-right="arrow_back" label="اعرف المزيد"
+              <q-btn class="text-center justify-center" flat icon-right="chevron_left" label="اعرف المزيد"
                 @click="() => $router.push('/about')" />
             </div>
           </div>
         </div>
       </div>
       <div class="full-width stats no-wrap bg-secondary flex justify center">
-        <div class="stat_item" v-for="(stat, index) in stats" :key="index">
-          {{ stat }}
+        <div class="stat_item text-center" v-for="(stat, index) in stats" :key="index">
+          <span style="font-size: 25px;">+</span>
+          <strong>
+            <vue3-autocounter separator="" style="font-size: 18px; margin-inline:2px" ref='counter' :startAmount='0'
+              :endAmount='stat.number' :duration='1' :autoinit='true' />
+          </strong>
+          <span>{{ stat.label }} </span>
+
         </div>
       </div>
     </div>

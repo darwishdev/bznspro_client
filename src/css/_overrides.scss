@@ -75,10 +75,57 @@ html {
   }
 
   h3 {
-    margin-bottom: 80px !important;
+    // margin-bottom: 80px !important;
   }
 }
 
 ol {
   padding: 0;
+}
+
+.home-consulting .main .navigators {
+  top: 50%;
+  z-index: 100;
+  width: 100%;
+  justify-content: space-between;
+  & button {
+    position: relative;
+
+    &:first-child {
+      transform: translateX(-100px);
+    }
+    &:last-child {
+      transform: translateX(100px);
+    }
+  }
+}
+
+@media (max-width: 679px) {
+  .home-consulting {
+    .q-tab-panel {
+    }
+    & .navigators {
+      display: flex;
+      z-index: 100;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      & button {
+        position: relative;
+
+        transform: translateX(0) !important;
+      }
+    }
+  }
+  .home-consulting .service-content {
+    order: 2;
+    margin-top: 0px;
+  }
+  .home-consulting .services-page-img {
+    margin-bottom: 90px;
+    order: 1;
+    & img {
+      max-width: 250px;
+    }
+  }
 }

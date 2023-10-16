@@ -2,5 +2,12 @@
   'layouts/_footer', 'sections/_services', 'sections/_testemonials',
   'sections/_banner', '_overrides', 'pages/_programms',
   'pages/_programm_checkout', 'pages/_blog', 'pages/_programm_view',
-  'partials/_home_programm',
+  'partials/_home_programm', '_responsive',
   url('https://fonts.googleapis.com/css?family=Tajawal:300,400,500,600,800,300italic,400italic,600italic&family=Cairo:300,400,600,800,300italic,400italic,600italic');
+
+.banner-btns i {
+  background: #fff;
+  border-radius: 50%;
+  padding: 3px;
+  box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.2);
+}

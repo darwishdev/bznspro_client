@@ -25,16 +25,16 @@ const programs: Program[] = [
     img: 'https://static.exploremelon.com/bznspro/progs//p1.webp',
     text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
     price: 575,
-    day: 15,
-    month: 'يوليو',
+    day: 16,
+    month: 'سبتمبر',
     discount: 40,
     discountExpiresAt: '10 يوليو'
   },
   {
     id: 2,
     title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    day: 22,
-    month: 'يوليو',
+    day: 9,
+    month: 'ديسمبر',
     img: 'https://static.exploremelon.com/bznspro/progs/p2.png',
     text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
     price: 480
@@ -45,7 +45,7 @@ const programs: Program[] = [
 <template>
   <carousel-section class-name="programs" color="#162337" center-title>
     <template v-slot:title>
-      <h3 class="text-white text-weight-bold">احدث برامجنا</h3>
+      <h3 class="text-white text-weight-bold">احدث الفعاليات</h3>
     </template>
 
     <template v-slot:content>
@@ -63,7 +63,7 @@ const programs: Program[] = [
       </div>
       <div class="row justify-center q-mx-auto q-my-lg">
         <q-btn icon-right="arrow_back" color="grey" text-color="secondary" @click="$router.push('/programms')" size="lg"
-          rounded>المزيد من البرامج</q-btn>
+          rounded>المزيد من الفعاليات</q-btn>
       </div>
     </template>
   </carousel-section>

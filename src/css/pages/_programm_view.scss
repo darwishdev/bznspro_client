@@ -4,8 +4,19 @@
       display: none;
     }
   }
-
+  .info-head {
+    height: auto !important;
+  }
+  .info-head.mobile {
+    display: none;
+  }
   @media (max-width: 1000px) {
+    .info-head.mobile {
+      display: block;
+    }
+    .info-head.desktop {
+      display: none;
+    }
     .header_wrapper {
       height: 350px;
       & .header-info {
