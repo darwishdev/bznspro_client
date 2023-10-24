@@ -49,3 +49,8 @@ TODO: show programm name on mobile
 \*rename platoforms to programms
 
 - remove اطلب عضويتك
+
+# 24/10/2023
+
+-- show hiddedn logo on mobiole
+-- chang icons on contact

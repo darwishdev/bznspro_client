@@ -2,16 +2,16 @@
 import Vue3Autocounter from 'vue3-autocounter';
 const stats = [
   {
-    label: 'عضو',
-    number: 300,
+    label: 'برنامج',
+    number: 100,
   },
   {
     label: 'مستفيد',
     number: 2000,
   },
   {
-    label: 'شركة',
-    number: 250,
+    label: 'مشروع',
+    number: 350,
   },
   {
     label: 'استشارة',
@@ -40,7 +40,7 @@ const stats = [
             </p>
             <div class="row no-wrap banner-btns">
               <q-btn class="text-center mr-110" color="secondary" rounded label=" اتصل بنا "
-                @click="() => $router.push('/services')" />
+                @click="() => $router.push('/contact')" />
               <q-btn class="text-center justify-center" flat icon-right="chevron_left" label="اعرف المزيد"
                 @click="() => $router.push('/about')" />
             </div>

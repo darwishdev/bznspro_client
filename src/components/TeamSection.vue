@@ -25,25 +25,31 @@ const carouselBreakpoints = {
 
 const members: Team[] = [
   {
-    name: 'احمد عبد الله',
-    title: 'مسوق الكتروني',
-    img: 'https://static.exploremelon.com/bznspro/team/1.png',
-  },
-  {
-    name: 'رشدي حمدين',
-    title: 'مطور تطبيقات الادنرويد',
+    name: 'احمد المنهبي',
+    title: 'المدير عام',
     img: 'https://static.exploremelon.com/bznspro/team/2.png',
   },
   {
-    name: 'أسامة أبو يزيد',
-    title: 'مدير التسويق',
+    name: 'احمد درويش',
+    title: 'تقنية المعلومات ',
+    img: 'https://static.exploremelon.com/bznspro/team/4.png',
+  },
+  {
+    name: 'اسامة المنهبي',
+    title: 'التسويق الالكتروني ',
+    img: 'https://static.exploremelon.com/bznspro/team/1.png',
+  },
+  {
+    name: 'يوسف نضال',
+    title: 'التصميم و الميديا ',
     img: 'https://static.exploremelon.com/bznspro/team/3.png',
   },
   {
-    name: 'محمد عطا الله',
-    title: 'مسوق الكتروني',
-    img: 'https://static.exploremelon.com/bznspro/team/4.png',
-  },
+    name: ' رحاب المغربي',
+    title: 'الخدمات المشتركة ',
+    img: 'https://static.exploremelon.com/bznspro/team/3.png',
+  }
+
 ];
 </script>
 
