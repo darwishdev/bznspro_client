@@ -10,11 +10,7 @@ const props = defineProps<Props>();
 <template>
   <div class="project">
     <div class="column">
-      <img
-        :src="props.project.img"
-        class="q-mb-md rounded-borders"
-        :alt="props.project.title"
-      />
+      <img :src="props.project.img" class="q-mb-md rounded-borders" :alt="props.project.title" />
       <div class="props.project_content">
         <h6 class="text-white text-bold no-margin full-width">
           {{ props.project.title }}
@@ -29,7 +25,7 @@ const props = defineProps<Props>();
 .project {
   & img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 20px;
   }
 }

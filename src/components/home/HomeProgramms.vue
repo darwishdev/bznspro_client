@@ -22,7 +22,7 @@ const programs: Program[] = [
   {
     id: 1,
     title: 'صناعة الريادة والابتكار في المنظمات والشركات',
-    img: 'https://static.exploremelon.com/bznspro/progs//p1.webp',
+    img: 'https://static.exploremelon.com/bznspro/progs/p1.webp',
     text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
     price: 575,
     day: 16,

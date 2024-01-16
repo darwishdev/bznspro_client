@@ -115,21 +115,21 @@ function onReset() {
             <q-list clicable class="text-left">
               <q-item to="Tel: 123-456-7890" clickable v-ripple>
                 <q-item-section avatar>
-                  <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
+                  <q-icon color="secondary" name="email" size="lg" />
                 </q-item-section>
 
                 <q-item-section>BusinessPro@gmail.com</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section avatar>
-                  <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
+                  <q-icon color="secondary" name="phone" size="lg" />
                 </q-item-section>
 
                 <q-item-section>+966 455 888 25</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section avatar>
-                  <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg" size="lg" />
+                  <q-icon color="secondary" name="map" size="lg" />
                 </q-item-section>
 
                 <q-item-section>

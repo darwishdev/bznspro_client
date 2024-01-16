@@ -27,52 +27,34 @@ const carouselBreakpoints = {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'مشروع شركة العقاري',
-    img: 'https://static.exploremelon.com/bznspro/pr1.png',
-    cat: 'ماليات',
+    title: 'صناعة المبادرات',
+    img: 'https://static.exploremelon.com/bznspro/mobdarat.jpg',
+    cat: 'الريادة والابتكار',
   },
   {
     id: 2,
-    title: 'تطوير خطة عمل لستارت اب',
-    img: 'https://static.exploremelon.com/bznspro/pr2.png',
-    cat: 'استشارة ادارية',
+    title: 'مصنع البالونات',
+    img: 'https://static.exploremelon.com/bznspro/baloon.webp',
+    cat: 'دراسة وتحليل السوق',
   },
   {
     id: 3,
-    title: 'استشارة شركات القبيصي',
-    img: 'https://static.exploremelon.com/bznspro/pr3.png',
-    cat: 'استشارة ',
+    title: 'الاستثمار التجاري ',
+    img: 'https://static.exploremelon.com/bznspro/financialinvest.jpg',
+    cat: ' حصص و اسهم الشركات ',
   },
   {
     id: 4,
-    title: 'مشروع شركة البحرين',
-    img: 'https://static.exploremelon.com/bznspro/pr4.png',
-    cat: 'تسويق',
+    title: 'متجر المكتبة الرقمية',
+    img: 'https://static.exploremelon.com/bznspro/ebook.webp',
+    cat: 'نموذج عمل تجاري ',
   },
   {
-    id: 1,
-    title: 'مشروع شركة العقاري',
-    img: 'https://static.exploremelon.com/bznspro/pr1.png',
-    cat: 'ماليات',
-  },
-  {
-    id: 2,
-    title: 'تطوير خطة عمل لستارت اب',
-    img: 'https://static.exploremelon.com/bznspro/pr2.png',
-    cat: 'استشارة ادارية',
-  },
-  {
-    id: 3,
-    title: 'استشارة شركات القبيصي',
-    img: 'https://static.exploremelon.com/bznspro/pr3.png',
-    cat: 'استشارة ',
-  },
-  {
-    id: 4,
-    title: 'مشروع شركة البحرين',
-    img: 'https://static.exploremelon.com/bznspro/pr4.png',
-    cat: 'تسويق',
-  },
+    id: 5,
+    title: 'تصميم المنتجات',
+    img: 'https://static.exploremelon.com/bznspro/prdesign.webp',
+    cat: 'التسويق والابتكار',
+  }
 ];
 </script>
 

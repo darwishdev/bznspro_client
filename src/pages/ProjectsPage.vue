@@ -8,34 +8,34 @@ const tab = ref(1);
 const projects: Project[] = [
   {
     id: 1,
-    title: 'شركة متجر',
-    img: 'https://static.exploremelon.com/bznspro/projects/1.png',
+    title: 'صناعة المبادرات',
+    img: 'https://static.exploremelon.com/bznspro/initiative.webp',
+    cat: 'الريادة والابتكار',
   },
   {
     id: 2,
-    title: 'الشاب الريادي',
-    img: 'https://static.exploremelon.com/bznspro/projects/2.png',
+    title: 'مصنع البالونات',
+    img: 'https://static.exploremelon.com/bznspro/baloon.webp',
+    cat: 'دراسة وتحليل السوق',
   },
   {
     id: 3,
-    title: ' منصة المنتور',
-    img: 'https://static.exploremelon.com/bznspro/projects/3.png',
+    title: 'الاستثمار التجاري ',
+    img: 'https://static.exploremelon.com/bznspro/invest.webp',
+    cat: ' حصص و اسهم الشركات ',
   },
   {
     id: 4,
-    title: 'منصة ادراك',
-    img: 'https://static.exploremelon.com/bznspro/projects/4.png',
+    title: 'متجر المكتبة الرقمية',
+    img: 'https://static.exploremelon.com/bznspro/ebook.webp',
+    cat: 'نموذج عمل تجاري ',
   },
   {
     id: 5,
-    title: 'شركة الروضة',
-    img: 'https://static.exploremelon.com/bznspro/projects/5.png',
-  },
-  {
-    id: 6,
-    title: 'تطبيق شازلونج',
-    img: 'https://static.exploremelon.com/bznspro/projects/6.png',
-  },
+    title: 'تصميم المنتجات',
+    img: 'https://static.exploremelon.com/bznspro/prdesign.webp',
+    cat: 'التسويق والابتكار',
+  }
 ];
 const projectCats: ProjectCat[] = [
   {

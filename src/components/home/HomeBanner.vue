@@ -48,11 +48,11 @@ const stats = [
         </div>
       </div>
       <div class="full-width stats no-wrap bg-secondary flex justify center">
-        <div class="stat_item text-center" v-for="(stat, index) in stats" :key="index">
-          <span style="font-size: 25px;">+</span>
+        <div class="banner-counter stat_item text-center" v-for="(stat, index) in stats" :key="index">
+          <span class="plus">+</span>
           <strong>
-            <vue3-autocounter separator="" style="font-size: 18px; margin-inline:2px" ref='counter' :startAmount='0'
-              :endAmount='stat.number' :duration='1' :autoinit='true' />
+            <vue3-autocounter separator="" class="counter" ref='counter' :startAmount='0' :endAmount='stat.number'
+              :duration='1' :autoinit='true' />
           </strong>
           <span>{{ stat.label }} </span>
 
@@ -61,3 +61,4 @@ const stats = [
     </div>
   </div>
 </template>
+<style></style>

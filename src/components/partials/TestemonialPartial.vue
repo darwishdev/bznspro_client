@@ -17,8 +17,8 @@ const props = defineProps<Props>();
         <div class="testemonials_letters">
           {{ props.testemonial.letters }}
         </div>
-        <img src="https://static.exploremelon.com/bznspro/testemonial.png" alt="your-image-description"
-          class="testemonials_img" />
+        <img src="~assets/testemonial.png" alt="your-image-description" class="testemonials_img" />
+
       </div>
       <h4 class="testemonial_name no-margin text-center" v-html="props.testemonial.name"></h4>
       <p class="testemonial_job no-margin text-center" v-html="props.testemonial.job"></p>

@@ -6,7 +6,7 @@ import TeamSection from 'components/TeamSection.vue';
   <div class="container">
     <div class="flex about-wrapper justify-md-between justify-center">
       <div class="about-content">
-        <h1>عن بزنس برو</h1>
+        <h2 style="font-weight: bold;"> بزنس برو | Business Pro </h2>
         <p class="text-h6 aligned-paragraph">
           نطرح على الطاولة العديد من الخدمات الاستشارية القيمة المختلفة التي
           تؤثر بشكل مباشر على الإدارات الأساسية الشركة السعودية الرائدة في تقديم

@@ -61,11 +61,11 @@ const navItems: NavItem[] = [
     icon: 'info',
     to: '/about',
   },
-  {
-    text: 'مستشارينا',
-    icon: 'account_circle',
-    to: '/consultunts',
-  },
+  // {
+  //   text: 'مستشارينا',
+  //   icon: 'account_circle',
+  //   to: '/consultunts',
+  // },
   {
     text: 'الخدمات',
     icon: 'payments',
@@ -81,11 +81,11 @@ const navItems: NavItem[] = [
     icon: 'calendar_month',
     to: '/programms',
   },
-  {
-    text: 'الاكاديمية',
-    icon: 'school',
-    to: '/academies',
-  },
+  // {
+  //   text: 'الاكاديمية',
+  //   icon: 'school',
+  //   to: '/academies',
+  // },
   {
     text: 'المدونة',
     icon: 'article',

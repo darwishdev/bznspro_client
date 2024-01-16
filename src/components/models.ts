@@ -38,6 +38,7 @@ export interface Cat {
 }
 export interface Blog {
   id: number;
+  cat_id: number;
   views?: number;
   name: string;
   cat: string;

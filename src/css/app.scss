@@ -11,3 +11,23 @@
   padding: 3px;
   box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.2);
 }
+@media (min-width: 900px) {
+  .banner-counter .counter {
+    font-size: 25px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .banner-counter .plus {
+    font-size: 25px;
+  }
+}
+.banner-counter .counter {
+  font-size: 16px;
+  margin-right: 2px;
+  font-weight: bold;
+}
+
+.banner-counter .plus {
+  font-size: 18px;
+}

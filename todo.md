@@ -54,3 +54,44 @@ TODO: show programm name on mobile
 
 -- show hiddedn logo on mobiole
 -- chang icons on contact
+-- change services from whatsapp
+
+# 20/11/2023
+
+-- programms section container and titles
+-- rename مالية on services to المالية
+
+# 12/11/2023
+
+-- show testemonial image
+-- rewrite about us
+
+# 26/12/2023
+
+-- image sizes
+-- banner text should be the same on the mobile
+-- image about alshab al riyady
+-- add woman to the team with avatar photo
+-- footer icons on mobile
+-- remove ارسال add تسجيل -- checkout page
+-- add bank info on the place of payment methos -- checkout page
+-- replce تفعيل خصم الشاب الريادي to خصم عضوية الشاب الريادي
+-- add early subscribe discount 10%
+-- make the discount 25%
+-- events on the backoffice
+
+# 1/1/2024
+
+-- center slider controllers on projects
+--testemonials images
+-- resize
+-- add rehab to team
+-- change osama to from لتسويق الالكتروني to الخدمات المشتركة
+-- عبدالله حسان المشاريع
+--رحاب نغربي العمليات
+-- رغدة تطوير الاعمال
+--early discount 15%
+--بيانات التحويل البنكي to بيانات التحويلات البنكية
+--البنك الاهلي السعودي bank name
+-- change discount label to "خصم العضوية" and value to 30%
+-- replace زياد البسام to جمال الزامل

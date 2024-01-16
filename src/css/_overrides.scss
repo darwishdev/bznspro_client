@@ -129,3 +129,11 @@ ol {
     }
   }
 }
+
+.services-page-img {
+  margin-bottom: 90px;
+  order: 1;
+  & img {
+    width: 500px;
+  }
+}

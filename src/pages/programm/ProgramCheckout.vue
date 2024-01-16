@@ -56,8 +56,8 @@ const program1: SingleProgram = {
   price: 575,
   day: 15,
   month: 'يوليو',
-  discount: 40,
-  shabDiscount: 60,
+  discount: 25,
+  shabDiscount: 45,
   discountExpiresAt: '10 يوليو',
 
   breif: ' تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق من خلال الاستثمار المستقبلي لتحقيق أفكار جديدة وجريئة تتوافق مع تطلعات المستقبل',
@@ -205,7 +205,7 @@ function convertToPrice(price: number): string {
           <div class="header-info col-md-5 col-12">
             <h4 class="q-my-sm text-secondary text-bold">تفاصيل الدفع</h4>
             <div class="flex" v-if="program.shabDiscount">
-              <q-toggle v-model="isShabRyady" label="تفعيل خصم الشاب الريادي" />
+              <q-toggle v-model="isShabRyady" label=" خصم عضوية الشاب الريادي" />
             </div>
             <h6 class="q-my-sm text-black"><strong>اسم البرنامج : </strong> {{ program.title }}</h6>
             <h6 class="q-my-sm text-black"><strong>سعر البرنامج : </strong> {{ convertToPrice(program.price) }} </h6>
@@ -219,7 +219,7 @@ function convertToPrice(price: number): string {
                   <span class="price"> {{ convertToPrice(program.price) }}</span>
                 </div>
                 <div v-if="discont != 0" class="text-h6 q-my-md row justify-between">
-                  <span> الخصم ({{ isShabRyady ? program.shabDiscount : program.discount }} %) </span>
+                  <span> خصم الحجز المبكر ({{ isShabRyady ? program.shabDiscount : program.discount }} %) </span>
                   <span class="price"> {{ convertToPrice(discont) }} </span>
                 </div>
                 <hr class="bg-white q-my-sm" />
@@ -239,10 +239,26 @@ function convertToPrice(price: number): string {
         <hr class="bg-white q-my-xl" />
         <div class="payment_method">
           <div class="form-header q-my-xl row items-center">
-            <h4 class="q-my-sm text-secondary text-bold q-mr-md">وسيلة الدفع </h4>
+            <h4 class="q-my-sm text-secondary text-bold q-mr-md">بيانات التحويل البنكي</h4>
           </div>
 
-          <div class="flex">
+          <q-card class="bg-white rounded-xl">
+            <q-card-section>
+              <div class="text-h6 q-my-md row justify-between">
+                <span> آيبان</span>
+                <span> SA9010000012472813000102</span>
+              </div>
+              <div class="text-h6 q-my-md row justify-between">
+                <span> الحساب</span>
+                <span> 12472813000102</span>
+              </div>
+
+            </q-card-section>
+
+
+          </q-card>
+
+          <div class="flex q-mt-xl">
             <q-btn label="ارسال" type="submit" color="secondary" class="full-width" />
           </div>
 
