@@ -14,7 +14,7 @@ export const useGlobalStore = defineStore('global', () => {
   const testemonials = ref<TestemonialsListRow[]>([])
   const events = ref<EventsListRow[]>([])
   const projects = ref<ProjectsListRow[]>([])
-  const services = ref<Array<ServicesListRow>>([])
+  const services = ref<ServicesListRow[]>([])
 
   const init = async () => {
     const loaded = await loadRequests()

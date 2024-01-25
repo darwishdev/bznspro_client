@@ -4,7 +4,7 @@
   <q-layout v-else :class="$route.name" view="hHh lpR fff">
     <app-nav />
     <q-page-container>
-      {{ globalStore.settings }}
+      <!-- {{ globalStore.settings }} -->
       <router-view />
     </q-page-container>
 
