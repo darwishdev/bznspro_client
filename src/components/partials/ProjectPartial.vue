@@ -24,7 +24,7 @@ const props = defineProps<Props>();
 <style lang="scss" scoped>
 .project {
   & img {
-    width: 100%;
+    width: 300px;
     height: 200px;
     border-radius: 20px;
   }

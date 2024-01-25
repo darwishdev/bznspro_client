@@ -57,7 +57,7 @@ const program1: SingleProgram = {
   day: 15,
   month: 'يوليو',
   discount: 25,
-  shabDiscount: 45,
+  shabDiscount: 30,
   discountExpiresAt: '10 يوليو',
 
   breif: ' تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق من خلال الاستثمار المستقبلي لتحقيق أفكار جديدة وجريئة تتوافق مع تطلعات المستقبل',
@@ -219,7 +219,8 @@ function convertToPrice(price: number): string {
                   <span class="price"> {{ convertToPrice(program.price) }}</span>
                 </div>
                 <div v-if="discont != 0" class="text-h6 q-my-md row justify-between">
-                  <span> خصم الحجز المبكر ({{ isShabRyady ? program.shabDiscount : program.discount }} %) </span>
+                  <span v-if="isShabRyady"> خصم العضوية ({{ program.shabDiscount }} %) </span>
+                  <span v-else> خصم الحجز المبكر ({{ program.discount }} %) </span>
                   <span class="price"> {{ convertToPrice(discont) }} </span>
                 </div>
                 <hr class="bg-white q-my-sm" />
@@ -239,11 +240,15 @@ function convertToPrice(price: number): string {
         <hr class="bg-white q-my-xl" />
         <div class="payment_method">
           <div class="form-header q-my-xl row items-center">
-            <h4 class="q-my-sm text-secondary text-bold q-mr-md">بيانات التحويل البنكي</h4>
+            <h4 class="q-my-sm text-secondary text-bold q-mr-md">بيانات التحويلات البنكية</h4>
           </div>
 
           <q-card class="bg-white rounded-xl">
             <q-card-section>
+              <div class="text-h6 q-my-md row justify-between">
+                <span> اسم البنك</span>
+                <span>البنك الاهلي السعودي</span>
+              </div>
               <div class="text-h6 q-my-md row justify-between">
                 <span> آيبان</span>
                 <span> SA9010000012472813000102</span>

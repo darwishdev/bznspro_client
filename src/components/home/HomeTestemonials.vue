@@ -41,7 +41,7 @@ const testemonials: Testemonial[] = [
     content: `تجربتنا مع بزنس برو منحتنا خوض تجربة عملية<br/> أثمرت على نتائج مثمرة `,
   },
   {
-    name: 'زياد البسام',
+    name: 'جمال الزامل',
     job: 'مستثمر ورجل اعمال',
     img: 'https://static.exploremelon.com/bznspro/testomnial.png',
     letters: 'MD',

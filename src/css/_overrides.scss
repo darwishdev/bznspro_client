@@ -61,6 +61,11 @@ html {
   }
 }
 .projects {
+  .carousel__prev,
+  .carousel__next {
+    top: 50% !important;
+    transform: translateY(-100%) rotate(-180deg) !important;
+  }
 }
 @media (max-width: 700px) {
   .carousel__next {

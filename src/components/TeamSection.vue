@@ -29,10 +29,22 @@ const members: Team[] = [
     title: 'المدير عام',
     img: 'https://static.exploremelon.com/bznspro/manhaby.png',
   },
+
   {
-    name: 'روان احمد',
-    title: 'المدير عام',
-    img: 'http://localhost:9091/assets/ryady-24461652920210509032652AM.png',
+    name: 'عبدالله حسان',
+    title: 'المشاريع',
+    img: 'https://static.exploremelon.com/bznspro/UTN1.png',
+  },
+
+  {
+    name: 'رحاب مغربي',
+    title: 'العمليات',
+    img: 'https://static.exploremelon.com/bznspro/UTN2.png',
+  },
+  {
+    name: 'رغدة مرغلان',
+    title: 'تطوير الاعمال',
+    img: 'https://static.exploremelon.com/bznspro/UTN3.png',
   },
 
   {
@@ -42,18 +54,13 @@ const members: Team[] = [
   },
   {
     name: 'اسامة المنهبي',
-    title: 'التسويق الالكتروني ',
+    title: 'الخدمات المشتركة ',
     img: 'https://static.exploremelon.com/bznspro/osama.png',
   },
   {
     name: 'يوسف نضال',
     title: 'التصميم و الميديا ',
     img: 'https://static.exploremelon.com/bznspro/yossuf.png',
-  },
-  {
-    name: ' رحاب المغربي',
-    title: 'الخدمات المشتركة ',
-    img: 'https://static.exploremelon.com/bznspro/team/3.png',
   }
 
 ];
