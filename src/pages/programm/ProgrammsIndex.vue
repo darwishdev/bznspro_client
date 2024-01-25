@@ -3,10 +3,12 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
 import ProgramPartial from 'components/partials/ProgramPartial.vue';
 import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
-import { Cat, Program } from 'components/models';
+import { Program } from 'components/models';
 import { ref } from 'vue';
-const activeCat = ref(1);
 const drawer = ref(false);
+import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 // const showFilter = ref(activeCat.value != -1);
 const carouselSettings = {
   itemsToShow: 1,
@@ -24,25 +26,6 @@ const carouselBreakpoints = {
   },
 };
 
-const cats: Cat[] = [
-  {
-    id: 1,
-    name: 'الاعمال والشركات',
-  }
-  // ,
-  // {
-  //   id: 2,
-  //   name: 'الاستشارات',
-  // },
-  // {
-  //   id: 3,
-  //   name: 'تطوير الشركات',
-  // },
-  // {
-  //   id: 4,
-  //   name: 'التسويق',
-  // },
-];
 const programs: Program[] = [
   {
     id: 1,
@@ -76,9 +59,7 @@ const programs: Program[] = [
 
 ];
 
-function getCurrenCat(): Cat {
-  return cats.filter((cats) => cats.id == activeCat.value)[0];
-}
+const events :EventsListRow[] = globalStore.events
 </script>
 
 <template>
@@ -101,8 +82,8 @@ function getCurrenCat(): Cat {
       <template v-slot:content>
         <div class="container">
           <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-            <slide v-for="program in programs" :key="program.title">
-              <home-program-partial :program="program" />
+            <slide v-for="event in events" :key="event.eventId">
+              <home-program-partial :event="event" />
             </slide>
             <template #addons>
               <navigation />

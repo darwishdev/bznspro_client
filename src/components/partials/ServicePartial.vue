@@ -1,8 +1,9 @@
 
 <script setup lang="ts">
-import { Service } from '../models';
+import type { ServicesListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_services_definitions_pb'
+
 export interface Props {
-  service: Service;
+  service: ServicesListRow;
 }
 
 const props = defineProps<Props>();
@@ -19,8 +20,10 @@ const props = defineProps<Props>();
       </g>
     </svg>
 
-    <h2 class="font-weight-bold">{{ props.service.title }}</h2>
-    <p class="srevice-desc">{{ props.service.content }}</p>
+    <h2 class="font-weight-bold">{{ props.service.serviceName }}</h2>
+    <div v-html="props.service.breif">
+
+    </div>
     <!-- <q-btn class="text-center justify-center h-50" flat icon-right="arrow_back" label="اطلب الخدمة" size="lg"
       @click="() => $router.push('/contact')" /> -->
   </div>

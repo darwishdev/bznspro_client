@@ -2,7 +2,9 @@
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
 import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
-import { Program } from 'components/models';
+import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
@@ -18,28 +20,7 @@ const carouselBreakpoints = {
     snapAlign: 'left',
   },
 };
-const programs: Program[] = [
-  {
-    id: 1,
-    title: 'صناعة الريادة والابتكار في المنظمات والشركات',
-    img: 'https://static.exploremelon.com/bznspro/progs/p1.webp',
-    text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
-    price: 575,
-    day: 16,
-    month: 'سبتمبر',
-    discount: 40,
-    discountExpiresAt: '10 يوليو'
-  },
-  {
-    id: 2,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    day: 9,
-    month: 'ديسمبر',
-    img: 'https://static.exploremelon.com/bznspro/progs/p2.png',
-    text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
-    price: 480
-  }
-];
+const events: EventsListRow[] = globalStore.events as EventsListRow[]
 </script>
 
 <template>
@@ -51,8 +32,8 @@ const programs: Program[] = [
     <template v-slot:content>
       <div class="container">
         <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-          <slide v-for="program in programs" :key="program.title">
-            <home-program-partial :program="program" />
+          <slide v-for="event in events" :key="event.eventId">
+            <home-program-partial :event="event" />
           </slide>
           <template #addons>
             <navigation />

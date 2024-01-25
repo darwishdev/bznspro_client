@@ -24,6 +24,7 @@ const globalStore = useGlobalStore()
 
 onMounted(() => {
   globalStore.init()
+
   // setTimeout(() => (loading.value = false), 300);
 });
 </script>

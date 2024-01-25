@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Program } from '../models';
+import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 export interface Props {
-  program: Program;
+  program: EventsListRow;
 }
 
 const props = defineProps<Props>();

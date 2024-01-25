@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, Ref } from 'vue';
 import { SingleProgram } from 'components/models';
 import { useRoute } from 'vue-router';
-
+import apiClient from 'src/api/ApiClient';
 const route = useRoute();
-// const tab = ref('mails')
+import type { EventUpdateRequest } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 const splitterModel = ref(30)
 const { params } = route;
 const tab = ref('description');
+const event : Ref<EventUpdateRequest | undefined> = ref()
 
 const tabs = [
   { value: 'الوصف', key: 'description' },
@@ -17,10 +20,10 @@ const tabs = [
 ];
 
 const infoKeys = [
-  { key: 'hours', value: 'عدد ساعات البرنامج' },
-  { key: 'date', value: 'تاريخ البرنامج' },
-  { key: 'time', value: 'توقيت البرنامج' },
-  { key: 'location', value: 'مكان البرنامج' },
+  { key: 'hours', value: event.value?.eventHours },
+  { key: 'date', value: event.value?.eventDate },
+  { key: 'time', value: event.value?.eventStartTime },
+  { key: 'location', value: event.value?.eventLocation },
 ];
 const program2: SingleProgram = {
   id: 2,
@@ -111,10 +114,14 @@ const program1: SingleProgram = {
 
 };
 
+onMounted(() => {
+  apiClient.eventFindForUpdate({eventId : parseInt(params.id as string)}).then((result) => {
+    event.value = result
+  }).catch((err) => {
+    console.log(err);
 
-const program = computed(() => {
-  return params.id == '1' ? program1 : program2
-});
+  });
+})
 
 const newPrice = computed(() => {
   if (!program.value.discount) {
@@ -130,6 +137,7 @@ function price(): string {
 </script>
 
 <template>
+  <!-- {{ event. }} -->
   <div class="programms-single">
     <div class="header bg-secondary">
       <div class="container">
@@ -138,10 +146,10 @@ function price(): string {
             <q-breadcrumbs>
               <q-breadcrumbs-el label="البرامج" />
               <q-breadcrumbs-el label="الشركات والاعمال " />
-              <q-breadcrumbs-el label="دورة بناء خطط الاعمال" />
+              <q-breadcrumbs-el :label="event?.eventName" />
             </q-breadcrumbs>
-            <h2 class="title">{{ program.title }}</h2>
-            <p v-html="program.breif" class="text-h5" />
+            <h2 class="title">{{ event?.eventName }}</h2>
+            <p v-html="event?.eventBrief" class="text-h5" />
 
 
             <!-- <div class="flex no-wrap">
@@ -152,11 +160,12 @@ function price(): string {
           </div>
 
           <div class="img">
-            <img :src="program.img" alt="" />
+            <img :src="`${globalStore.baseImg}${event?.eventImage}`" alt="" />
           </div>
         </div>
       </div>
     </div>
+    <!-- {{ JSON.parse(event?.eventPlan as string) }} -->
 
     <div class="content">
       <div class="container">
@@ -171,12 +180,12 @@ function price(): string {
             <q-tab-panels v-model="tab" animated>
               <q-tab-panel name="description">
                 <div class="text-h6 q-my-lg">الوصف</div>
-                <div v-html="program.description"></div>
+                <div v-html="event?.eventDescription"></div>
               </q-tab-panel>
               <q-tab-panel name="goals">
                 <div class="text-h6 q-my-lg">اهداف البرنامج</div>
                 <q-list clicable class="text-left q-ml-xl">
-                  <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md">
+                  <q-item v-for="goal in JSON.parse(event?.eventGoals as string)" :key="goal" class="q-mb-md">
                     <q-item-section avatar>
                       <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
                         size="lg" />
@@ -188,7 +197,7 @@ function price(): string {
               </q-tab-panel>
               <q-tab-panel name="whattolearn">
                 <div class="text-h6 q-my-lg">فيديو تعريفي</div>
-                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${program.video}`"
+                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${event?.eventVideo}`"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen></iframe>
@@ -196,13 +205,13 @@ function price(): string {
               <q-tab-panel name="plan">
                 <div class="text-h6 q-my-lg">خطة البرنامج</div>
                 <q-list separator class="text-left q-ml-xl">
-                  <q-item v-for="step in program.plan" :key="step.title" class="q-py-xl">
+                  <q-item v-for="step in JSON.parse(event?.eventPlan as string)" :key="step" class="q-py-xl">
                     <q-item-section>
                       <q-item-label class="text-blue q-mb-md text-h5">{{
-                        step.title
+                        step
                       }}</q-item-label>
                       <q-item-label class="text-h6">{{
-                        step.breif
+                        step
                       }}</q-item-label>
                     </q-item-section>
                   </q-item>
@@ -212,23 +221,24 @@ function price(): string {
           </div>
           <div class="info">
             <div class="info-head text-center desktop">
-              <div class="text-center">خبير تطوير الاعمال</div>
+              <div class="text-center">{{event?.constructorTitle}}</div>
 
               <div class="flex q-mt-sm">
 
                 <h5 class="text-secondary text-center text-bold no-margin">
-                  احمد عبدالله المنهبي
+                  {{event?.constructorName}}
                 </h5>
               </div>
 
             </div>
             <div class="info-head mobile">
-              <div class="text-center q-pt-sm">احمد عبدالله المنهبي</div>
+                  {{event?.constructorName}}
+                  <div class="text-center q-pt-sm"></div>
 
               <div class="flex q-mt-sm">
 
                 <h5 class="text-secondary  q-pa-sm text-center text-bold no-margin">
-                  {{ program.title }}
+                  {{ event?.eventName }}
                 </h5>
               </div>
 
@@ -237,10 +247,10 @@ function price(): string {
               <div class="flex q-py-md text-h6 justify-between" v-for="k in infoKeys" :key="k.key">
                 <span>{{ k.value }}</span>
                 <span class="value">{{
-                  program[k.key as keyof typeof program]
+                  k[k.key as keyof typeof event]
                 }}</span>
               </div>
-              <p class="text-center q-my-xl text-h6">{{ program.note }}</p>
+              <!-- <p class="text-center q-my-xl text-h6">{{ event. }}</p> -->
               <q-btn color="primary" size="xl" label="سجل الان" class="btn"
                 @click="() => $router.push({ name: 'programms-checkout', params })" />
             </div>
@@ -258,24 +268,24 @@ function price(): string {
             <q-tab-panels v-model="tab" animated>
               <q-tab-panel name="description">
                 <div class="text-h6 ">الوصف</div>
-                <div v-html="program.description"></div>
+                <div v-html="event?.eventDescription"></div>
               </q-tab-panel>
               <q-tab-panel name="goals">
                 <div class="text-h6 ">اهداف البرنامج</div>
                 <q-list clicable class="text-left ">
-                  <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md">
+                  <!-- <q-item v-for="goal in program.goals" :key="goal" class="q-mb-md"> -->
                     <!-- <q-item-section avatar>
                       <q-icon color="secondary" name="img:https://static.exploremelon.com/bznspro/chevron.svg"
                         size="lg" />
                     </q-item-section> -->
 
-                    <q-item-section>{{ goal }}</q-item-section>
-                  </q-item>
+                    <!-- <q-item-section>{{ goal }}</q-item-section> -->
+                  <!-- </q-item> -->
                 </q-list>
               </q-tab-panel>
               <q-tab-panel name="whattolearn">
                 <div class="text-h6 ">td]d, juvdtd</div>
-                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${program.video}`"
+                <iframe width="100%" height="400" :src="`https://www.youtube.com/embed/${event?.eventVideo}`"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen></iframe>
@@ -283,7 +293,7 @@ function price(): string {
               <q-tab-panel name="plan">
                 <div class="text-h6 ">خطة البرنامج</div>
                 <q-list separator class="text-left ">
-                  <q-item v-for="step in program.plan" :key="step.title" class="q-py-xl">
+                  <q-item v-for="step in event?.eventPlan" :key="step.title" class="q-py-xl">
                     <q-item-section>
                       <q-item-label class="text-blue q-mb-md text-h5">{{
                         step.title

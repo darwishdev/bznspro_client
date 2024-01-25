@@ -2,7 +2,9 @@
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
 import ProjectPartial from 'components/partials/ProjectPartial.vue';
-import { Project } from 'components/models';
+import type { ProjectsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_projects_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
@@ -24,38 +26,7 @@ const carouselBreakpoints = {
   },
 };
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'صناعة المبادرات',
-    img: 'https://static.exploremelon.com/bznspro/mobdarat.jpg',
-    cat: 'الريادة والابتكار',
-  },
-  {
-    id: 2,
-    title: 'مصنع البالونات',
-    img: 'https://static.exploremelon.com/bznspro/baloon.webp',
-    cat: 'دراسة وتحليل السوق',
-  },
-  {
-    id: 3,
-    title: 'الاستثمار التجاري ',
-    img: 'https://static.exploremelon.com/bznspro/financialinvest.jpg',
-    cat: ' حصص و اسهم الشركات ',
-  },
-  {
-    id: 4,
-    title: 'متجر المكتبة الرقمية',
-    img: 'https://static.exploremelon.com/bznspro/ebook.webp',
-    cat: 'نموذج عمل تجاري ',
-  },
-  {
-    id: 5,
-    title: 'تصميم المنتجات',
-    img: 'https://static.exploremelon.com/bznspro/prdesign.webp',
-    cat: 'التسويق والابتكار',
-  }
-];
+const projects: ProjectsListRow[] = globalStore.projects as  ProjectsListRow[]
 </script>
 
 <template>
@@ -67,7 +38,7 @@ const projects: Project[] = [
     <template v-slot:content>
       <div class="container">
         <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-          <slide v-for="project in projects" :key="project.title">
+          <slide v-for="project in projects" :key="project.projectId">
             <project-partial :project="project" />
           </slide>
           <template #addons>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { Testemonial } from '../models';
+import type { TestemonialsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_testemonials_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 export interface Props {
-  testemonial: Testemonial;
+  testemonial: TestemonialsListRow;
 }
 
 const props = defineProps<Props>();
@@ -10,18 +12,18 @@ const props = defineProps<Props>();
 <template>
   <div class="row q-mt-lg full-width gap-md testemonials_item items-center justify-sm-between">
     <div class="testemonials_item_content">
-      <p class="text-h6 q-mb-lg" v-html="props.testemonial.content"></p>
+      <p class="text-h6 q-mb-lg" v-html="props.testemonial.breif"></p>
     </div>
     <div class="column justify-center">
       <div class="row no-wrap q-mb-md">
         <div class="testemonials_letters">
-          {{ props.testemonial.letters }}
+          {{ props.testemonial.testemonialName }}
         </div>
-        <img src="~assets/testemonial.png" alt="your-image-description" class="testemonials_img" />
+        <img :src="`${globalStore.baseImg}${testemonial.testemonialImage}`" :alt="testemonial.testemonialName" class="testemonials_img" />
 
       </div>
-      <h4 class="testemonial_name no-margin text-center" v-html="props.testemonial.name"></h4>
-      <p class="testemonial_job no-margin text-center" v-html="props.testemonial.job"></p>
+      <h4 class="testemonial_name no-margin text-center" v-html="props.testemonial.testemonialName"></h4>
+      <p class="testemonial_job no-margin text-center" v-html="props.testemonial.testemonialTitle"></p>
     </div>
   </div>
 </template>

@@ -1,38 +1,40 @@
 <script setup lang="ts">
-import { Program } from '../models';
-export interface Props {
-  program: Program;
-}
+import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
+import { useGlobalStore } from '../../stores/global';
 
+export interface Props {
+  event: EventsListRow;
+}
+const globalStore = useGlobalStore()
 const props = defineProps<Props>();
 </script>
 
 <template>
   <div class="flex home-programm program__wrapper partial no-wrap" @click.prevent="
-    $router.push({ name: 'programms-view', params: { id: props.program.id } })
+    $router.push({ name: 'programms-view', params: { id: props.event.eventId } })
     ">
+    <!-- {{  event.eventImage }} -->
     <div class="img__wrapper">
-      <img :src="props.program.img" class="full-height" :alt="props.program.title" />
+      <img :src="`${globalStore.baseImg}${event.eventImage}`" class="full-height" :alt="props.event.eventName" />
     </div>
     <div class="program__content bg-grey">
       <div class="date bg-teal">
         <div class="q-pa-sm text-center">
-          <p class="no-padding no-margin text-h4 text-white">{{ props.program.day }}</p>
-          <p class="no-padding no-margin text-h5 text-white">{{ props.program.month }}</p>
+          <p class="no-padding no-margin text-h4 text-white">{{ new Date(props.event.eventDate).getDay() }}</p>
+          <p class="no-padding no-margin text-h5 text-white">{{ new Date(props.event.eventDate).toLocaleString('en-US', { month: 'long' }) }}</p>
         </div>
       </div>
       <div class="q-pa-lg program__title column items-center text-left justify-center full-height">
         <h5 class="text-secondary text-bold no-margin full-width">
-          {{ props.program.title }}
+          {{ props.event.eventName }}
         </h5>
-        <p class="text-h6">
-          {{ props.program.text }}
-        </p>
+        <div v-html="props.event.eventBrief" style="margin: 1vh 0;">
+        </div>
         <div class="full-width text-left">
           <q-btn color="blue" size="lg" @click.prevent="
             $router.push({
               name: 'programms-view',
-              params: { id: props.program.id },
+              params: { id: props.event.eventId },
             })
             ">سجل الان</q-btn>
         </div>

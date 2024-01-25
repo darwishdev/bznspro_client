@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import AppSection from 'components/layouts/AppSection.vue';
 import { Goal } from 'components/models';
+import { useGlobalStore } from '../../stores/global';
+const globalStore = useGlobalStore()
 const goals: Goal[] = [
   {
     title: 'رؤيتنا',
-    text: ' الشركة السعودية الرائدة في الحلول  <br/> الإستشارية والإستثمارية',
+    text:   globalStore.settings.filter((setting) => setting.settingKey == 'vision')[0].settingValue,
     icon: 'img:https://static.exploremelon.com/bznspro/icons/vision.svg',
   },
   {
     title: 'رسالتنا',
-    text: 'تطوير المنظمات وقادة الاعمال نحو المستقبل <br/> بـرؤيـة مـخـتـلـفـة',
+    text: globalStore.settings.filter((setting) => setting.settingKey == 'message')[0].settingValue,
     icon: 'img:https://static.exploremelon.com/bznspro/icons/mission.svg',
   },
   {
     title: 'قيمنا',
-    text: 'تطوير الأداء، تحقيق النجاح المستدام، <br/>واكتشاف الحلول المبتكرة',
+    text: globalStore.settings.filter((setting) => setting.settingKey == 'values')[0].settingValue,
     icon: 'img:https://static.exploremelon.com/bznspro/icons/goal.svg',
   },
 ];
@@ -24,7 +26,7 @@ const goals: Goal[] = [
   <app-section class-name="goals" center-title center-content>
     <template v-slot:title>
       <h3 class="text-secondary q-mb-md text-center text-weight-medium  ">
-        بزنس برو | Business Pro
+        {{ globalStore.settings.filter((setting) => setting.settingKey == 'site_title')[0].settingValue }}
       </h3>
       <p class="text-center text-h6 sm-aligned-paragraph">
 
@@ -38,7 +40,7 @@ const goals: Goal[] = [
           <h2 class="text-secondary q-ma-md">
             {{ goal.title }} <q-icon :name="goal.icon" />
           </h2>
-          <p class="text-h6" v-html="goal.text"></p>
+          <div v-html="goal.text"></div>
         </div>
       </div>
     </template>
