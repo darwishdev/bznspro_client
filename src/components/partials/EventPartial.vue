@@ -1,52 +1,49 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import AppImage from 'components/base/AppImage.vue'
 import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
-import { useGlobalStore } from '../../stores/global';
-const globalStore = useGlobalStore()
+// import { useGlobalStore } from '../../stores/global';
+// const globalStore = useGlobalStore()
 export interface Props {
-  program: EventsListRow;
+  event: EventsListRow;
 }
 
 const props = defineProps<Props>();
 
 const newPrice = computed(() => {
-  const program = props.program
-  if (!program.discount) {
-    return program.price
+  const event = props.event
+  if (!event.discount) {
+    return event.price
   }
-  const discountAmount = program.price * (program.discount / 100);
-  return program.price - discountAmount;
+  const discountAmount = event.price * (event.discount / 100);
+  return event.price - discountAmount;
 });
 </script>
 
 <template>
   <div class="partial" @click.prevent="
-    $router.push({ name: 'programms-view', params: { id: props.program.id } })
+    $router.push({ name: 'events-view', params: { id: props.event.eventId } })
     ">
     <div>
-      <img :src="props.program.img" class="full-width" style="height: 250px;" :alt="props.program.title" />
+      <AppImage :src="props.event.eventImage" class="full-width" style="height: 250px;" :alt="props.event.eventName" />
     </div>
     <div class="program__content">
       <div class="q-py-lg column items-center text-left justify-center full-height">
         <h5 class="text-secondary text-bold no-margin full-width">
-          {{ props.program.title }}
+          {{ props.event.eventName }}
         </h5>
         <p class="text-h6">
-          {{ props.program.text }}
+          {{ props.event.eventBreif }}
         </p>
         <q-separator />
         <div class="full-width flex justify-between text-left">
           <div class="flex justify-evenly ">
-            <!-- <div class="discont  text-center q-mx-sm" v-if="props.program.discount">
-              <del class="text-blue"> {{ props.program.price }} </del>
-              <p v-if="props.program.discountExpiresAt">حتي {{ props.program.discountExpiresAt }}</p>
-            </div> -->
-            <p class="text-blue text-center"> الرياض</p>
+            <p class="text-blue text-center"> {{ props.event.eventLocation }}</p>
           </div>
           <q-btn color="blue" rounded size="lg" @click.prevent="
             $router.push({
-              name: 'programms-view',
-              params: { id: props.program.id },
+              name: 'events-view',
+              params: { id: props.event.eventId },
             })
             ">سجل الان</q-btn>
         </div>

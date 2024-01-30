@@ -26,7 +26,7 @@ const carouselBreakpoints = {
   },
 };
 
-const projects: ProjectsListRow[] = globalStore.projects as  ProjectsListRow[]
+const projects: ProjectsListRow[] = globalStore.projects as ProjectsListRow[]
 </script>
 
 <template>
@@ -38,20 +38,15 @@ const projects: ProjectsListRow[] = globalStore.projects as  ProjectsListRow[]
     <template v-slot:content>
       <div class="container">
         <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-          <slide v-for="project in projects" :key="project.projectId">
-            <project-partial :project="project" />
+          <slide v-for="project in globalStore.projects" :key="project.projectId">
+            <project-partial :project="project as ProjectsListRow" />
           </slide>
           <template #addons>
             <navigation />
-            <!-- <pagination /> -->
           </template>
         </carousel>
-        <!-- <project-partial v-for="project in projects" :key="project.title" :project="project" /> -->
       </div>
-      <!-- <div class="row justify-center q-mx-auto q-my-lg">
-        <q-btn icon-right="arrow_back" color="grey" text-color="secondary" @click="$router.push('/projects')" size="lg"
-          rounded>المزيد من المشاريع</q-btn>
-      </div> -->
+
     </template>
   </carousel-section>
 </template>

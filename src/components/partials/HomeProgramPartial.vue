@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
 import { useGlobalStore } from '../../stores/global';
+import AppImage from 'components/base/AppImage.vue';
 
 export interface Props {
   event: EventsListRow;
@@ -11,29 +12,31 @@ const props = defineProps<Props>();
 
 <template>
   <div class="flex home-programm program__wrapper partial no-wrap" @click.prevent="
-    $router.push({ name: 'programms-view', params: { id: props.event.eventId } })
+    $router.push({ name: 'events-view', params: { id: props.event.eventId } })
     ">
     <!-- {{  event.eventImage }} -->
     <div class="img__wrapper">
-      <img :src="`${globalStore.baseImg}${event.eventImage}`" class="full-height" :alt="props.event.eventName" />
+      <app-image :src="props.event.eventImage" class="full-height" :alt="props.event.eventName" />
     </div>
     <div class="program__content bg-grey">
       <div class="date bg-teal">
         <div class="q-pa-sm text-center">
           <p class="no-padding no-margin text-h4 text-white">{{ new Date(props.event.eventDate).getDay() }}</p>
-          <p class="no-padding no-margin text-h5 text-white">{{ new Date(props.event.eventDate).toLocaleString('en-US', { month: 'long' }) }}</p>
+          <p class="no-padding no-margin text-h5 text-white">{{ new Date(props.event.eventDate).toLocaleString('en-US', {
+            month: 'long'
+          }) }}</p>
         </div>
       </div>
       <div class="q-pa-lg program__title column items-center text-left justify-center full-height">
         <h5 class="text-secondary text-bold no-margin full-width">
           {{ props.event.eventName }}
         </h5>
-        <div v-html="props.event.eventBrief" style="margin: 1vh 0;">
+        <div v-html="props.event.eventBreif" style="margin: 1vh 0;">
         </div>
         <div class="full-width text-left">
           <q-btn color="blue" size="lg" @click.prevent="
             $router.push({
-              name: 'programms-view',
+              name: 'events-view',
               params: { id: props.event.eventId },
             })
             ">سجل الان</q-btn>

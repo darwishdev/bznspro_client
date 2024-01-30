@@ -1,21 +1,28 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import apiClient from 'src/api/ApiClient'
-import type { SettingsFindForUpdateResponse, SettingsFindForUpdateRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_setting_definitions_pb'
+// import type { SettingsFindForUpdateResponse, SettingsFindForUpdateRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_setting_definitions_pb'
 import type { ProjectsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_projects_definitions_pb'
 import type { TestemonialsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_testemonials_definitions_pb'
 import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
 import type { ServicesListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_services_definitions_pb'
+import type { ProgramsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_programs_definitions_pb'
+import type { TeamMembersListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_team_members_definitions_pb'
+import type { BlogsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/blog_blog_definitions_pb'
 import type { ClientInitializeResponse } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_client_definitions_pb'
 // import { SettingsFindForUpdateResponse } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_setting_definitions_pb'
 
 export const useGlobalStore = defineStore('global', () => {
   const loading = ref(true)
-  const settings = ref<SettingsFindForUpdateRow[]>([])
+  // const settings = ref<SettingsFindForUpdateRow[]>([])
+  const settingsMap = ref<Record<string, string>>({})
   const testemonials = ref<TestemonialsListRow[]>([])
   const events = ref<EventsListRow[]>([])
   const projects = ref<ProjectsListRow[]>([])
   const services = ref<ServicesListRow[]>([])
+  const teamMembers = ref<TeamMembersListRow[]>([])
+  const blogs = ref<BlogsListRow[]>([])
+  const programs = ref<ProgramsListRow[]>([])
   const baseImg = 'https://static.exploremelon.com/bznspro/'
 
   const init = async () => {
@@ -23,23 +30,46 @@ export const useGlobalStore = defineStore('global', () => {
     console.log('heyyy');
 
     if (loaded) {
-      loading.value = false
+      setTimeout(() => loading.value = false, 1000)
+
     }
   }
 
+  const getEventById =
+    (id: number) => {
+      return events.value.filter(e => e.eventId == id)[0] as EventsListRow
+    }
+
+
+  const getSettingByKey = (key: string) => {
+
+    console.log("leu", key, settingsMap.value)
+    return settingsMap.value[key]
+  }
   const loadRequests = async () => {
     return new Promise((r) => {
-      apiClient.clientInitialize({}).then((resp: ClientInitializeResponse) => {
-        settings.value = resp.settings
+      // apiClient.loadInitialData({})
+      apiClient.loadInitialData({}).then((resp: ClientInitializeResponse) => {
+        // settings.value = resp.settings
+        const settingsObj: Record<string, string> = {}
+        for (let i = 0; i < resp.settings.length; i++) {
+          const element = resp.settings[i];
+          settingsObj[element.settingKey] = element.settingValue
+        }
+
+        teamMembers.value = resp.teamMembers
+        settingsMap.value = settingsObj
         testemonials.value = resp.testemonials
+        blogs.value = resp.blogs
         events.value = resp.events
+        programs.value = resp.programs
         projects.value = resp.projects
         services.value = resp.services
-        console.log(settings.value);
+        // console.log(settings.value);
         r(true)
       })
     })
   }
 
-  return { init, settings, baseImg, services, events, projects, loading , testemonials }
+  return { init, blogs, getSettingByKey, getEventById, settingsMap, teamMembers, programs, baseImg, services, events, projects, loading, testemonials }
 })

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
-import ProgramPartial from 'components/partials/ProgramPartial.vue';
+import EventPartial from 'components/partials/EventPartial.vue';
 import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
-import { Program } from 'components/models';
 import { ref } from 'vue';
 const drawer = ref(false);
 import type { EventsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/events_event_definitions_pb'
@@ -25,41 +24,7 @@ const carouselBreakpoints = {
     snapAlign: 'left',
   },
 };
-
-const programs: Program[] = [
-  {
-    id: 1,
-    title: 'صناعة الريادة والابتكار في المنظمات والشركات',
-    img: 'https://static.exploremelon.com/bznspro/progs//p1.webp',
-    text: 'تركز الورشة على تطوير وتعزيز الإبداع والابتكار الريادي والتفوق بأدوات الذكاء الاصطناعي والعمل على تشجيع التفكير الخلاق ',
-    price: 575,
-    day: 16,
-    month: 'سبنتمبر',
-    discount: 40,
-    discountExpiresAt: '10 يوليو'
-  },
-  {
-    id: 2,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    day: 9,
-    month: 'ديسمبر',
-    img: 'https://static.exploremelon.com/bznspro/progs/p2.png',
-    text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
-    price: 480
-  },
-  {
-    id: 3,
-    title: 'دورة تدريبية لبناء خطط الاعمال للشركات',
-    day: 9,
-    month: 'ديسمبر',
-    img: 'https://static.exploremelon.com/bznspro/progs/p3.png',
-    text: 'تهدف هذه الدورة التدريبية إلى تزويدك بالمهارات والأدوات اللازمة لبناء خطط الأعمال الناجحة للشركات.',
-    price: 480
-  },
-
-];
-
-const events :EventsListRow[] = globalStore.events
+// const events: EventsListRow[] = globalStore.events
 </script>
 
 <template>
@@ -82,8 +47,8 @@ const events :EventsListRow[] = globalStore.events
       <template v-slot:content>
         <div class="container">
           <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-            <slide v-for="event in events" :key="event.eventId">
-              <home-program-partial :event="event" />
+            <slide v-for="event in globalStore.events" :key="event.eventId">
+              <home-program-partial :event="(event as EventsListRow)" />
             </slide>
             <template #addons>
               <navigation />
@@ -102,41 +67,13 @@ const events :EventsListRow[] = globalStore.events
       </div>
       <div class="lt-md flex justify-end q-mb-lg items-center">
         <q-btn icon="filter_alt" class="q-ml-md" round color="secondary" size="md" clicable @click="drawer = !drawer" />
-        <!-- <q-drawer v-model="drawer" :width="200" overlay bordered class="bg-secondary">
-          <q-scroll-area class="fit">
-            <q-list>
-              <template v-for="(cat, index) in cats" :key="index">
-                <q-item clickable :active="cat.id === activeCat" v-ripple @click.prevent="
-                  activeCat = cat.id;
-                drawer = false;
-                ">
-                  <q-item-section class="text-white">
-                    {{ cat.name }}
-                  </q-item-section>
-                </q-item>
-                <q-separator />
-              </template>
-            </q-list>
-          </q-scroll-area>
-        </q-drawer> -->
       </div>
       <div class="programms-all-wrapper">
-        <div class="progs">
-          <div class="program" v-for="program in programs" :key="program.title">
-            <program-partial :program="program" />
-          </div>
-
+        <div class="program" v-for="event in globalStore.events" :key="event.eventId">
+          <event-partial :event="(event as EventsListRow)" />
         </div>
-        <!-- <q-separator vertical class="gt-md" /> -->
-        <!-- <div class="column gt-md">
-          <h6>التصنيف:</h6>
-          <q-list padding class="rounded-borders">
-            <q-item clickable v-ripple v-for="cat in cats" :key="cat.id" :active="activeCat === cat.id"
-              @click="activeCat = cat.id" active-class="my-menu-link">
-              <q-item-section>{{ cat.name }}</q-item-section>
-            </q-item>
-          </q-list>
-        </div> -->
+
+
       </div>
     </div>
   </div>
@@ -144,6 +81,17 @@ const events :EventsListRow[] = globalStore.events
 
 <style lang="scss">
 .programms {
+  &-all-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width : 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    gap: 50px;
+  }
+
   .header {
     position: relative;
 

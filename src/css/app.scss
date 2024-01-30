@@ -5,6 +5,10 @@
   'partials/_home_programm', '_responsive',
   url('https://fonts.googleapis.com/css?family=Tajawal:300,400,500,600,800,300italic,400italic,600italic&family=Cairo:300,400,600,800,300italic,400italic,600italic');
 
+.loading {
+  position: relative;
+  z-index: 10000;
+}
 .banner-btns i {
   background: #fff;
   border-radius: 50%;

@@ -79,7 +79,7 @@ const navItems: NavItem[] = [
   {
     text: 'الفعاليات',
     icon: 'calendar_month',
-    to: '/programms',
+    to: '/events',
   },
   // {
   //   text: 'الاكاديمية',

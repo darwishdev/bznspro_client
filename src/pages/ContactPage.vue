@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 import { reactive } from 'vue';
 import { useQuasar } from 'quasar';
+import { useGlobalStore } from 'stores/global'
+
+const globalStore = useGlobalStore()
 const $q = useQuasar();
 
 const state = reactive({
@@ -118,14 +121,14 @@ function onReset() {
                   <q-icon color="secondary" name="email" size="lg" />
                 </q-item-section>
 
-                <q-item-section>BusinessPro@gmail.com</q-item-section>
+                <q-item-section>{{ globalStore.settingsMap['email'] }}</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section avatar>
                   <q-icon color="secondary" name="phone" size="lg" />
                 </q-item-section>
 
-                <q-item-section>+966 455 888 25</q-item-section>
+                <q-item-section>{{ globalStore.settingsMap['phone'] }}</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
                 <q-item-section avatar>
@@ -133,11 +136,7 @@ function onReset() {
                 </q-item-section>
 
                 <q-item-section>
-                  السعودية
-                  , الرياض
-                  , حي النرجس
-                  , طريق انس بن مالك
-
+                  {{ globalStore.settingsMap['address'] }}
                 </q-item-section>
               </q-item>
             </q-list>

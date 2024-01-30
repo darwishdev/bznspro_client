@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import TeamSection from 'components/TeamSection.vue';
+import AppImage from 'src/components/base/AppImage.vue';
+import { useGlobalStore } from 'src/stores/global';
+const globalStore = useGlobalStore()
 </script>
 
 <template>
@@ -7,23 +10,10 @@ import TeamSection from 'components/TeamSection.vue';
     <div class="flex about-wrapper justify-md-between justify-center">
       <div class="about-content">
         <h2 style="font-weight: bold;"> بزنس برو | Business Pro </h2>
-        <p class="text-h6 aligned-paragraph">
-          نطرح على الطاولة العديد من الخدمات الاستشارية القيمة المختلفة التي
-          تؤثر بشكل مباشر على الإدارات الأساسية الشركة السعودية الرائدة في تقديم
-          خدمات الاستشارات الإدارية والمالية وحلول الاعمال
-        </p>
-        <p class="text-h6 aligned-paragraph">
-          الشركة السعودية الرائدة في تقديم خدمات الاستشارات الإدارية والمالية
-          وحلول الاعمال
-        </p>
-        <p class="text-h6 aligned-paragraph">
-          نطرح على الطاولة العديد من الخدمات الاستشارية القيمة المختلفة التي
-          تؤثر بشكل مباشر على الإدارات الأساسية الشركة السعودية الرائدة في تقديم
-          خدمات الاستشارات الإدارية والمالية وحلول الاعمال
-        </p>
+        <div v-html="globalStore.settingsMap['about']"></div>
       </div>
       <div class="about-img">
-        <img src="https://static.exploremelon.com/bznspro/about.png" alt="" />
+        <app-image :src="globalStore.settingsMap['about_image']" alt="بزنس برو | Business Pro" />
       </div>
     </div>
   </div>

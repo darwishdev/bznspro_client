@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import type { TeamMembersListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_team_members_definitions_pb'
 import TeamPartial from 'components/partials/TeamPartial.vue';
-import { Team } from 'components/models';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
+import { useGlobalStore } from 'src/stores/global';
+
+
+const globalStore = useGlobalStore()
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
@@ -22,48 +26,6 @@ const carouselBreakpoints = {
     snapAlign: 'start',
   },
 };
-
-const members: Team[] = [
-  {
-    name: 'احمد المنهبي',
-    title: 'المدير عام',
-    img: 'https://static.exploremelon.com/bznspro/manhaby.png',
-  },
-
-  {
-    name: 'عبدالله حسان',
-    title: 'المشاريع',
-    img: 'https://static.exploremelon.com/bznspro/UTN1.png',
-  },
-
-  {
-    name: 'رحاب مغربي',
-    title: 'العمليات',
-    img: 'https://static.exploremelon.com/bznspro/UTN2.png',
-  },
-  {
-    name: 'رغدة مرغلان',
-    title: 'تطوير الاعمال',
-    img: 'https://static.exploremelon.com/bznspro/UTN3.png',
-  },
-
-  {
-    name: 'احمد درويش',
-    title: 'تقنية المعلومات ',
-    img: 'https://static.exploremelon.com/bznspro/team/4.png',
-  },
-  {
-    name: 'اسامة المنهبي',
-    title: 'الخدمات المشتركة ',
-    img: 'https://static.exploremelon.com/bznspro/osama.png',
-  },
-  {
-    name: 'يوسف نضال',
-    title: 'التصميم و الميديا ',
-    img: 'https://static.exploremelon.com/bznspro/yossuf.png',
-  }
-
-];
 </script>
 
 <template>
@@ -73,8 +35,8 @@ const members: Team[] = [
       <h3 class="text-black font-weight-bold">تعرف علي فريق العمل</h3>
 
       <carousel class="teams-carousel" :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-        <slide v-for="member in members" :key="member.name">
-          <team-partial :member="member" />
+        <slide v-for="member in globalStore.teamMembers" :key="member.teamMemberName">
+          <team-partial :member="(member as TeamMembersListRow)" />
         </slide>
         <template #addons>
           <navigation />

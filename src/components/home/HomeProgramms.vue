@@ -20,20 +20,20 @@ const carouselBreakpoints = {
     snapAlign: 'left',
   },
 };
-const events: EventsListRow[] = globalStore.events as EventsListRow[]
+// const events: EventsListRow[] = globalStore.events as EventsListRow[]
 </script>
 
 <template>
   <carousel-section class-name="programs" color="#162337" center-title>
     <template v-slot:title>
-      <h3 class="text-white text-weight-bold">احدث الفعاليات</h3>
+      <h3 class="text-white text-weight-bold">احدث الفعاليات </h3>
     </template>
 
     <template v-slot:content>
       <div class="container">
         <carousel :settings="carouselSettings" :breakpoints="carouselBreakpoints">
-          <slide v-for="event in events" :key="event.eventId">
-            <home-program-partial :event="event" />
+          <slide v-for="event in globalStore.events" :key="event.eventId">
+            <home-program-partial :event="(event as EventsListRow)" />
           </slide>
           <template #addons>
             <navigation />

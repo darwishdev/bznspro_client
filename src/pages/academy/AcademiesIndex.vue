@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import CarouselSection from 'components/layouts/CarouselSection.vue';
-import ProgramPartial from 'components/partials/ProgramPartial.vue';
+import EventPartial from 'components/partials/EventPartial.vue';
 import HomeProgramPartial from 'components/partials/HomeProgramPartial.vue';
 import { Cat, Program } from 'components/models';
 import { ref } from 'vue';
@@ -123,10 +123,10 @@ function getCurrenCat(): Cat {
       </div>
       <div class="programms-all-wrapper">
         <div class="progs">
-          <div class="program" v-for="program in programs"
+          <!-- <div class="program" v-for="program in programs"
             @click.prevent="$router.push({ name: 'academies-view', params: { id: program.id } })" :key="program.title">
-            <program-partial :program="program" />
-          </div>
+            <event-partial :event="event" />
+          </div> -->
 
         </div>
         <!-- <q-separator vertical class="gt-md" /> -->

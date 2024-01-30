@@ -1,45 +1,49 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Service } from 'components/models';
+// import { Service } from 'components/models';
+import { useGlobalStore } from 'src/stores/global';
+import AppImage from 'src/components/base/AppImage.vue';
+
+const globalStore = useGlobalStore()
 const tab = ref(1);
-const services: Service[] = [
-  {
-    id: 1,
-    title: 'الاستشارات الإدارية  ',
-    img: 'https://static.exploremelon.com/bznspro/edarya.webp',
-    content:
-      '<p class="text-h6">نعمل على تحليل البيانات وتقييم الأداء بهدف التخطيط وتطوير الاستراتيجيات لتحسين وزيادة الإنتاجية وتخفيض التكاليف.</p>',
-  },
-  {
-    id: 2,
-    title: 'الاستشارات المالية ',
-    img: 'https://static.exploremelon.com/bznspro/marketing.webp',
-    content:
-      '<p class="text-h6">تحليل وتقييم البيانات المالية وتحسين الأداء المالي للموارد المالية وتقليل الاعباء المالية بشكل فعال لتحقيق الأرباح المستدامة.  </p>',
-  },
-  {
-    id: 3,
-    title: 'الحلول الاستثمارية ',
-    img: 'https://static.exploremelon.com/bznspro/inv.jpeg',
-    content:
-      '<p class="text-h6">نقدم حلول وخطط استثمارية متنوعة في كيفية الاستثمار بشكل فعال لتحقيق أفضل عوائد ممكنة مستدامة على المدى الطويل.  </p>',
-  },
-  {
-    id: 4,
-    title: ' الاستشارات التسويقية ',
-    img: 'https://static.exploremelon.com/bznspro/investsolutions.webp',
-    content:
-      '<p class="text-h6">مساعدة الشركات على تحسين استراتيجيات التسويق وتحقيق أهدافها في إيصال منتجاتها أو خدماتها إلى الجمهور المستهدف لتحقيق نمو في المبيعات</p>',
-  },
+// const services: Service[] = [
+//   {
+//     id: 1,
+//     title: 'الاستشارات الإدارية  ',
+//     img: 'https://static.exploremelon.com/bznspro/edarya.webp',
+//     content:
+//       '<p class="text-h6">نعمل على تحليل البيانات وتقييم الأداء بهدف التخطيط وتطوير الاستراتيجيات لتحسين وزيادة الإنتاجية وتخفيض التكاليف.</p>',
+//   },
+//   {
+//     id: 2,
+//     title: 'الاستشارات المالية ',
+//     img: 'https://static.exploremelon.com/bznspro/marketing.webp',
+//     content:
+//       '<p class="text-h6">تحليل وتقييم البيانات المالية وتحسين الأداء المالي للموارد المالية وتقليل الاعباء المالية بشكل فعال لتحقيق الأرباح المستدامة.  </p>',
+//   },
+//   {
+//     id: 3,
+//     title: 'الحلول الاستثمارية ',
+//     img: 'https://static.exploremelon.com/bznspro/inv.jpeg',
+//     content:
+//       '<p class="text-h6">نقدم حلول وخطط استثمارية متنوعة في كيفية الاستثمار بشكل فعال لتحقيق أفضل عوائد ممكنة مستدامة على المدى الطويل.  </p>',
+//   },
+//   {
+//     id: 4,
+//     title: ' الاستشارات التسويقية ',
+//     img: 'https://static.exploremelon.com/bznspro/investsolutions.webp',
+//     content:
+//       '<p class="text-h6">مساعدة الشركات على تحسين استراتيجيات التسويق وتحقيق أهدافها في إيصال منتجاتها أو خدماتها إلى الجمهور المستهدف لتحقيق نمو في المبيعات</p>',
+//   },
 
 
 
 
-];
+// ];
 
 function _getCurrenServiceIndex(): number {
-  return services.indexOf(
-    services.filter((service) => service.id == tab.value)[0]
+  return globalStore.services.indexOf(
+    globalStore.services.filter((service) => service.serviceId == tab.value)[0]
   );
 }
 function goTo(isNext: boolean) {
@@ -48,19 +52,19 @@ function goTo(isNext: boolean) {
     return;
   }
 
-  const targetSlide = services.indexOf(
-    services[isNext ? currentIndex + 1 : currentIndex - 1]
+  const targetSlide = globalStore.services.indexOf(
+    globalStore.services[isNext ? currentIndex + 1 : currentIndex - 1]
   );
 
   console.log(targetSlide);
   if (targetSlide == -1) {
-    tab.value = isNext ? services[0].id : services[services.length - 1].id;
+    tab.value = isNext ? globalStore.services[0].serviceId : globalStore.services[globalStore.services.length - 1].serviceId;
     return;
   }
 
   // prevBtnDisabled.value = !isNext;
 
-  tab.value = services[targetSlide].id;
+  tab.value = globalStore.services[targetSlide].serviceId;
 }
 </script>
 
@@ -76,20 +80,21 @@ function goTo(isNext: boolean) {
         <!-- <span>تصفح خدماتنا :</span> -->
         <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
           class="cats flex-grow">
-          <q-tab v-for="service in services" :key="service.id" :name="service.id" :label="service.title" />
+          <q-tab v-for="service in globalStore.services" :key="service.serviceId" :name="service.serviceId"
+            :label="service.serviceName" />
         </q-tabs>
       </div>
 
       <q-tab-panels v-model="tab" animated>
-        <q-tab-panel v-for="service in services" :key="service.id" :name="service.id">
+        <q-tab-panel v-for="service in globalStore.services" :key="service.serviceId" :name="service.serviceId">
           <div class="flex q-mt-lg service-wrapper justify-md-between justify-center">
             <div class="service-content full-width">
-              <h4 class="underline h-mr">{{ service.title }}</h4>
-              <div v-html="service.content" class="breif"></div>
+              <h4 class="underline h-mr">{{ service.serviceName }}</h4>
+              <div v-html="service.breif" class="breif"></div>
               <q-btn color="blue" text-color="white" size="lg" rounded>اطلب الخدمة</q-btn>
             </div>
             <div class="services-page-img">
-              <img :src="service.img" alt="" />
+              <app-image :src="service.serviceImage" :alt="service.serviceName" />
             </div>
           </div>
         </q-tab-panel>

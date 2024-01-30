@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Team } from '../models';
+import AppImage from 'components/base/AppImage.vue';
+import type { TeamMembersListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/public_team_members_definitions_pb'
 export interface Props {
-  member: Team;
+  member: TeamMembersListRow;
 }
 
 const props = defineProps<Props>();
@@ -10,12 +11,12 @@ const props = defineProps<Props>();
 <template>
   <div class="project">
     <div class="column">
-      <img :src="props.member.img" class="q-mb-md rounded-borders" :alt="props.member.title" />
+      <app-image :src="props.member.teamMemberImage" class="q-mb-md rounded-borders" :alt="props.member.teamMemberName" />
       <div class="props.member_content text-center">
         <h6 class="text-bold no-margin full-width">
-          {{ props.member.name }}
+          {{ props.member.teamMemberName }}
         </h6>
-        <p class=" ">{{ props.member.title }}</p>
+        <p class=" ">{{ props.member.jobTitle }}</p>
       </div>
     </div>
   </div>

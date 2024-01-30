@@ -29,7 +29,7 @@
         <div class="content">
           <img src="https://static.exploremelon.com/bznspro/logo-light.png" width="100" />
           <div class="logo">
-            <span class="">{{ copyRights }}</span>
+            <span class="">{{ globalStore.settingsMap['copyrights'] }}</span>
           </div>
 
           <span class="">
@@ -48,26 +48,26 @@
 <script setup lang="ts">
 import ContactBanner from 'components/layouts/ContactBanner.vue';
 import { NavItem, FooterLists, SocialLink } from 'components/layouts/models';
-
-
+import { useGlobalStore } from 'stores/global'
+const globalStore = useGlobalStore()
 const openLink = (url: string) => {
   window.open(url, '_blank')
 }
-const copyRights = ' جميع حقوق النشر محفوظة © بزنس برو. ';
+const copyRights = globalStore.settingsMap['copyrights'];
 const follwUs = ' يمكنك متابعتنا علي : ';
 const socialLinks: SocialLink[] = [
 
   {
     icon: 'ion-logo-youtube',
-    url: 'https://www.youtube.com/@businesspro7304',
+    url: globalStore.settingsMap['youtube'],
   },
   {
     icon: 'ion-logo-twitter',
-    url: 'https://twitter.com/businessprosa',
+    url: globalStore.settingsMap['twitter'],
   },
   {
     icon: 'ion-logo-instagram',
-    url: 'https://www.instagram.com/',
+    url: globalStore.settingsMap['instagram'],
   },
 ];
 const aboutBreif =
@@ -108,31 +108,17 @@ const blogItems: NavItem[] = [
 
 const contactItems: NavItem[] = [
   {
-    text: 'info@businesspor@gmail.com',
-    to: '/blog',
+    text: globalStore.settingsMap['email'],
+    to: '',
   },
   {
-    text: '+96615855555',
-    to: '/blog',
+    text: globalStore.settingsMap['phone'],
+    to: '',
   },
   {
-    text: 'السعودية, الرياض , جدة',
-    to: '/blog',
+    text: globalStore.settingsMap['address'],
+    to: '/contact',
   },
 ];
 
-const lists: FooterLists[] = [
-  {
-    title: 'الموقع',
-    links: websiteItems,
-  },
-  {
-    title: 'المدونة',
-    links: blogItems,
-  },
-  {
-    title: 'تواصل معنا',
-    links: contactItems,
-  },
-];
 </script>

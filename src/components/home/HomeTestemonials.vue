@@ -24,8 +24,8 @@ const testemonials: TestemonialsListRow[] = globalStore.testemonials as Testemon
     <template v-slot:content>
       <div class="container">
         <carousel :settings="carouselSettings">
-          <slide v-for="testemonial in testemonials" :key="testemonial.testemonialId">
-            <testemonial-partial :testemonial="testemonial" />
+          <slide v-for="testemonial in globalStore.testemonials" :key="testemonial.testemonialId">
+            <testemonial-partial :testemonial="(testemonial as TestemonialsListRow)" />
           </slide>
           <template #addons>
             <!-- <navigation /> -->
