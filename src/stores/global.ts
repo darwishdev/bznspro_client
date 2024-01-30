@@ -43,10 +43,10 @@ export const useGlobalStore = defineStore('global', () => {
       return events.value.filter(e => e.eventId == id)[0] as EventsListRow
     }
 
-  const getBlogById =
-    (id: number) => {
-      return blogs.value.filter(e => e.blogId == id)[0] as BlogsListRow
-    }
+  const getBlogById = (id: number) => {
+      const blog = blogs.value.filter(e => e.blogId == id)[0] as BlogsListRow
+      return(blog)
+  }
 
 
   const getSettingByKey = (key: string) => {

@@ -2,7 +2,7 @@
 import { Blog } from 'components/models';
 import PostSidePartial from 'components/partials/PostSidePartial.vue';
 import PostRecentPartial from 'components/partials/PostRecentPartial.vue';
-import { computed, ref } from 'vue';
+import { computed, ref, onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
 import { Carousel, Slide } from 'vue3-carousel';
 import { useGlobalStore } from 'src/stores/global';
@@ -22,25 +22,12 @@ const blog = computed(() => {
   return globalStore.getBlogById(parseInt(route.params.id! as string))
 })
 
-// breakpoints are mobile first
-// any settings not specified will fallback to the carousel settings
-
 const email = ref('');
-const date = 'Aug 24, 2020';
-const links = [
-  {
-    icon: 'facebook',
-    url: 'https://www.facebook.com/',
-  },
-  {
-    icon: 'ion-logo-twitter',
-    url: 'https://www.twitter.com/',
-  },
-  {
-    icon: 'ion-logo-instagram',
-    url: 'https://www.instagram.com/',
-  },
-];
+const openUrl = (url : string) => {
+  window.open(url, '_blank');
+}
+
+
 
 </script>
 <template>
@@ -63,7 +50,7 @@ const links = [
         <div class="left">
           <q-btn class="text-center full-width" color="secondary" rounded label="مشاركة" />
           <div class="flex">
-            <q-btn v-for="link in links" flat round :key="link.icon" :icon="link.icon" />
+            <q-btn @click="openUrl(link.url)" v-for="link in blog.links" flat round :key="link.name" :icon="link.name" />
           </div>
         </div>
       </div>
