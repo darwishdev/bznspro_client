@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import AppImage from '../base/AppImage.vue';
 import { Blog } from '../models';
+import type { BlogsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/blog_blog_definitions_pb';
+
 export interface Props {
-  post: Blog;
+  post: BlogsListRow;
 }
 
 const props = defineProps<Props>();
@@ -9,13 +12,13 @@ const props = defineProps<Props>();
 
 <template>
   <div class="post-side">
-    <img :src="props.post.img" :alt="props.post.name" />
+    <AppImage :src="props.post.blogImage" :alt="props.post.blogName" />
     <div class="post_content column justify-between text-left">
       <div>
         <h3 class="text-weight-medium full-width">
-          {{ props.post.name }}
+          {{ props.post.blogName }}
         </h3>
-        <span class="rounded-borders">{{ props.post.date }}</span>
+        <span class="rounded-borders">{{ props.post.dateTime }}</span>
       </div>
     </div>
   </div>

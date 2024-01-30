@@ -24,7 +24,7 @@ export const useGlobalStore = defineStore('global', () => {
   const blogs = ref<BlogsListRow[]>([])
   const mostReadBlog = ref<BlogsListRow[]>()
   const mostRecentBlog = ref<BlogsListRow>()
-  const blogCategoriesMap = ref<Record<number, BlogsListRow[]>>({})
+  const blogCategoriesMap = ref<Record<string, BlogsListRow[]>>({})
   const programs = ref<ProgramsListRow[]>([])
   const baseImg = 'https://static.exploremelon.com/bznspro/'
 
@@ -41,6 +41,11 @@ export const useGlobalStore = defineStore('global', () => {
   const getEventById =
     (id: number) => {
       return events.value.filter(e => e.eventId == id)[0] as EventsListRow
+    }
+
+  const getBlogById =
+    (id: number) => {
+      return blogs.value.filter(e => e.blogId == id)[0] as BlogsListRow
     }
 
 
@@ -66,14 +71,14 @@ export const useGlobalStore = defineStore('global', () => {
         blogs.value = resp.blogs
         mostReadBlog.value = blogs.value.filter((blog) => blog.tags.some((tag) => tag == 'الاكثر قراءة')) as BlogsListRow[]
         mostRecentBlog.value = blogs.value.filter((blog) => blog.tags.some((tag) => tag == 'الاحدث'))[0] as BlogsListRow
-        const blogCategories: Record<number, BlogsListRow[]> = {}
+        const blogCategories: Record<string, BlogsListRow[]> = {}
         for (let i = 0; i < resp.blogs.length; i++) {
           const element = resp.blogs[i];
-          if(blogCategories[element.categoryId] && blogCategories[element.categoryId].length > 0){
-            blogCategories[element.categoryId].push(element)
+          if(blogCategories[element.categoryName] && blogCategories[element.categoryName].length > 0){
+            blogCategories[element.categoryName].push(element)
             continue;
           }
-          blogCategories[element.categoryId] = [element]
+          blogCategories[element.categoryName] = [element]
         }
         blogCategoriesMap.value = blogCategories
         events.value = resp.events
@@ -88,5 +93,5 @@ export const useGlobalStore = defineStore('global', () => {
   }
 
   return { init, blogs ,mostReadBlog ,mostRecentBlog ,blogCategoriesMap , getSettingByKey, getEventById, settingsMap,
-    teamMembers, programs, baseImg, services, events, projects, loading, testemonials }
+    teamMembers, programs, baseImg, services, events, projects, loading, testemonials , getBlogById }
 })
