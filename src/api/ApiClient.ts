@@ -5,7 +5,7 @@ import { BznsProService } from "@buf/ahmeddarwish_bzns-pro-api.connectrpc_es/bzn
 
 
 const transport = createConnectTransport({
-  baseUrl: process.env.API!,
+  baseUrl: 'http://196.221.166.82:9090/',
   useHttpGet: true
 });
 

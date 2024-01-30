@@ -6,7 +6,11 @@ import { Blog, Cat } from 'components/models';
 import { ref } from 'vue';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import { useRouter } from 'vue-router';
+import { useGlobalStore } from '../../stores/global';
+import AppImage from 'src/components/base/AppImage.vue';
 const router = useRouter();
+
+const globalStore = useGlobalStore()
 const carouselSettings = {
   itemsToShow: 1,
   dir: 'rtl',
@@ -273,23 +277,23 @@ function goToPost(id: number) {
         {{ pageDescription }}
       </p>
     </div>
-    <div class="latest" @click.prevent="goToPost(latestBlog.id)">
-      <div class="flex no-wrap">
+    <div class="latest" @click.prevent="goToPost(globalStore.mostRecentBlog!.blogId)">
+      <div v-if="globalStore.mostRecentBlog" class="flex no-wrap">
         <div class="latest-content column justify-center bg-grey q-pa-lg">
           <span class="text-h6 font-cairo">احدث المقالات في المدونة</span>
-          <h4 class="text-bold q-my-lg">{{ latestBlog.name }}</h4>
-          <p class="text-h5 q-mt-md">{{ latestBlog.breif }}</p>
+          <h4 class="text-bold q-my-lg">{{ globalStore.mostRecentBlog.blogName }}</h4>
+          <p class="text-h5 q-mt-md" v-html="globalStore.mostRecentBlog.breif"></p>
           <div>
             <q-btn outline label="اقرأ المزيد" color="blue" size="xl" @click.prevent="
               $router.push({
                 name: 'blog-view',
-                params: { id: latestBlog.id },
+                params: { id: globalStore.mostRecentBlog?.blogId },
               })
               " />
           </div>
         </div>
         <div class="img">
-          <img :src="latestBlog.img" class="full-height" />
+          <app-image :src="globalStore.mostRecentBlog?.blogImage" :alt="globalStore.mostRecentBlog.blogName" class="full-height" />
         </div>
       </div>
     </div>
@@ -297,8 +301,8 @@ function goToPost(id: number) {
       <h4 class="underline">الاكثر قراءة</h4>
 
       <carousel :settings="carouselSettings" dir="rtl" :breakpoints="carouselBreakpoints">
-        <slide v-for="post in mostReads" :key="post.id">
-          <post-recent-partial @click.prevent="goToPost(post.id)" :key="post.id" :post="post" />
+        <slide v-for="(post , index) in globalStore.mostReadBlog" :key="index">
+          <post-recent-partial @click.prevent="goToPost(post.blogId)" :key="post.blogId" :post="post" />
         </slide>
         <template #addons>
           <navigation />
@@ -311,13 +315,13 @@ function goToPost(id: number) {
         <span class="text-h5">المقالات </span>
         <q-tabs dense v-model="tab" active-bg-color="blue" active-color="white" outside-arrows inline-label
           class="cats flex-grow wrap">
-          <q-tab v-for="cat in cats" :key="cat.id" :name="cat.id" :label="cat.name" />
+          <q-tab v-for="cat in globalStore.blogs" :key="cat.categoryId" :name="cat.categoryName" :label="cat.categoryName" />
         </q-tabs>
       </div>
 
-      <q-tab-panels v-for="cat in cats" :key="cat.id" v-model="tab" animated>
-        <q-tab-panel v-for="post in postsMap[cat.id]" :key="post.id" :name="post.id">
-          <post-partial @click.prevent="goToPost(post.id)" :post="post" class="q-mt-xl" />
+      <q-tab-panels v-for="cat in globalStore.blogs" :key="cat.categoryId" v-model="tab" animated>
+        <q-tab-panel v-for="post in globalStore.blogCategoriesMap[cat.categoryId]" :key="post.blogId" :name="post.blogName">
+          <post-partial @click.prevent="goToPost(post.blogId)" :post="post" class="q-mt-xl" />
         </q-tab-panel>
         <h2>helloa</h2>
       </q-tab-panels>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Blog } from '../models';
+import type { BlogsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/blog_blog_definitions_pb';
 export interface Props {
-  post: Blog;
+  post: BlogsListRow;
 }
 
 const props = defineProps<Props>();
@@ -9,29 +10,29 @@ const props = defineProps<Props>();
 
 <template>
   <div class="post">
-    <img :src="props.post.img" :alt="props.post.name" />
+    <app-image :src="props.post.blogImage" :alt="props.post.blogName" />
     <div class="post_content column justify-between q-pa-lg text-left">
       <div>
         <span class="rounded-borders q-py-sm q-px-md bg-grey">{{
-          props.post.cat
+          props.post.categoryName
         }}</span>
         <h4 class="text-weight-medium full-width q-mt-lg q-mb-md">
-          {{ props.post.name }}
+          {{ props.post.blogName }}
         </h4>
         <span class="rounded-borders q-py-sm q-px-md">{{
-          props.post.date
+          props.post.dateTime
         }}</span>
-        <p class="text-h5 text-grey-7 q-mt-md">{{ props.post.breif }}</p>
+        <p class="text-h5 text-grey-7 q-mt-md" v-html="props.post.breif"></p>
       </div>
       <div class="flex justify-between">
         <div class="flex">
-          <q-btn
+          <!-- <q-btn
             v-for="link in props.post.links"
             flat
             round
             :key="link.icon"
             :icon="link.icon"
-          />
+          /> -->
         </div>
         <q-btn
           outline

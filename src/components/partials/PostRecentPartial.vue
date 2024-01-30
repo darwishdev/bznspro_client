@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Blog } from '../models';
+import type { BlogsListRow } from '@buf/ahmeddarwish_bzns-pro-api.bufbuild_es/bznspro/v1/blog_blog_definitions_pb';
+
 export interface Props {
-  post: Blog;
+  post: BlogsListRow;
 }
 
 const props = defineProps<Props>();
@@ -10,13 +12,13 @@ const props = defineProps<Props>();
 <template>
   <div class="recent-post">
     <div class="column">
-      <img :src="props.post.img" :alt="props.post.name" />
+      <app-image :src="props.post.blogImage" :alt="props.post.blogName" />
       <div class="post_content q-pa-lg text-left">
         <span class="rounded-borders q-py-sm q-px-md bg-grey">{{
-          props.post.cat
+          props.post.categoryName
         }}</span>
         <h6 class="text-bold full-width q-mt-lg q-mb-md">
-          {{ props.post.name }}
+          {{ props.post.blogName }}
         </h6>
       </div>
     </div>

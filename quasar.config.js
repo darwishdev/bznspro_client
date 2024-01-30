@@ -58,13 +58,13 @@ module.exports = configure(function (ctx) {
       // analyze: true,
       env: {
         API: ctx.dev
-          ? 'http://192.168.1.40:9090/'
+          ? 'http://196.221.166.82:9090/'
           : 'https://api.businessprosa.com/',
         IMG_BASE: ctx.dev
-          ? 'http://192.168.1.40:54321/storage/v1/object/public/images/'
+          ? 'http://196.221.166.82:54321/storage/v1/object/public/images/'
           : 'https://chsblnhhpugrdggdqtht.supabase.co/storage/v1/object/public/images/',
         IMG_FALLABCK: ctx.dev
-          ? 'http://192.168.1.40:54321/storage/v1/object/public/images/initial/noimg.webp'
+          ? 'http://196.221.166.82:54321/storage/v1/object/public/images/initial/noimg.webp'
           : 'https://chsblnhhpugrdggdqtht.supabase.co/storage/v1/object/public/images/initial/noimg.webp',
       },
       // rawDefine: {}

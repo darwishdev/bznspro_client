@@ -22,6 +22,9 @@ export const useGlobalStore = defineStore('global', () => {
   const services = ref<ServicesListRow[]>([])
   const teamMembers = ref<TeamMembersListRow[]>([])
   const blogs = ref<BlogsListRow[]>([])
+  const mostReadBlog = ref<BlogsListRow[]>()
+  const mostRecentBlog = ref<BlogsListRow>()
+  const blogCategoriesMap = ref<Record<number, BlogsListRow[]>>({})
   const programs = ref<ProgramsListRow[]>([])
   const baseImg = 'https://static.exploremelon.com/bznspro/'
 
@@ -61,15 +64,29 @@ export const useGlobalStore = defineStore('global', () => {
         settingsMap.value = settingsObj
         testemonials.value = resp.testemonials
         blogs.value = resp.blogs
+        mostReadBlog.value = blogs.value.filter((blog) => blog.tags.some((tag) => tag == 'الاكثر قراءة')) as BlogsListRow[]
+        mostRecentBlog.value = blogs.value.filter((blog) => blog.tags.some((tag) => tag == 'الاحدث'))[0] as BlogsListRow
+        const blogCategories: Record<number, BlogsListRow[]> = {}
+        for (let i = 0; i < resp.blogs.length; i++) {
+          const element = resp.blogs[i];
+          if(blogCategories[element.categoryId] && blogCategories[element.categoryId].length > 0){
+            blogCategories[element.categoryId].push(element)
+            continue;
+          }
+          blogCategories[element.categoryId] = [element]
+        }
+        blogCategoriesMap.value = blogCategories
         events.value = resp.events
         programs.value = resp.programs
         projects.value = resp.projects
         services.value = resp.services
-        // console.log(settings.value);
+
+        console.log(blogCategoriesMap.value);
         r(true)
       })
     })
   }
 
-  return { init, blogs, getSettingByKey, getEventById, settingsMap, teamMembers, programs, baseImg, services, events, projects, loading, testemonials }
+  return { init, blogs ,mostReadBlog ,mostRecentBlog ,blogCategoriesMap , getSettingByKey, getEventById, settingsMap,
+    teamMembers, programs, baseImg, services, events, projects, loading, testemonials }
 })
