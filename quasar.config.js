@@ -10,7 +10,7 @@
 
 const { configure } = require('quasar/wrappers');
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function (ctx) {
   return {
     eslint: {
       // fix: true,
@@ -56,7 +56,17 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      // env: {},
+      env: {
+        API: ctx.dev
+          ? 'http://192.168.1.40:9090/'
+          : 'https://api.businessprosa.com/',
+        IMG_BASE: ctx.dev
+          ? 'http://192.168.1.40:54321/storage/v1/object/public/images/'
+          : 'https://chsblnhhpugrdggdqtht.supabase.co/storage/v1/object/public/images/',
+        IMG_FALLABCK: ctx.dev
+          ? 'http://192.168.1.40:54321/storage/v1/object/public/images/initial/noimg.webp'
+          : 'https://chsblnhhpugrdggdqtht.supabase.co/storage/v1/object/public/images/initial/noimg.webp',
+      },
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
@@ -92,7 +102,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ['Notify'],
     },
 
     // animations: 'all', // --- includes all animations

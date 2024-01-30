@@ -42,19 +42,19 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ConsultuntsPage.vue'),
       },
       {
-        path: '/programms',
-        name: 'programms',
-        component: () => import('pages/programm/ProgrammsIndex.vue'),
+        path: '/events',
+        name: 'events',
+        component: () => import('pages/event/EventsIndex.vue'),
       },
       {
-        path: '/programms/:id',
-        name: 'programms-view',
-        component: () => import('pages/programm/ProgrammsView.vue'),
+        path: '/events/:id',
+        name: 'events-view',
+        component: () => import('pages/event/EventsView.vue'),
       },
       {
-        path: '/programms/:id/checkout',
-        name: 'programms-checkout',
-        component: () => import('pages/programm/ProgramCheckout.vue'),
+        path: '/events/:id/checkout',
+        name: 'events-checkout',
+        component: () => import('pages/event/EventCheckout.vue'),
       },
       {
         path: '/academies',
